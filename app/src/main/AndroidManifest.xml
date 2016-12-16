@@ -18,6 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MaterialMainActivity"/>
+        <activity android:name=".activity.XsqMainActivity"/>
+
     </application>
 
 </manifest>
