@@ -1,11 +1,11 @@
 package com.bingley.materialdesign.activity;
 
 import android.content.Intent;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
+import com.bingley.materialdesign.view.TitleView;
 
 import butterknife.Bind;
 import butterknife.OnClick;
@@ -15,9 +15,9 @@ import butterknife.OnClick;
  * on 16/6/20.
  */
 
-public class MaterialMainActivity extends BaseActivity {
-    @Bind(R.id.toolbar)
-    Toolbar mToolbar;
+public class MateriaListActivity extends BaseActivity {
+    @Bind(R.id.titleview)
+    TitleView mTitleView;
 
     @Override
     protected int getContentView() {
@@ -27,22 +27,21 @@ public class MaterialMainActivity extends BaseActivity {
     @Override
     protected void initWidget() {
         super.initWidget();
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+        mTitleView.setBackBtn();
+        mTitleView.setTitle("material");
     }
 
 
-    @OnClick({ R.id.ll_hide_toolbar})
+    @OnClick({R.id.ll_hide_toolbar,R.id.ll_pull_torefesh})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_hide_toolbar:
-                startActivity(new Intent(this, HideToolbarActivty.class));
+
+                startActivity(new Intent(this, MaterialDetailActivty.class).putExtra("material",1));
+                break;
+            case R.id.ll_pull_torefesh:
+
+                startActivity(new Intent(this, MaterialDetailActivty.class).putExtra("material",2));
                 break;
         }
     }

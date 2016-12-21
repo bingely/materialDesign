@@ -12,7 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.bingley.materialdesign.activity.MaterialMainActivity;
+import com.bingley.materialdesign.activity.MateriaListActivity;
 import com.bingley.materialdesign.base.BaseActivity;
 
 public class MainActivity extends BaseActivity
@@ -86,7 +86,7 @@ public class MainActivity extends BaseActivity
         int id = item.getItemId();
 
         if (id == R.id.item_materialdesign) {
-            startActivity(new Intent(this, MaterialMainActivity.class));
+            startActivity(new Intent(this, MateriaListActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

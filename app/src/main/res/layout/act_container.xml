@@ -5,12 +5,10 @@
               android:baselineAligned="false"
               android:orientation="vertical">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <com.bingley.materialdesign.view.TitleView
+        android:id="@+id/titleview"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:background="?attr/colorPrimaryDark"/>
+        android:layout_height="wrap_content"></com.bingley.materialdesign.view.TitleView>
 
     <FrameLayout
         android:id="@+id/fl_container"

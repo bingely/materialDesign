@@ -7,7 +7,7 @@ import com.bingley.materialdesign.base.BaseFragment;
  * Created by Administrator on 2016/12/16.
  */
 
-public class MaterialFragment extends BaseFragment {
+public class PtrRefreashFragment extends BaseFragment {
     @Override
     protected int getLayoutId() {
         return R.layout.act_listview;

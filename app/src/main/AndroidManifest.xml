@@ -18,9 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MaterialMainActivity"/>
+        <activity android:name=".activity.MateriaListActivity"/>
         <activity android:name=".activity.XsqMainActivity"/>
-        <activity android:name=".activity.HideToolbarActivty"/>
+        <activity android:name=".activity.MaterialDetailActivty"/>
 
     </application>
 

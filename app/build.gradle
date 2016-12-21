@@ -39,6 +39,8 @@ dependencies {
     compile 'com.jakewharton:butterknife:7.0.1'
     // goson
     compile 'com.google.code.gson:gson:2.3.1'
+    // 下拉刷新
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
     // retrofit 和 rxjava结合
     compile 'com.squareup.retrofit2:converter-gson:2.0.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'
