@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.component;
+package com.bingley.materialdesign.mvp.textview;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;

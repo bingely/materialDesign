@@ -6,7 +6,8 @@ import android.widget.FrameLayout;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MaterialFragment;
-import com.bingley.materialdesign.mvp.component.ComponnetFragment;
+import com.bingley.materialdesign.mvp.dialog.DialogFragment;
+import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
 import com.bingley.materialdesign.view.TitleView;
 
@@ -45,9 +46,15 @@ public class MaterialDetailActivty extends BaseActivity {
                 fragmentTransaction.add(R.id.fl_container, jdFragment);
                 break;
             case 3:
-                mTitleview.setTitle("组件demo");
-                ComponnetFragment componnetFragment = new ComponnetFragment();
-                fragmentTransaction.add(R.id.fl_container, componnetFragment);
+                mTitleview.setTitle("TextVIew Demo");
+                TextViewFragment textViewFragment = new TextViewFragment();
+                fragmentTransaction.add(R.id.fl_container, textViewFragment);
+                break;
+
+            case 4:
+                mTitleview.setTitle("Dialog Demo");
+                DialogFragment dialogFragment = new DialogFragment();
+                fragmentTransaction.add(R.id.fl_container, dialogFragment);
                 break;
             default:
                 break;

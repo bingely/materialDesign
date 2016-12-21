@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.component;
+package com.bingley.materialdesign.mvp.textview;
 
 import android.text.Editable;
 import android.text.TextWatcher;

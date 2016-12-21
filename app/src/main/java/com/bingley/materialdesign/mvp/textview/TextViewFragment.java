@@ -1,15 +1,11 @@
-package com.bingley.materialdesign.mvp.component;
+package com.bingley.materialdesign.mvp.textview;
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseFragment;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * 小组件
@@ -18,7 +14,7 @@ import butterknife.ButterKnife;
  * Date:  2016/12/21
  */
 
-public class ComponnetFragment extends BaseFragment {
+public class TextViewFragment extends BaseFragment {
     @Bind(R.id.phone)
     ClearableEditText mPhone;
 
