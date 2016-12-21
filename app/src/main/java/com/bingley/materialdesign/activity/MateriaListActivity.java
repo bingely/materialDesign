@@ -32,7 +32,7 @@ public class MateriaListActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.ll_hide_toolbar,R.id.ll_pull_torefesh})
+    @OnClick({R.id.ll_hide_toolbar,R.id.ll_pull_torefesh,R.id.ll_conponet})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_hide_toolbar:
@@ -42,6 +42,9 @@ public class MateriaListActivity extends BaseActivity {
             case R.id.ll_pull_torefesh:
 
                 startActivity(new Intent(this, MaterialDetailActivty.class).putExtra("material",2));
+                break;
+            case R.id.ll_conponet:
+                startActivity(new Intent(this, MaterialDetailActivty.class).putExtra("material",3));
                 break;
         }
     }

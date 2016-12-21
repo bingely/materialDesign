@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.jd;
+package com.bingley.materialdesign.mvp.jdong;
 
 import android.content.Context;
 import android.util.AttributeSet;

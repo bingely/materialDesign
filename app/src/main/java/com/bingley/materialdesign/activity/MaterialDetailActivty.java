@@ -1,18 +1,16 @@
 package com.bingley.materialdesign.activity;
 
-import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MaterialFragment;
-import com.bingley.materialdesign.fragment.PtrRefreashFragment;
-import com.bingley.materialdesign.mvp.jd.JdFragment;
+import com.bingley.materialdesign.mvp.component.ComponnetFragment;
+import com.bingley.materialdesign.mvp.jdong.JdFragment;
 import com.bingley.materialdesign.view.TitleView;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * 实现Google+滑动显示、隐藏toolbar
@@ -45,6 +43,11 @@ public class MaterialDetailActivty extends BaseActivity {
                 mTitleview.setTitle("下拉刷新");
                 JdFragment jdFragment = new JdFragment();
                 fragmentTransaction.add(R.id.fl_container, jdFragment);
+                break;
+            case 3:
+                mTitleview.setTitle("组件demo");
+                ComponnetFragment componnetFragment = new ComponnetFragment();
+                fragmentTransaction.add(R.id.fl_container, componnetFragment);
                 break;
             default:
                 break;

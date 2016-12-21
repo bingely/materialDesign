@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.jd;
+package com.bingley.materialdesign.mvp.jdong;
 
 import android.os.AsyncTask;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,7 +11,6 @@ import com.bingley.materialdesign.base.BaseFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import butterknife.Bind;
 import in.srain.cube.views.ptr.PtrDefaultHandler;
