@@ -8,6 +8,7 @@ import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MaterialFragment;
 import com.bingley.materialdesign.fragment.PtrRefreashFragment;
+import com.bingley.materialdesign.mvp.jd.JdFragment;
 import com.bingley.materialdesign.view.TitleView;
 
 import butterknife.Bind;
@@ -42,8 +43,8 @@ public class MaterialDetailActivty extends BaseActivity {
                 break;
             case 2:
                 mTitleview.setTitle("下拉刷新");
-                PtrRefreashFragment ptrRefreashFragment = new PtrRefreashFragment();
-                fragmentTransaction.add(R.id.fl_container, ptrRefreashFragment);
+                JdFragment jdFragment = new JdFragment();
+                fragmentTransaction.add(R.id.fl_container, jdFragment);
                 break;
             default:
                 break;
