@@ -102,6 +102,7 @@ public class ColorDialog extends Dialog implements View.OnClickListener {
         mPositiveBtn.setOnClickListener(this);
         mNegativeBtn.setOnClickListener(this);
 
+        // 这个代表值是从外界赋予的
         mTitleTv.setText(mTitleText);
         mContentTv.setText(mContentText);
         mPositiveBtn.setText(mPositiveText);
