@@ -21,6 +21,7 @@
         <activity android:name=".activity.MateriaListActivity"/>
         <activity android:name=".activity.XsqMainActivity"/>
         <activity android:name=".activity.MaterialDetailActivty"/>
+        <activity android:name=".mvp.osc.OscMainActivity"/>
 
     </application>
 
