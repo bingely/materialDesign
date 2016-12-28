@@ -1,5 +1,7 @@
 package com.bingley.materialdesign.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
@@ -7,8 +9,9 @@ import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
-import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
+import com.bingley.materialdesign.mvp.materal.SvgFragment;
+import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.view.TitleView;
 
 import butterknife.Bind;
@@ -26,6 +29,11 @@ public class KnowleageDetailActivty extends BaseActivity {
     @Override
     protected int getContentView() {
         return R.layout.act_container;
+    }
+
+
+    public static void gotoActivity(Context context,int code) {
+        context.startActivity(new Intent(context, KnowleageDetailActivty.class).putExtra("material", code));
     }
 
     @Override
@@ -55,6 +63,13 @@ public class KnowleageDetailActivty extends BaseActivity {
                 mTitleview.setTitle("Dialog Demo");
                 DialogFragment dialogFragment = new DialogFragment();
                 fragmentTransaction.add(R.id.fl_container, dialogFragment);
+                break;
+
+
+            case 11:
+                mTitleview.setTitle("svg Demo");
+                SvgFragment svgFragment = new SvgFragment();
+                fragmentTransaction.add(R.id.fl_container, svgFragment);
                 break;
             default:
                 break;

@@ -1,6 +1,5 @@
 package com.bingley.materialdesign.activity;
 
-import android.content.Intent;
 import android.view.View;
 
 import com.bingley.materialdesign.R;
@@ -32,23 +31,22 @@ public class KnowlegeListActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.ll_hide_toolbar,R.id.ll_pull_torefesh,R.id.ll_textview,R.id.ll_dialog})
+    @OnClick({R.id.ll_hide_toolbar, R.id.ll_pull_torefesh, R.id.ll_textview, R.id.ll_dialog})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_hide_toolbar:
-
-                startActivity(new Intent(this, KnowleageDetailActivty.class).putExtra("material",1));
+                KnowleageDetailActivty.gotoActivity(this,1);
                 break;
             case R.id.ll_pull_torefesh:
-
-                startActivity(new Intent(this, KnowleageDetailActivty.class).putExtra("material",2));
+                KnowleageDetailActivty.gotoActivity(this,2);
                 break;
             case R.id.ll_textview:
-                startActivity(new Intent(this, KnowleageDetailActivty.class).putExtra("material",3));
+                KnowleageDetailActivty.gotoActivity(this,3);
                 break;
             case R.id.ll_dialog:
-                startActivity(new Intent(this, KnowleageDetailActivty.class).putExtra("material",4));
+                KnowleageDetailActivty.gotoActivity(this,4);
                 break;
         }
     }
+
 }
