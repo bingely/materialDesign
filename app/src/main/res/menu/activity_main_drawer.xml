@@ -1,32 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:app="http://schemas.android.com/apk/res-auto"
-      xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <group android:checkableBehavior="single">
+
+       <!-- <item
+            android:id="@+id/item_material"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Material学习"/>-->
         <item
-            android:id="@+id/item_materialdesign"
+            android:id="@+id/item_leanningbasic"
             android:icon="@drawable/ic_menu_camera"
-            android:title="MaterialDesign"/>
+            android:title="泡在网上的日子"/>
         <item
             android:id="@+id/nav_gallery"
             android:icon="@drawable/ic_menu_gallery"
             android:title="项目"/>
-        <!--<item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow"/>
+        <!--
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"
             android:title="Tools"/>-->
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="项目">
         <menu>
             <item
-                android:id="@+id/nav_share"
+                android:id="@+id/project_osc"
                 android:icon="@drawable/ic_menu_share"
-                android:title="Share"/>
+                android:title="osc"/>
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"

@@ -12,8 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.bingley.materialdesign.activity.MateriaListActivity;
+import com.bingley.materialdesign.activity.KnowlegeListActivity;
 import com.bingley.materialdesign.base.BaseActivity;
+import com.bingley.materialdesign.mvp.osc.OscMainActivity;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -50,7 +51,6 @@ public class MainActivity extends BaseActivity
     }
 
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -76,6 +76,7 @@ public class MainActivity extends BaseActivity
 
     /**
      * 这个是侧滑条目的item点击事件触发的事件
+     *
      * @param item
      * @return
      */
@@ -84,9 +85,14 @@ public class MainActivity extends BaseActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        switch (id) {
+            case R.id.project_osc:
+                startActivity(new Intent(this, OscMainActivity.class));
+                break;
+            case R.id.item_leanningbasic:
+                startActivity(new Intent(this, KnowlegeListActivity.class));
+                break;
 
-        if (id == R.id.item_materialdesign) {
-            startActivity(new Intent(this, MateriaListActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

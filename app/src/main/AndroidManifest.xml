@@ -18,9 +18,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MateriaListActivity"/>
+        <activity android:name=".activity.KnowlegeListActivity"/>
         <activity android:name=".activity.XsqMainActivity"/>
-        <activity android:name=".activity.MaterialDetailActivty"/>
+        <activity android:name=".activity.KnowleageDetailActivty"/>
         <activity android:name=".mvp.osc.OscMainActivity"/>
 
     </application>

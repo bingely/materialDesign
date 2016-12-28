@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
-import com.bingley.materialdesign.fragment.MaterialFragment;
+import com.bingley.materialdesign.fragment.MaterialListFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
@@ -17,7 +17,7 @@ import butterknife.Bind;
  * 实现Google+滑动显示、隐藏toolbar
  * 我觉得应该一种容器的作用，放置的是各个fragment
  */
-public class MaterialDetailActivty extends BaseActivity {
+public class KnowleageDetailActivty extends BaseActivity {
     @Bind(R.id.titleview)
     TitleView mTitleview;
     @Bind(R.id.fl_container)
@@ -36,8 +36,8 @@ public class MaterialDetailActivty extends BaseActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         switch (material) {
             case 1:
-                mTitleview.setTitle("我的收藏");
-                MaterialFragment collectFragment = new MaterialFragment();
+                mTitleview.setTitle("5.0新特性");
+                MaterialListFragment collectFragment = new MaterialListFragment();
                 fragmentTransaction.add(R.id.fl_container, collectFragment);
                 break;
             case 2:

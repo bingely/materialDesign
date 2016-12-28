@@ -15,20 +15,20 @@ import butterknife.OnClick;
  * on 16/6/20.
  */
 
-public class MateriaListActivity extends BaseActivity {
+public class KnowlegeListActivity extends BaseActivity {
     @Bind(R.id.titleview)
     TitleView mTitleView;
 
     @Override
     protected int getContentView() {
-        return R.layout.act_material;
+        return R.layout.act_learn_basic;
     }
 
     @Override
     protected void initWidget() {
         super.initWidget();
         mTitleView.setBackBtn();
-        mTitleView.setTitle("material");
+        mTitleView.setTitle("基础知识学习");
     }
 
 
@@ -37,17 +37,17 @@ public class MateriaListActivity extends BaseActivity {
         switch (view.getId()) {
             case R.id.ll_hide_toolbar:
 
-                startActivity(new Intent(this, MaterialDetailActivty.class).putExtra("material",1));
+                startActivity(new Intent(this, KnowleageDetailActivty.class).putExtra("material",1));
                 break;
             case R.id.ll_pull_torefesh:
 
-                startActivity(new Intent(this, MaterialDetailActivty.class).putExtra("material",2));
+                startActivity(new Intent(this, KnowleageDetailActivty.class).putExtra("material",2));
                 break;
             case R.id.ll_textview:
-                startActivity(new Intent(this, MaterialDetailActivty.class).putExtra("material",3));
+                startActivity(new Intent(this, KnowleageDetailActivty.class).putExtra("material",3));
                 break;
             case R.id.ll_dialog:
-                startActivity(new Intent(this, MaterialDetailActivty.class).putExtra("material",4));
+                startActivity(new Intent(this, KnowleageDetailActivty.class).putExtra("material",4));
                 break;
         }
     }
