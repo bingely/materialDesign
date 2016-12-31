@@ -36,4 +36,9 @@
         <item name="android:backgroundDimAmount">0.4</item>
     </style>
 
+    <style name="TRM_ANIM_STYLE">
+        <item name="android:windowEnterAnimation">@animator/trm_popup_enter</item>
+        <item name="android:windowExitAnimation">@animator/trm_popup_exit</item>
+    </style>
+
 </resources>

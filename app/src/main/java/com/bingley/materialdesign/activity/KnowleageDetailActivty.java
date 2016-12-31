@@ -11,6 +11,7 @@ import com.bingley.materialdesign.fragment.MaterialListFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
 import com.bingley.materialdesign.mvp.materal.SvgFragment;
+import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
 import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.view.TitleView;
 
@@ -63,6 +64,11 @@ public class KnowleageDetailActivty extends BaseActivity {
                 mTitleview.setTitle("Dialog Demo");
                 DialogFragment dialogFragment = new DialogFragment();
                 fragmentTransaction.add(R.id.fl_container, dialogFragment);
+                break;
+            case 5:
+                mTitleview.setTitle("popwindow Demo");
+                PopwindowFragment popwindowFragment = new PopwindowFragment();
+                fragmentTransaction.add(R.id.fl_container, popwindowFragment);
                 break;
 
 
