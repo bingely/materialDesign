@@ -31,7 +31,7 @@ public class KnowlegeListActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.ll_hide_toolbar, R.id.ll_pull_torefesh, R.id.ll_textview, R.id.ll_dialog,R.id.ll_pop})
+    @OnClick({R.id.ll_hide_toolbar, R.id.ll_pull_torefesh, R.id.ll_textview, R.id.ll_dialog,R.id.ll_pop,R.id.ll_elm})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_hide_toolbar:
@@ -49,6 +49,9 @@ public class KnowlegeListActivity extends BaseActivity {
             case R.id.ll_pop:
                 KnowleageDetailActivty.gotoActivity(this,5);
 
+                break;
+            case R.id.ll_elm:
+                KnowleageDetailActivty.gotoActivity(this,6);
                 break;
         }
     }

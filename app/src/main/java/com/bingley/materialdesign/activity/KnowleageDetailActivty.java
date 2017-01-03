@@ -9,6 +9,7 @@ import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
+import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
 import com.bingley.materialdesign.mvp.materal.SvgFragment;
 import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
@@ -69,6 +70,11 @@ public class KnowleageDetailActivty extends BaseActivity {
                 mTitleview.setTitle("popwindow Demo");
                 PopwindowFragment popwindowFragment = new PopwindowFragment();
                 fragmentTransaction.add(R.id.fl_container, popwindowFragment);
+                break;
+            case 6:
+                mTitleview.setTitle("elm Demo");
+                ElmFrament elmFrament = new ElmFrament();
+                fragmentTransaction.add(R.id.fl_container, elmFrament);
                 break;
 
 
