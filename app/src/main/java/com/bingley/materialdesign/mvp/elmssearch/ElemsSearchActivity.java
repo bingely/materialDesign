@@ -2,6 +2,7 @@ package com.bingley.materialdesign.mvp.elmssearch;
 
 import android.animation.Animator;
 import android.animation.ValueAnimator;
+                                                                                                                                                    import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
@@ -44,26 +45,30 @@ public class ElemsSearchActivity extends BaseActivity{
         右侧搜索的Y轴平移动画。
         中间文字以及背景的Y轴平移动画。
         中间背景的X缩放动画。
-        下部View内容的透明动画。*/
+        下部View内容的透明动画。
+        */
         mSearchBGTxt.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
             public void onGlobalLayout() {
                 performEnterAnimation();
             }
+        });
 
-
+        mArrowImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                performExitAnimation();
+            }
         });
     }
 
      private void performEnterAnimation() {
-         // 得到Y轴偏移量
          float originY = getIntent().getIntExtra("y", 0);
+
          int location[] = new int[2];
          mSearchBGTxt.getLocationOnScreen(location);
 
          final float translateY = originY - (float) location[1];
-
-
 
          //放到前一个页面的位置
          mSearchBGTxt.setY(mSearchBGTxt.getY() + translateY);
@@ -75,6 +80,7 @@ public class ElemsSearchActivity extends BaseActivity{
              public void onAnimationUpdate(ValueAnimator valueAnimator) {
                  mSearchBGTxt.setY((Float) valueAnimator.getAnimatedValue());
 
+                 // 这个为什么是这样计算的，还有为什么我的中间文字不见了
                  mArrowImg.setY(mSearchBGTxt.getY() + (mSearchBGTxt.getHeight() - mArrowImg.getHeight()) / 2);
                  mHintTxt.setY(mSearchBGTxt.getY() + (mSearchBGTxt.getHeight() - mHintTxt.getHeight()) / 2);
                  mSearchTxt.setY(mSearchBGTxt.getY() + (mSearchBGTxt.getHeight() - mSearchTxt.getHeight()) / 2);
@@ -106,6 +112,7 @@ public class ElemsSearchActivity extends BaseActivity{
          alphaVa.start();
          translateVa.start();
          scaleVa.start();
+
      }
 
 
@@ -129,8 +136,9 @@ public class ElemsSearchActivity extends BaseActivity{
              public void onAnimationUpdate(ValueAnimator valueAnimator) {
                  mSearchBGTxt.setY((Float) valueAnimator.getAnimatedValue());
                  mArrowImg.setY(mSearchBGTxt.getY() + (mSearchBGTxt.getHeight() - mArrowImg.getHeight()) / 2);
-                 mHintTxt.setY(mSearchBGTxt.getY() + (mSearchBGTxt.getHeight() - mHintTxt.getHeight()) / 2);
+                // mHintTxt.setY(mSearchBGTxt.getY() + (mSearchBGTxt.getHeight() - mHintTxt.getHeight()) / 2);
                  mSearchTxt.setY(mSearchBGTxt.getY() + (mSearchBGTxt.getHeight() - mSearchTxt.getHeight()) / 2);
+                 //mSearchTxt.setY((Float) valueAnimator.getAnimatedValue());
              }
          });
          translateVa.addListener(new Animator.AnimatorListener() {
