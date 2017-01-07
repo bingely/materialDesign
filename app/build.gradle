@@ -3,6 +3,8 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.0"
+
+
     defaultConfig {
         applicationId "com.bingley.materialdesign"
         minSdkVersion 15
@@ -11,11 +13,51 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+
+   /* def versionPropsFile = file("version.properties")
+    if (versionPropsFile.canRead()) {
+
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        def runTasks = gradle.startParameter.taskNames
+        def int verCode = versionProps['VERSION_CODE'].toInteger()
+        if (':app:assembleRelease' in runTasks) {
+            versionProps['VERSION_CODE'] = (verCode + 1).toString()
+            versionProps.store(versionPropsFile.newWriter(), null)
+        }
+
+        defaultConfig {
+            applicationId "com.bingley.materialdesign"
+            minSdkVersion 15
+            targetSdkVersion 25
+            versionCode verCode
+            versionName "1.0"
+            testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        }
+    } else {
+        throw new GradleException("Could not read version.properties!")
+    }*/
+
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+
+    /**
+     * gradle之版本差异控制
+     * 比如我在这个程序里面弄个包名专门测试 上线app里面的功能（分享，支付等等）
+     */
+    productFlavors{
+        xsq{
+            //com.weytenera.xsq
+            applicationId "com.weytenera.xsq"   // 注意格式""
+        }
+        md{}
     }
 }
 
