@@ -1,7 +1,8 @@
 package com.bingley.materialdesign.utils;
 
 import android.content.Context;
-import android.graphics.Point;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.WindowManager;
 
 /**
@@ -58,17 +59,33 @@ public class DisplayUtil {
         return (int) (TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics()));
     }*/
 
+    /**
+     * 获取屏幕相关参数
+     *
+     *
+     * @param context context
+     * @return DisplayMetrics 屏幕宽高
+     */
+    public static DisplayMetrics getScreenSize(Context context) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        WindowManager wm = (WindowManager) context.getSystemService(
+                Context.WINDOW_SERVICE);
+        Display display = wm.getDefaultDisplay();
+        display.getMetrics(metrics);
+        return metrics;
+    }
 
     /**
-     * 获得屏幕尺寸
+     * 获取屏幕density
      *
-     * @param context
-     * @return
+     * @param context context
+     * @return density 屏幕density（密度）
      */
-    public static Point getScreenSize(Context context) {
-        Point point = new Point();
-        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
-        wm.getDefaultDisplay().getSize(point);
-        return point;
+    public static float getDeviceDensity(Context context) {
+        DisplayMetrics metrics = new DisplayMetrics();
+        WindowManager wm = (WindowManager) context.getSystemService(
+                Context.WINDOW_SERVICE);
+        wm.getDefaultDisplay().getMetrics(metrics);
+        return metrics.density;
     }
 }

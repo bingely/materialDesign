@@ -1,9 +1,11 @@
 package com.bingley.materialdesign.activity;
 
+import android.content.Intent;
 import android.view.View;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
+import com.bingley.materialdesign.mvp.listviewdemo.ScrollHideListViewActivity;
 import com.bingley.materialdesign.view.TitleView;
 
 import butterknife.Bind;
@@ -31,7 +33,7 @@ public class KnowlegeListActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.ll_hide_toolbar, R.id.ll_pull_torefesh, R.id.ll_textview, R.id.ll_dialog,R.id.ll_pop,R.id.ll_elm})
+    @OnClick({R.id.ll_hide_toolbar, R.id.ll_pull_torefesh, R.id.ll_textview, R.id.ll_dialog,R.id.ll_pop,R.id.ll_elm,R.id.ll_hindlistview})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.ll_hide_toolbar:
@@ -52,6 +54,9 @@ public class KnowlegeListActivity extends BaseActivity {
                 break;
             case R.id.ll_elm:
                 KnowleageDetailActivty.gotoActivity(this,6);
+                break;
+            case R.id.ll_hindlistview:
+                startActivity(new Intent(this, ScrollHideListViewActivity.class));
                 break;
         }
     }

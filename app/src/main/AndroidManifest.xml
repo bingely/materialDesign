@@ -23,6 +23,7 @@
         <activity android:name=".activity.KnowleageDetailActivty"/>
         <activity android:name=".mvp.osc.OscMainActivity"/>
         <activity android:name=".mvp.elmssearch.ElemsSearchActivity" android:theme="@style/Translucent"/>
+        <activity android:name=".mvp.listviewdemo.ScrollHideListViewActivity"/>
 
     </application>
 
