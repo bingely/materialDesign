@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
+import com.bingley.materialdesign.mvp.anim.AnimFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
@@ -75,6 +76,11 @@ public class KnowleageDetailActivty extends BaseActivity {
                 mTitleview.setTitle("elm Demo");
                 ElmFrament elmFrament = new ElmFrament();
                 fragmentTransaction.add(R.id.fl_container, elmFrament);
+                break;
+            case 7:
+                mTitleview.setTitle("anim Demo");
+                AnimFragment animFragment = new AnimFragment();
+                fragmentTransaction.add(R.id.fl_container, animFragment);
                 break;
 
 

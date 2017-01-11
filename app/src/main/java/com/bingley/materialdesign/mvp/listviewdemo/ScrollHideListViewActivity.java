@@ -90,7 +90,7 @@ public class ScrollHideListViewActivity extends BaseActivity {
         header.setLayoutParams(new AbsListView.LayoutParams(
                 AbsListView.LayoutParams.MATCH_PARENT,
                 (int) 44));
-        mListView.addHeaderView(header);
+        //mListView.addHeaderView(header);
         mListView.setAdapter(new ArrayAdapter<String>(
                this,
                 android.R.layout.simple_expandable_list_item_1,
@@ -112,5 +112,13 @@ public class ScrollHideListViewActivity extends BaseActivity {
                     -mToolbar.getHeight());
         }
         mAnimator.start();
+    }
+
+    private void toobarA(int flag) {
+        if (mAnimator != null && mAnimator.isRunning()) {
+            mAnimator.cancel();
+        }
+        mAnimator = ObjectAnimator.ofFloat(mToolbar,"translationY",mToolbar.getTranslationY(),0);
+
     }
 }
