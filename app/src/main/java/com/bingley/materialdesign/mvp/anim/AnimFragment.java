@@ -68,7 +68,7 @@ public class AnimFragment extends BaseFragment implements View.OnClickListener {
 
     }
 
-    @OnClick({R.id.llClick,R.id.imageView_a,R.id.tvTimer})
+    @OnClick({R.id.llClick,R.id.imageView_a,R.id.tvTimer,R.id.customanim,R.id.customtv})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.llClick:
@@ -99,6 +99,15 @@ public class AnimFragment extends BaseFragment implements View.OnClickListener {
                         });
                 valueAnimator.setDuration(3000);
                 valueAnimator.start();
+                break;
+            case R.id.customanim:
+                CustomAnim customAnim = new CustomAnim();
+                customAnim.setRotateY(30);
+                view.startAnimation(customAnim);
+                break;
+            case R.id.customtv:
+                CustomTV customTV = new CustomTV();
+                view.startAnimation(customTV);
                 break;
         }
     }
@@ -139,6 +148,20 @@ public class AnimFragment extends BaseFragment implements View.OnClickListener {
                         view.setLayoutParams(layoutParams);
                     }
                 });
+        return animator;
+    }
+
+    private ValueAnimator createDropAni(final View view, int start, int end) {
+        ValueAnimator animator = ValueAnimator.ofInt(start, end);
+        animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+            @Override
+            public void onAnimationUpdate(ValueAnimator animation) {
+                int value = (int) animation.getAnimatedValue();
+                ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
+                layoutParams.height = value;
+                view.setLayoutParams(layoutParams);
+            }
+        });
         return animator;
     }
 
