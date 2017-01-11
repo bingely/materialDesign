@@ -56,6 +56,8 @@ public class KnowlegeListActivity extends BaseActivity {
             case R.id.ll_elm:
                 KnowleageDetailActivty.gotoActivity(this,6);
                 break;
+
+
             case R.id.ll_hindlistview:
                 startActivity(new Intent(this, ScrollHideListViewActivity.class));
                 break;
