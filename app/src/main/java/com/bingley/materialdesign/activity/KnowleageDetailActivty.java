@@ -16,6 +16,7 @@ import com.bingley.materialdesign.mvp.jdong.JdFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
 import com.bingley.materialdesign.mvp.materal.SvgFragment;
 import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
+import com.bingley.materialdesign.mvp.scrolldemo.ScrollFragment;
 import com.bingley.materialdesign.mvp.sqlite.SqliteFragment;
 import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.view.TitleView;
@@ -101,6 +102,11 @@ public class KnowleageDetailActivty extends BaseActivity {
                 CustomViewFragment customViewFragment = new CustomViewFragment();
                 fragmentTransaction.add(R.id.fl_container, customViewFragment);
                 break;
+            case 12:
+                mTitleview.setTitle("scrollFragment Demo");
+                ScrollFragment scrollFragment = new ScrollFragment();
+                fragmentTransaction.add(R.id.fl_container, scrollFragment);
+                break;
 
 
             case 11:
@@ -112,7 +118,7 @@ public class KnowleageDetailActivty extends BaseActivity {
                 break;
         }
         fragmentTransaction.commit();
-
     }
+
 
 }

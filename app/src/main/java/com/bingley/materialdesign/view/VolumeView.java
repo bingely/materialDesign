@@ -72,7 +72,7 @@ public class VolumeView extends View {
             mRandom = Math.random();
 
             float currentHeight = (float) (mRectHeight * mRandom);
-            // 这个不太懂
+            // 这个不太懂???
             canvas.drawRect(
                     (float) (mWidth * 0.4 / 2 + mRectWidth * i + offset),
                     currentHeight,

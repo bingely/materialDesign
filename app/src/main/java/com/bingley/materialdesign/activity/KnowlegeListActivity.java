@@ -35,7 +35,7 @@ public class KnowlegeListActivity extends BaseActivity {
 
     @OnClick({R.id.ll_hide_toolbar, R.id.ll_pull_torefesh, R.id.ll_textview, R.id.ll_dialog,
             R.id.ll_pop,R.id.ll_elm,R.id.ll_hindlistview,R.id.ll_anim,R.id.ll_lunbo,R.id.ll_sqlite,
-            R.id.ll_customview
+            R.id.ll_customview,R.id.ll_scroll
     })
     public void onClick(View view) {
         switch (view.getId()) {
@@ -59,7 +59,6 @@ public class KnowlegeListActivity extends BaseActivity {
                 KnowleageDetailActivty.gotoActivity(this,6);
                 break;
 
-
             case R.id.ll_hindlistview:
                 startActivity(new Intent(this, ScrollHideListViewActivity.class));
                 break;
@@ -74,6 +73,10 @@ public class KnowlegeListActivity extends BaseActivity {
                 break;
             case R.id.ll_customview:
                 KnowleageDetailActivty.gotoActivity(this,10);
+                break;
+
+            case R.id.ll_scroll:
+                KnowleageDetailActivty.gotoActivity(this,12);
                 break;
         }
     }
