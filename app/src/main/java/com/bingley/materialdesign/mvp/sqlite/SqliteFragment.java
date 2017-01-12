@@ -11,6 +11,7 @@ import com.bingley.materialdesign.base.BaseFragment;
 import com.bingley.materialdesign.mvp.sqlite.dao.ContactInfoDao;
 
 import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * 原生的sqlite操作  ---也得具备数据库知识才行
@@ -45,60 +46,82 @@ public class SqliteFragment extends BaseFragment {
 
     /**
      * 添加一条联系人的信息
-     * @param view
+     *
      */
-    public void add(View view) {
+    public void add() {
         String name = mEtName.getText().toString().trim();
         String phone = mEtPhone.getText().toString().trim();
-        if(TextUtils.isEmpty(name)||TextUtils.isEmpty(phone)){
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(phone)) {
             Toast.makeText(mActivity, "不能为空", Toast.LENGTH_SHORT).show();
             return;
-        }else{
+        } else {
             dao.add(name, phone);
             Toast.makeText(mActivity, "添加成功", Toast.LENGTH_SHORT).show();
         }
     }
+
     /**
      * 删除一条记录
-     * @param view
+     *
      */
-    public void delete(View view){
+    public void delete() {
         String name = mEtName.getText().toString().trim();
-        if(TextUtils.isEmpty(name)){
+        if (TextUtils.isEmpty(name)) {
             Toast.makeText(mActivity, "姓名不能为空", Toast.LENGTH_SHORT).show();
             return;
-        }else{
+        } else {
             dao.delete(name);
             Toast.makeText(mActivity, "删除成功", Toast.LENGTH_SHORT).show();
         }
     }
+
     /**
-     *  修改联系人的号码
-     * @param view
+     * 修改联系人的号码
+     *
      */
-    public void update(View view){
+    public void update() {
         String name = mEtName.getText().toString().trim();
         String phone = mEtPhone.getText().toString().trim();
-        if(TextUtils.isEmpty(name)||TextUtils.isEmpty(phone)){
+        if (TextUtils.isEmpty(name) || TextUtils.isEmpty(phone)) {
             Toast.makeText(mActivity, "不能为空", Toast.LENGTH_SHORT).show();
             return;
-        }else{
+        } else {
             dao.update(phone, name);
             Toast.makeText(mActivity, "修改成功", Toast.LENGTH_SHORT).show();
         }
     }
+
     /**
      * 查询
-     * @param view
+     *
      */
-    public void query(View view){
+    public void query() {
         String name = mEtName.getText().toString().trim();
-        if(TextUtils.isEmpty(name)){
+        if (TextUtils.isEmpty(name)) {
             Toast.makeText(mActivity, "姓名不能为空", Toast.LENGTH_SHORT).show();
             return;
-        }else{
+        } else {
             String result = dao.getPhoneNumber(name);
-            Toast.makeText(mActivity, "号码:"+result, Toast.LENGTH_SHORT).show();
+            Toast.makeText(mActivity, "号码:" + result, Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    @OnClick({R.id.add, R.id.delete, R.id.update, R.id.query})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.add:
+                add();
+                break;
+            case R.id.delete:
+                delete();
+                break;
+            case R.id.update:
+                update();
+                break;
+            case R.id.query:
+                query();
+                break;
         }
     }
 }

@@ -46,6 +46,24 @@
 
             </LinearLayout>
 
+            <com.bingley.materialdesign.view.MyToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginTop="45dp">
+
+            </com.bingley.materialdesign.view.MyToggleButton>
+
+            <com.bingley.materialdesign.mvp.textview.MyTextView
+                android:layout_marginTop="45dp"
+                android:padding="15dp"
+                android:text="如果爱---textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+            </com.bingley.materialdesign.mvp.textview.MyTextView>
+
         </LinearLayout>
 
     </ScrollView>

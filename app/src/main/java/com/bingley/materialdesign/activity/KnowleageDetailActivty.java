@@ -12,8 +12,10 @@ import com.bingley.materialdesign.mvp.anim.AnimFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
+import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
 import com.bingley.materialdesign.mvp.materal.SvgFragment;
 import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
+import com.bingley.materialdesign.mvp.sqlite.SqliteFragment;
 import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.view.TitleView;
 
@@ -81,6 +83,16 @@ public class KnowleageDetailActivty extends BaseActivity {
                 mTitleview.setTitle("anim Demo");
                 AnimFragment animFragment = new AnimFragment();
                 fragmentTransaction.add(R.id.fl_container, animFragment);
+                break;
+            case 8:
+                mTitleview.setTitle("轮播图 Demo");
+                LunboFragment lunboFragment = new LunboFragment();
+                fragmentTransaction.add(R.id.fl_container, lunboFragment);
+                break;
+            case 9:
+                mTitleview.setTitle("数据库 Demo");
+                SqliteFragment sqliteFragment = new SqliteFragment();
+                fragmentTransaction.add(R.id.fl_container, sqliteFragment);
                 break;
 
 

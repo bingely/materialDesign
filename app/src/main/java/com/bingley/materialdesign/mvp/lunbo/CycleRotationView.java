@@ -80,4 +80,8 @@ public class CycleRotationView extends FrameLayout{
             return;
         }
     }
+
+
+
+
 }

@@ -41,5 +41,29 @@ public class demo extends BaseActivity{
         return 0;
     }
 
+    @Override
+    protected void initWidget() {
+        super.initWidget();
 
+    }
+
+    @Override
+    protected void initData() {
+        super.initData();
+
+
+
+        initArrayAdapter();
+    }
+
+    private void initArrayAdapter() {
+     /*
+        String[] objects = new String[100];
+        for (int i = 0; i < 100; i++) {
+            objects[i] = "hacket--"+i;
+        }
+        lv.setAdapter(new ArrayAdapter<String>(this, R.layout.list_item, R.id.tv_info, objects ));
+
+        */
+    }
 }
