@@ -1,10 +1,12 @@
 package com.bingley.materialdesign.fragment;
 
+import android.content.Intent;
 import android.view.View;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.activity.KnowleageDetailActivty;
 import com.bingley.materialdesign.base.BaseFragment;
+import com.bingley.materialdesign.mvp.materal.XiTuActivity;
 
 import butterknife.OnClick;
 
@@ -18,7 +20,7 @@ public class MaterialListFragment extends BaseFragment {
         return R.layout.frg_learn_material;
     }
 
-    @OnClick({R.id.item_svg,R.id.item_palette})
+    @OnClick({R.id.item_svg,R.id.item_palette,R.id.item_cc})
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
@@ -27,6 +29,9 @@ public class MaterialListFragment extends BaseFragment {
                 break;
             case R.id.item_palette:
                 KnowleageDetailActivty.gotoActivity(getActivity(),1001);
+                break;
+            case R.id.item_cc:
+                startActivity(new Intent(getActivity(), XiTuActivity.class));
                 break;
         }
     }

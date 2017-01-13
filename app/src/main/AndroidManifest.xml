@@ -31,6 +31,7 @@
         <activity android:name=".mvp.elmssearch.ElemsSearchActivity" android:theme="@style/Translucent"/>
         <activity android:name=".mvp.listviewdemo.ScrollHideListViewActivity"/>
         <activity android:name=".mvp.materal.PaletteActivity"/>
+        <activity android:name=".mvp.materal.XiTuActivity"/>
 
     </application>
 

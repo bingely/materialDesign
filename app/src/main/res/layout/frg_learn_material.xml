@@ -30,6 +30,16 @@
         android:background="#ece6e6">
     </View>
 
+    <com.bingley.materialdesign.view.ComItemLayoutView
+        android:id="@+id/item_cc"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        item:ctitle="CoordinatorLayout，AppBarLayout，CollapsingToolbarLayout，Toolbar，TabLayout"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ece6e6">
+    </View>
 
 </LinearLayout>

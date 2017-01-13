@@ -20,6 +20,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="18dip"
         android:layout_toRightOf="@id/icon_img"
+        android:singleLine="true"
         android:textColor="#252525"
         android:textSize="18sp" />
 

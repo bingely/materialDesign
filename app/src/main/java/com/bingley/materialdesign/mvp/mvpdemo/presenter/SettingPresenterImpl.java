@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvpdemo.presenter;
+package com.bingley.materialdesign.mvp.mvpdemo.presenter;
 
 
 /**

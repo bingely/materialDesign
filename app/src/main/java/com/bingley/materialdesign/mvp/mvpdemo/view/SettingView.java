@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvpdemo.view;
+package com.bingley.materialdesign.mvp.mvpdemo.view;
 
 /**
 * Created by Administrator on 2017/01/03

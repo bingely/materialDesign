@@ -1,12 +1,9 @@
 package com.bingley.materialdesign.mvp.materal;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -19,7 +16,6 @@ import android.view.Window;
 import android.widget.Toast;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.base.BaseSwipebackActivity;
 
 /**
