@@ -7,6 +7,7 @@ import android.widget.FrameLayout;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
+import com.bingley.materialdesign.base.BaseSwipebackActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
 import com.bingley.materialdesign.mvp.anim.AnimFragment;
 import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
@@ -14,6 +15,7 @@ import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
+import com.bingley.materialdesign.mvp.materal.PaletteActivity;
 import com.bingley.materialdesign.mvp.materal.SvgFragment;
 import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
 import com.bingley.materialdesign.mvp.scrolldemo.ScrollFragment;
@@ -27,7 +29,7 @@ import butterknife.Bind;
  * 实现Google+滑动显示、隐藏toolbar
  * 我觉得应该一种容器的作用，放置的是各个fragment
  */
-public class KnowleageDetailActivty extends BaseActivity {
+public class KnowleageDetailActivty extends BaseSwipebackActivity {
     @Bind(R.id.titleview)
     TitleView mTitleview;
     @Bind(R.id.fl_container)
@@ -54,6 +56,10 @@ public class KnowleageDetailActivty extends BaseActivity {
                 mTitleview.setTitle("5.0新特性");
                 MaterialListFragment collectFragment = new MaterialListFragment();
                 fragmentTransaction.add(R.id.fl_container, collectFragment);
+                break;
+            case 1001:
+                mTitleview.setTitle("5.0新特性");
+                startActivity(new Intent(this, PaletteActivity.class));
                 break;
             case 2:
                 mTitleview.setTitle("下拉刷新");
@@ -109,7 +115,7 @@ public class KnowleageDetailActivty extends BaseActivity {
                 break;
 
 
-            case 11:
+            case 1000:
                 mTitleview.setTitle("svg Demo");
                 SvgFragment svgFragment = new SvgFragment();
                 fragmentTransaction.add(R.id.fl_container, svgFragment);

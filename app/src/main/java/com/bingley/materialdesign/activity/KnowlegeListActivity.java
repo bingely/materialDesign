@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
+import com.bingley.materialdesign.base.BaseSwipebackActivity;
 import com.bingley.materialdesign.mvp.listviewdemo.ScrollHideListViewActivity;
 import com.bingley.materialdesign.view.TitleView;
 
@@ -16,7 +17,7 @@ import butterknife.OnClick;
  * on 16/6/20.
  */
 
-public class KnowlegeListActivity extends BaseActivity {
+public class KnowlegeListActivity extends BaseSwipebackActivity {
     @Bind(R.id.titleview)
     TitleView mTitleView;
 

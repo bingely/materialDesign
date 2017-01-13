@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
+import com.bingley.materialdesign.base.BaseSwipebackActivity;
 import com.bingley.materialdesign.utils.DisplayUtil;
 
 /**
@@ -20,7 +21,7 @@ import com.bingley.materialdesign.utils.DisplayUtil;
  * Date:  2016/12/22
  */
 
-public class OscMainActivity extends BaseActivity {
+public class OscMainActivity extends BaseSwipebackActivity {
     private View mPopupView;
     private PopupWindow mPopupWindow;
 

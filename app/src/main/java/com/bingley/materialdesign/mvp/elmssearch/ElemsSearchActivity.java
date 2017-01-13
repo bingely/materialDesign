@@ -10,15 +10,16 @@ import android.widget.TextView;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
+import com.bingley.materialdesign.base.BaseSwipebackActivity;
 
- /**
+/**
    * 在style.xml里面新增加一个透明的主题,为该acticity
    * Author:  Mr.bingley
    * Version:
    * Date:  2017/1/3
    */
 
-public class ElemsSearchActivity extends BaseActivity{
+public class ElemsSearchActivity extends BaseSwipebackActivity{
     private TextView mSearchBGTxt;
     private TextView mHintTxt;
     private TextView mSearchTxt;

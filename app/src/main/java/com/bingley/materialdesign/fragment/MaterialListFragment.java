@@ -18,12 +18,15 @@ public class MaterialListFragment extends BaseFragment {
         return R.layout.frg_learn_material;
     }
 
-    @OnClick({R.id.item_svg})
+    @OnClick({R.id.item_svg,R.id.item_palette})
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
             case R.id.item_svg:
-                KnowleageDetailActivty.gotoActivity(getActivity(),11);
+                KnowleageDetailActivty.gotoActivity(getActivity(),1000);
+                break;
+            case R.id.item_palette:
+                KnowleageDetailActivty.gotoActivity(getActivity(),1001);
                 break;
         }
     }

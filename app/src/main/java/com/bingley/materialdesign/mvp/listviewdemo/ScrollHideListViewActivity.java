@@ -11,6 +11,7 @@ import android.widget.ListView;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
+import com.bingley.materialdesign.base.BaseSwipebackActivity;
 
 import butterknife.Bind;
 
@@ -23,7 +24,7 @@ import butterknife.Bind;
  * Date:  2017/1/10
  */
 
-public class ScrollHideListViewActivity extends BaseActivity {
+public class ScrollHideListViewActivity extends BaseSwipebackActivity {
     @Bind(R.id.toolbar)
     Toolbar mToolbar;
     @Bind(R.id.listview)

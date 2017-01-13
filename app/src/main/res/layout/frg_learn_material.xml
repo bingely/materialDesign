@@ -18,6 +18,18 @@
         android:background="#ece6e6">
     </View>
 
+    <com.bingley.materialdesign.view.ComItemLayoutView
+        android:id="@+id/item_palette"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        item:ctitle="palette"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ece6e6">
+    </View>
+
 
 
 </LinearLayout>
