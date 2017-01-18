@@ -15,6 +15,7 @@ import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
+import com.bingley.materialdesign.mvp.materal.ElevationFragment;
 import com.bingley.materialdesign.mvp.materal.PaletteActivity;
 import com.bingley.materialdesign.mvp.materal.SvgFragment;
 import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
@@ -119,6 +120,12 @@ public class KnowleageDetailActivty extends BaseSwipebackActivity {
                 mTitleview.setTitle("svg Demo");
                 SvgFragment svgFragment = new SvgFragment();
                 fragmentTransaction.add(R.id.fl_container, svgFragment);
+                break;
+
+            case 1002:
+                mTitleview.setTitle("elevation Demo");
+                ElevationFragment elevationFragment = new ElevationFragment();
+                fragmentTransaction.add(R.id.fl_container, elevationFragment);
                 break;
             default:
                 break;

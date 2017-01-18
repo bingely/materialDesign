@@ -18,22 +18,13 @@
         android:src="@drawable/vc_anim_vector"/>
 
 
-    <Button
-        android:id="@+id/showPicDialog"
-        android:layout_width="match_parent"
+    <ImageView
+        android:id="@+id/image2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/pic"/>
+        android:layout_gravity="center"
+        />
 
-    <Button
-        android:id="@+id/showTextDialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text"/>
 
-    <Button
-        android:id="@+id/showAllModeDialog"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/text_and_pic"/>
 
 </LinearLayout>

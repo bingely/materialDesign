@@ -1,6 +1,8 @@
 package com.bingley.materialdesign.mvp.materal;
 
 import android.graphics.drawable.Animatable;
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,20 +24,33 @@ public class SvgFragment extends BaseFragment {
     @Bind(R.id.image)
     ImageView mImageView;
 
+    @Bind(R.id.image2)
+    ImageView mImageView2;
+
     @Override
     protected int getLayoutId() {
         return R.layout.frg_svg;
     }
 
 
-    @OnClick({R.id.bt_svg_demo})
+    @OnClick({R.id.bt_svg_demo,R.id.image2})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.bt_svg_demo:
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
                 // 失败不知道为什么没执行成功
-                ((Animatable) (mImageView.getDrawable())).start();
+                Drawable drawable = mImageView.getDrawable();
+                if (drawable instanceof AnimationDrawable) {
+                    ((Animatable) (mImageView.getDrawable())).start();
+                }
+                break;
+            case R.id.image2:
+                // 失败不知道为什么没执行成功
+                Drawable drawable2 = mImageView2.getDrawable();
+                if (drawable2 instanceof AnimationDrawable) {
+                    ((Animatable) (mImageView2.getDrawable())).start();
+                }
                 break;
         }
     }

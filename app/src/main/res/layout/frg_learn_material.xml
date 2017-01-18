@@ -42,4 +42,29 @@
         android:background="#ece6e6">
     </View>
 
+    <com.bingley.materialdesign.view.ComItemLayoutView
+        android:id="@+id/item_elevation"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        item:ctitle="阴影效果"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ece6e6">
+    </View>
+
+
+    <com.bingley.materialdesign.view.ComItemLayoutView
+        android:id="@+id/item_activity_trans"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        item:ctitle="activity过渡动画"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ece6e6">
+    </View>
+
 </LinearLayout>

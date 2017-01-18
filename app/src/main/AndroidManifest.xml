@@ -32,6 +32,8 @@
         <activity android:name=".mvp.listviewdemo.ScrollHideListViewActivity"/>
         <activity android:name=".mvp.materal.PaletteActivity"/>
         <activity android:name=".mvp.materal.XiTuActivity"/>
+        <activity android:name=".mvp.materal.TransListActitity"/>
+        <activity android:name=".mvp.materal.TransitionsActivity"/>
 
     </application>
 
