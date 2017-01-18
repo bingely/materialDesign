@@ -30,10 +30,10 @@
         <activity android:name=".mvp.osc.OscMainActivity"/>
         <activity android:name=".mvp.elmssearch.ElemsSearchActivity" android:theme="@style/Translucent"/>
         <activity android:name=".mvp.listviewdemo.ScrollHideListViewActivity"/>
-        <activity android:name=".mvp.materal.PaletteActivity"/>
-        <activity android:name=".mvp.materal.XiTuActivity"/>
-        <activity android:name=".mvp.materal.TransListActitity"/>
-        <activity android:name=".mvp.materal.TransitionsActivity"/>
+        <activity android:name=".mvp.materal.palette.PaletteActivity"/>
+        <activity android:name=".mvp.materal.palette.XiTuActivity"/>
+        <activity android:name=".mvp.materal.trans.TransListActitity"/>
+        <activity android:name=".mvp.materal.trans.TransitionsActivity"/>
 
     </application>
 

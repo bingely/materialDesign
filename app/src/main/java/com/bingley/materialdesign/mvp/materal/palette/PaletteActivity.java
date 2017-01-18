@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.materal;
+package com.bingley.materialdesign.mvp.materal.palette;
 
 import android.content.Context;
 import android.graphics.Bitmap;

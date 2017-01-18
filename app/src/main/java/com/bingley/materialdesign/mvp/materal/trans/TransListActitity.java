@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.materal;
+package com.bingley.materialdesign.mvp.materal.trans;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseSwipebackActivity;
+import com.bingley.materialdesign.mvp.materal.trans.TransitionsActivity;
 
 import butterknife.OnClick;
 

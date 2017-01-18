@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.materal;
+package com.bingley.materialdesign.mvp.materal.trans;
 
 import android.app.Activity;
 import android.os.Bundle;

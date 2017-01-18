@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.base.BaseSwipebackActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
 import com.bingley.materialdesign.mvp.anim.AnimFragment;
@@ -16,8 +15,10 @@ import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
 import com.bingley.materialdesign.mvp.materal.ElevationFragment;
-import com.bingley.materialdesign.mvp.materal.PaletteActivity;
+import com.bingley.materialdesign.mvp.materal.palette.PaletteActivity;
+import com.bingley.materialdesign.mvp.materal.recyleandcard.RecycleListFragment;
 import com.bingley.materialdesign.mvp.materal.SvgFragment;
+import com.bingley.materialdesign.mvp.materal.TintingFragment;
 import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
 import com.bingley.materialdesign.mvp.scrolldemo.ScrollFragment;
 import com.bingley.materialdesign.mvp.sqlite.SqliteFragment;
@@ -126,6 +127,18 @@ public class KnowleageDetailActivty extends BaseSwipebackActivity {
                 mTitleview.setTitle("elevation Demo");
                 ElevationFragment elevationFragment = new ElevationFragment();
                 fragmentTransaction.add(R.id.fl_container, elevationFragment);
+                break;
+
+            case 1003:
+                mTitleview.setTitle("tint Demo");
+                TintingFragment tintingFragment = new TintingFragment();
+                fragmentTransaction.add(R.id.fl_container, tintingFragment);
+                break;
+
+            case 1004:
+                mTitleview.setTitle("tint Demo");
+                RecycleListFragment recycleListFragment = new RecycleListFragment();
+                fragmentTransaction.add(R.id.fl_container, recycleListFragment);
                 break;
             default:
                 break;

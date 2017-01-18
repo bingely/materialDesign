@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.materal;
+package com.bingley.materialdesign.mvp.materal.palette;
 
 import android.annotation.TargetApi;
 import android.content.Context;

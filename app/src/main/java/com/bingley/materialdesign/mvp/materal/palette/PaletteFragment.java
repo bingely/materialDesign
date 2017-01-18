@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bingley.materialdesign.mvp.materal;
+package com.bingley.materialdesign.mvp.materal.palette;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;

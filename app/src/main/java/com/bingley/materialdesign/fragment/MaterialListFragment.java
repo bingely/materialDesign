@@ -7,8 +7,8 @@ import android.view.View;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.activity.KnowleageDetailActivty;
 import com.bingley.materialdesign.base.BaseFragment;
-import com.bingley.materialdesign.mvp.materal.TransListActitity;
-import com.bingley.materialdesign.mvp.materal.XiTuActivity;
+import com.bingley.materialdesign.mvp.materal.trans.TransListActitity;
+import com.bingley.materialdesign.mvp.materal.palette.XiTuActivity;
 
 import butterknife.OnClick;
 
@@ -22,7 +22,8 @@ public class MaterialListFragment extends BaseFragment {
         return R.layout.frg_learn_material;
     }
 
-    @OnClick({R.id.item_svg, R.id.item_palette, R.id.item_cc, R.id.item_activity_trans,R.id.item_elevation})
+    @OnClick({R.id.item_svg, R.id.item_palette, R.id.item_cc, R.id.item_activity_trans,R.id.item_elevation
+    ,R.id.item_tint,R.id.item_recycle,R.id.item_ripple,R.id.item_notification})
     public void onClick(View view) {
         int id = view.getId();
         switch (id) {
@@ -42,6 +43,26 @@ public class MaterialListFragment extends BaseFragment {
             case R.id.item_activity_trans:
                 startActivity(new Intent(getActivity(), TransListActitity.class), ActivityOptions.makeSceneTransitionAnimation(getActivity()).toBundle());
                 break;
+
+
+            case R.id.item_tint:
+                KnowleageDetailActivty.gotoActivity(getActivity(), 1003);
+                break;
+
+            case R.id.item_recycle:
+                KnowleageDetailActivty.gotoActivity(getActivity(), 1004);
+                break;
+
+            case R.id.item_ripple:
+                KnowleageDetailActivty.gotoActivity(getActivity(), 1005);
+                break;
+
+
+            case R.id.item_notification:
+                KnowleageDetailActivty.gotoActivity(getActivity(), 1006);
+                break;
+
+
         }
     }
 }

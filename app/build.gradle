@@ -59,6 +59,13 @@ android {
         }
         md{}
     }
+
+
+    allprojects {
+        repositories {
+            maven { url "https://jitpack.io" }
+        }
+    }
 }
 
 dependencies {
@@ -86,6 +93,8 @@ dependencies {
     compile 'com.google.code.gson:gson:2.3.1'
     // 下拉刷新
     compile 'in.srain.cube:ultra-ptr:1.0.11'
+    // 比较好用的recylerview
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v1.9.7'
     // retrofit 和 rxjava结合
     compile 'com.squareup.retrofit2:converter-gson:2.0.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.0.1'

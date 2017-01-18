@@ -67,4 +67,53 @@
         android:background="#ece6e6">
     </View>
 
+    <com.bingley.materialdesign.view.ComItemLayoutView
+        android:id="@+id/item_tint"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        item:ctitle="tint"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ece6e6">
+    </View>
+
+    <com.bingley.materialdesign.view.ComItemLayoutView
+        android:id="@+id/item_recycle"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        item:ctitle="列表和卡片"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ece6e6">
+    </View>
+
+
+    <com.bingley.materialdesign.view.ComItemLayoutView
+        android:id="@+id/item_ripple"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        item:ctitle="动画效果--ripple/circular reveal"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ece6e6">
+    </View>
+
+    <com.bingley.materialdesign.view.ComItemLayoutView
+        android:id="@+id/item_notification"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        item:ctitle="notification"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="#ece6e6">
+    </View>
+
 </LinearLayout>
