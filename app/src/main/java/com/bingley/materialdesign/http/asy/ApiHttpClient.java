@@ -1,3 +1,4 @@
+/*
 package com.bingley.materialdesign.http.asy;
 
 import android.text.TextUtils;
@@ -29,9 +30,11 @@ import cz.msebera.android.httpclient.client.params.ClientPNames;
 import cz.msebera.android.httpclient.conn.ssl.SSLSocketFactory;
 import retrofit2.http.GET;
 
+*/
 /**
  * getCookie　（）方法不太懂
- */
+ *//*
+
 
 @SuppressWarnings("WeakerAccess")
 public class ApiHttpClient {
@@ -174,3 +177,4 @@ public class ApiHttpClient {
 
 
 }
+*/

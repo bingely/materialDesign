@@ -1,6 +1,6 @@
 package com.bingley.materialdesign.http.retrofit;
 
-import com.bingley.materialdesign.BaseConfig;
+import com.bingley.materialdesign.AppConfig;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -12,7 +12,6 @@ import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Url;
 
 /**
  * $Description:$
@@ -62,7 +61,7 @@ public class ApiService {
                     .client(httpClientBuilder.build())
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                    .baseUrl(BaseConfig.HOST)
+                    .baseUrl(AppConfig.HOST)
                     .build().create(ApiService.class);
 
 

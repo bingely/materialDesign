@@ -115,7 +115,7 @@ dependencies {
     // 使用的是okhttp2.7，（retrofit自带的okhttp版本高，有些方法不识别--okhttp3）
     compile 'com.squareup.okhttp:okhttp:2.7.0'
     // test
-    compile 'com.loopj.android:android-async-http:1.4.9'
+    //compile 'com.loopj.android:android-async-http:1.4.9'
     // palette
     compile 'com.android.support:palette-v7:25.0.1'
 

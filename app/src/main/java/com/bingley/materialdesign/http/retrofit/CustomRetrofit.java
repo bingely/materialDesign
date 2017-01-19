@@ -2,7 +2,7 @@ package com.bingley.materialdesign.http.retrofit;
 
 
 import com.bingley.materialdesign.base.BaseApplication;
-import com.bingley.materialdesign.BaseConfig;
+import com.bingley.materialdesign.AppConfig;
 
 import java.io.IOException;
 
@@ -47,7 +47,7 @@ public class CustomRetrofit {
     private static Retrofit retrofit = new Retrofit.Builder().
             addConverterFactory(GsonConverterFactory.create()).
             addCallAdapterFactory(RxJavaCallAdapterFactory.create()).
-            baseUrl(BaseConfig.HOST).client(okHttpClient).build();
+            baseUrl(AppConfig.HOST).client(okHttpClient).build();
 
     public static Retrofit getRetrofit() {
         return retrofit;
