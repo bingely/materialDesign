@@ -61,6 +61,16 @@ android {
     }
 
 
+    signingConfigs {
+        debug {
+            storeFile file('E:\\xsq518.jks')
+            storePassword "123456"
+            keyAlias "weytenera"
+            keyPassword "123456"
+        }
+    }
+
+
     allprojects {
         repositories {
             maven { url "https://jitpack.io" }

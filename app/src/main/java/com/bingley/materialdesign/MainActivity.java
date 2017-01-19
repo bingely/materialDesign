@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import com.bingley.materialdesign.activity.KnowlegeListActivity;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.mvp.osc.OscMainActivity;
+import com.weytenera.xsq.XsqMainActivity;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -87,7 +88,7 @@ public class MainActivity extends BaseActivity
         int id = item.getItemId();
         switch (id) {
             case R.id.project_osc:
-                startActivity(new Intent(this, OscMainActivity.class));
+                startActivity(new Intent(this, XsqMainActivity.class));
                 break;
             case R.id.item_leanningbasic:
                 startActivity(new Intent(this, KnowlegeListActivity.class));

@@ -41,7 +41,7 @@ public class RecycleListFragment extends BaseFragment {
     // 模拟的数据集合
     private List<String> mData = new ArrayList<>();
     private RecycleAdapter mRecycleAdapter;
-    private RecyleAdapter2 mRecyleAdapter2;
+    private BaseQuickAdapter mRecyleAdapter2;
 
 
     @Override
@@ -68,16 +68,15 @@ public class RecycleListFragment extends BaseFragment {
         mRecycleAdapter = new RecycleAdapter(mData);
         //mRcList.setAdapter(mRecycleAdapter);
 
-        mRecyleAdapter2 = new RecyleAdapter2(R.layout.rc_item,mData);
+        // 引入框架后这么写
+        mRecyleAdapter2 = new BaseQuickAdapter<String>(R.layout.rc_item, mData) {
+            @Override
+            protected void convert(BaseViewHolder baseViewHolder, String s) {
+                baseViewHolder.setText(R.id.item_tv, s);
+            }
+        };
         mRcList.setAdapter(mRecyleAdapter2);
         mRecyleAdapter2.openLoadAnimation(BaseQuickAdapter.ALPHAIN);
-
-        /*mRcList.setAdapter(new BaseQuickAdapter(String) {
-            @Override
-            protected void convert(BaseViewHolder baseViewHolder, Object o) {
-
-            }
-        });*/
 
 
         mSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {

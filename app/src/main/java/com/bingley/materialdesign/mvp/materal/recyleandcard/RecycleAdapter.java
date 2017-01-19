@@ -49,7 +49,12 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
         public MyViewHolder(View view) {
             super(view);
-            mTextView =  (TextView) view;
+            mTextView = (TextView) view.findViewById(R.id.item_tv);
+
         }
+    }
+
+    public interface OnItemClickListener{
+        void onItemClick(View view, int position);
     }
 }
