@@ -17,13 +17,20 @@ import com.weytenera.xsq.fragment.MeFragment;
 import butterknife.Bind;
 import butterknife.OnClick;
 
+
+ /**
+   * 功能如何做到点击第一个tab时会刷新这个页面
+   * Author:  Mr.bingley
+   * Version:
+   * Date:  2017/1/19
+   */
+
 public class XsqMainActivity extends BaseActivity {
     Fragment mContent;
     HomeFragment homeFragment;
     MallFragment mMallFragment;  //优品
     ContactAndMessageFragment contactAndMessageFragment;
     MeFragment meFragment;       // 我
-    // 退出程序 private static long currenttime;
     @Bind(R.id.iv_home)
     ImageView mIvHome;
     @Bind(R.id.iv_goods)
@@ -38,8 +45,6 @@ public class XsqMainActivity extends BaseActivity {
     public  @Bind(R.id.ll_tab_me)
     LinearLayout ll_tab_me;//我
 
-
-    public static boolean showConfli=false;
     @Override
     protected int getContentView() {
         return R.layout.activity_xsq_main;
@@ -83,7 +88,7 @@ public class XsqMainActivity extends BaseActivity {
                 //Toast.makeText(MainActivity.this, "敬请期待", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.ll_tab_add:   // 发布
-                /*if (MyApplication.isLogin) {
+                /*if (BaseApplication.isLogin) {
 
                     final QuickPostDialog dialog = new QuickPostDialog(
                             MainActivity.this);

@@ -1,8 +1,8 @@
 package com.bingley.materialdesign.http.retrofit;
 
 
+import com.bingley.materialdesign.base.BaseApplication;
 import com.bingley.materialdesign.BaseConfig;
-import com.bingley.materialdesign.MyApplication;
 
 import java.io.IOException;
 
@@ -39,7 +39,7 @@ public class CustomRetrofit {
     };
 
     private static OkHttpClient okHttpClient = new OkHttpClient.Builder().addInterceptor(interceptor)
-            .addInterceptor(MyApplication.release ? new HttpLoggingInterceptor()
+            .addInterceptor(BaseApplication.release ? new HttpLoggingInterceptor()
                     .setLevel(HttpLoggingInterceptor.Level.NONE) : new HttpLoggingInterceptor()
                     .setLevel(HttpLoggingInterceptor.Level.BODY)).build();
 

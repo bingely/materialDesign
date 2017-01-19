@@ -192,7 +192,7 @@ public class ColorDialog extends Dialog implements View.OnClickListener {
             return;
         }
 
-        int radius = DisplayUtil.dp2px(getContext(), 6);
+        int radius = DisplayUtil.dp2px(6);
         float[] outerRadii = new float[] { radius, radius, radius, radius, 0, 0, 0, 0 };
         RoundRectShape roundRectShape = new RoundRectShape(outerRadii, null, null);
         ShapeDrawable shapeDrawable = new ShapeDrawable(roundRectShape);

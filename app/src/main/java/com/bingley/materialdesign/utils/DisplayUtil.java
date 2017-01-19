@@ -5,6 +5,8 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
+import com.bingley.materialdesign.base.BaseApplication;
+
 /**
  * 1 dp/sp转换为px工具类 (有公式换算方法，有系统TypedValue）
  * 2 获得屏幕尺寸
@@ -17,8 +19,8 @@ public class DisplayUtil {
     /**
      * 根据分辨率从 dp 的单位 转成为 px(像素)
      */
-    public static int dp2px(Context context, float dpValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
+    public static int dp2px(float dpValue) {
+        final float scale = BaseApplication.context().getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
     }
 
@@ -26,7 +28,7 @@ public class DisplayUtil {
      * 根据分辨率从 px(像素) 的单位 转成为 dp
      */
     public static int px2dp(Context context, float pxValue) {
-        final float scale = context.getResources().getDisplayMetrics().density;
+        final float scale = BaseApplication.context().getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
 
@@ -38,7 +40,7 @@ public class DisplayUtil {
      * @return
      */
     public static int px2sp(Context context, float pxValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        final float fontScale = BaseApplication.context().getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / fontScale + 0.5f);
     }
 
@@ -50,7 +52,7 @@ public class DisplayUtil {
      * @return
      */
     public static int sp2px(Context context, float spValue) {
-        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        final float fontScale = BaseApplication.context().getResources().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }
 
