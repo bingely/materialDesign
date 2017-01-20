@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseFragment;
+import com.bingley.materialdesign.mvp.dialog.progress.KProgressHUD;
 
 import butterknife.OnClick;
 
@@ -72,7 +73,8 @@ public class DialogFragment extends BaseFragment {
     }
 
 
-    @OnClick({R.id.showPromptDialog, R.id.showPicDialog, R.id.showTextDialog, R.id.showAllModeDialog})
+    @OnClick({R.id.showPromptDialog, R.id.showPicDialog, R.id.showTextDialog, R.id.showAllModeDialog
+    ,R.id.showprogress})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.showPromptDialog:
@@ -84,6 +86,23 @@ public class DialogFragment extends BaseFragment {
                 showTextDialog();
                 break;
             case R.id.showAllModeDialog:
+                break;
+            case R.id.showprogress:
+               /* KProgressHUD hud = KProgressHUD.create(getActivity())
+                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        .setLabel("Please wait")
+                        .setMaxProgress(100)
+                        .show();
+                hud.setProgress(90);*/
+
+                KProgressHUD.create(getActivity())
+                        .setStyle(KProgressHUD.Style.SPIN_INDETERMINATE)
+                        .setLabel("Please wait")
+                        .setDetailsLabel("Downloading data")
+                        .setCancellable(true)
+                    .setAnimationSpeed(2)
+                    .setDimAmount(0.5f)
+                    .show();
                 break;
         }
     }

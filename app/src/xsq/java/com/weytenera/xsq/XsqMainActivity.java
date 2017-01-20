@@ -133,6 +133,7 @@ public class XsqMainActivity extends BaseActivity {
             OnTabReselectListener listener = (OnTabReselectListener) mBaseFragment;
             listener.onTabReselect();
         }*/
+
     }
 
     public void switchContent(Fragment from, Fragment to) {

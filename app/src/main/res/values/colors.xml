@@ -4,6 +4,9 @@
     <color name="colorPrimaryDark">#04A5E6</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="kprogresshud_default_color">#b1000000</color>
+    <color name="kprogresshud_grey_color">#449E9E9E</color>
+
 
     <!--dialog-->
     <color name="color_dialog_gray">#ededf3</color>
