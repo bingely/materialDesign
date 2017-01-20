@@ -74,4 +74,12 @@ public class IosProgress extends ImageView implements Indeterminate {
         this.mNeedToUpdateView = needToUpdateView;
         return mNeedToUpdateView;
     }
+
+    public void stop() {
+        setNeedToUpdateView(false);
+    }
+
+    public void start() {
+        setNeedToUpdateView(true);
+    }
 }

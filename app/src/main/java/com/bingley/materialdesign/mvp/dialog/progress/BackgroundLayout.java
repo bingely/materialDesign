@@ -8,7 +8,7 @@ import android.util.AttributeSet;
 import android.widget.LinearLayout;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.utils.DisplayUtil;
+import com.bingley.materialdesign.utils.TDevice;
 
 /**
  * Created by Administrator on 2017/1/20.
@@ -54,7 +54,7 @@ public class BackgroundLayout extends LinearLayout {
     }
 
     public void setCornerRadius(float radius) {
-        mCornerRadius = DisplayUtil.dp2px(radius);
+        mCornerRadius = TDevice.dp2px(radius);
         initBackground(mBackgroundColor, mCornerRadius);
     }
 

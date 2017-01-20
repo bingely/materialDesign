@@ -1,4 +1,3 @@
-/*
 package com.bingley.materialdesign.view;
 
 import android.content.Context;
@@ -8,6 +7,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.bingley.materialdesign.R;
+import com.bingley.materialdesign.utils.TDevice;
 
 
 public class EmptyLayout extends LinearLayout implements
@@ -20,7 +22,7 @@ public class EmptyLayout extends LinearLayout implements
     public static final int NODATA_ENABLE_CLICK = 5;
     public static final int NO_LOGIN = 6;
 
-    private Loading mLoading;
+
     private boolean clickEnable = true;
     private final Context context;
     public ImageView img;
@@ -28,6 +30,9 @@ public class EmptyLayout extends LinearLayout implements
     private int mErrorState;
     private String strNoDataContent = "";
     private TextView tv;
+
+    private LinearLayout mLordingProgress;
+    private IosProgress mLoading;
 
     public EmptyLayout(Context context) {
         super(context);
@@ -46,7 +51,8 @@ public class EmptyLayout extends LinearLayout implements
         img = (ImageView) view.findViewById(R.id.img_error_layout);
         tv = (TextView) view.findViewById(R.id.tv_error_layout);
         RelativeLayout mLayout = (RelativeLayout) view.findViewById(R.id.pageerrLayout);
-        mLoading = (Loading) view.findViewById(R.id.animProgress);
+        mLordingProgress = (LinearLayout) view.findViewById(R.id.loading_progress);
+        mLoading = (IosProgress) view.findViewById(R.id.animProgress);
         setBackgroundColor(-1);
         setOnClickListener(this);
         img.setOnClickListener(new OnClickListener() {
@@ -119,13 +125,11 @@ public class EmptyLayout extends LinearLayout implements
         tv.setText(msg);
     }
 
-    */
-/**
+    /**
      * 新添设置背景
      *
      * @author 火蚁 2015-1-27 下午2:14:00
-     *//*
-
+     */
     public void setErrorImag(int imgResource) {
         try {
             img.setImageResource(imgResource);
@@ -211,4 +215,3 @@ public class EmptyLayout extends LinearLayout implements
         super.setVisibility(visibility);
     }
 }
-*/

@@ -9,9 +9,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.base.BaseSwipebackActivity;
-import com.bingley.materialdesign.utils.DisplayUtil;
+import com.bingley.materialdesign.utils.TDevice;
 
 /**
  * 我想实现点击下面某个模块会刷新界面功能
@@ -50,7 +49,7 @@ public class OscMainActivity extends BaseSwipebackActivity {
      */
     private void popupShow(View view) {
 
-        int density = (int) DisplayUtil.getDeviceDensity(this);
+        int density = (int) TDevice.getDeviceDensity(this);
         // 显示popup window
         mPopupWindow = new PopupWindow(mPopupView,
                 200 * density, 50 * density);

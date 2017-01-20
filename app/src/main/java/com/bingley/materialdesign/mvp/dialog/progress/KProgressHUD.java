@@ -1,7 +1,6 @@
 package com.bingley.materialdesign.mvp.dialog.progress;
 
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,7 +13,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.utils.DisplayUtil;
+import com.bingley.materialdesign.utils.TDevice;
 
 /**
    * https://github.com/Kaopiz/KProgressHUD/blob/master/kprogresshud/src/main/java/com/kaopiz/kprogresshud/Helper.java
@@ -329,8 +328,8 @@ public class KProgressHUD {
 
          private void updateBackgroundSize() {
              ViewGroup.LayoutParams params = mBackgroundLayout.getLayoutParams();
-             params.width = DisplayUtil.dp2px(mWidth);
-             params.height = DisplayUtil.dp2px(mHeight);
+             params.width = TDevice.dp2px(mWidth);
+             params.height = TDevice.dp2px(mHeight);
              mBackgroundLayout.setLayoutParams(params);
          }
 
