@@ -33,7 +33,8 @@ public class AppContext extends BaseApplication{
 
     private void init() {
         AppCrashHandler handler = AppCrashHandler.getInstance();
-        handler.init(this);
+        // 如果加了这句话app报错的话，不会提醒程序方面的语言。所以平常开发的时候还是给他注释掉把
+        //handler.init(this);
 
         // 初始化网络请求
         /*AsyncHttpClient client = new AsyncHttpClient();

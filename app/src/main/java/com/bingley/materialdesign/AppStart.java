@@ -29,7 +29,7 @@ public class AppStart extends Activity {
             public void run() {
                 redirectTo();
             }
-        }, 800);
+        }, 100);
     }
 
     @Override

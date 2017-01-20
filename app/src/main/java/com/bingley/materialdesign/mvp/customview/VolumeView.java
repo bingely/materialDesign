@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.view;
+package com.bingley.materialdesign.mvp.customview;
 
 import android.content.Context;
 import android.graphics.Canvas;

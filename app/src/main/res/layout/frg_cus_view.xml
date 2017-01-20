@@ -24,12 +24,12 @@
 
             </com.bingley.materialdesign.view.MyToggleButton>
 
-            <com.bingley.materialdesign.view.VolumeView
+            <com.bingley.materialdesign.mvp.customview.VolumeView
                 android:layout_width="wrap_content"
                 android:layout_height="164dp"
                 >
 
-            </com.bingley.materialdesign.view.VolumeView>
+            </com.bingley.materialdesign.mvp.customview.VolumeView>
 
 
         </LinearLayout>

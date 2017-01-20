@@ -11,18 +11,29 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.activity.KnowlegeListActivity;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.mvp.osc.OscMainActivity;
+import com.bingley.materialdesign.view.IosProgress;
 import com.weytenera.xsq.XsqMainActivity;
+
+import butterknife.Bind;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    @Bind(R.id.animProgress)
+    IosProgress mIosProgress;
+
+    @Bind(R.id.loading_progress)
+    LinearLayout mLl;
+
     @Override
     protected int getContentView() {
+
         return R.layout.activity_main;
     }
 
@@ -33,7 +44,7 @@ public class MainActivity extends BaseActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,6 +61,15 @@ public class MainActivity extends BaseActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        mIosProgress.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mIosProgress.setNeedToUpdateView(false);
+                mLl.setVisibility(View.GONE);
+            }
+        }, 3003);
     }
 
 

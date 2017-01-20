@@ -18,10 +18,15 @@ import com.bingley.materialdesign.utils.DisplayUtil;
 
 /**
    * https://github.com/Kaopiz/KProgressHUD/blob/master/kprogresshud/src/main/java/com/kaopiz/kprogresshud/Helper.java
+ *   灵活的设置progress里面的属性
    * Author:  Mr.bingley
    * Version:
    * Date:  2017/1/20
    */
+
+/**
+ * kprogresshud_spinner.png 这张图片要放到大分辨率下，这样子显示的效果不会很大。
+ */
 
 public class KProgressHUD {
 

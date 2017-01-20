@@ -34,8 +34,7 @@
                     android:layout_height="26dip"
                     app:gForegroundColor="?attr/colorPrimary" />-->
 
-                <ImageView
-                    android:src="@drawable/kprogresshud_spinner"
+                <com.bingley.materialdesign.view.IosProgress
                     android:id="@+id/animProgress"
                     android:layout_width="46dip"
                     android:layout_height="46dip"/>
