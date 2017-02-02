@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <net.oschina.app.improve.widget.RecyclerRefreshLayout
+    <com.bingley.materialdesign.view.RecyclerRefreshLayout
         android:id="@+id/refreshLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -17,9 +17,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="vertical" />
-    </net.oschina.app.improve.widget.RecyclerRefreshLayout>
+    </com.bingley.materialdesign.view.RecyclerRefreshLayout>
 
-    <net.oschina.app.ui.empty.EmptyLayout
+    <com.bingley.materialdesign.view.EmptyLayout
         android:id="@+id/error_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

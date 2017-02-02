@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.http;
+package com.bingley.materialdesign.http.okhttp;
 
 import android.os.Handler;
 import android.os.Looper;
@@ -54,7 +54,7 @@ public class OkHttpUtils {
      * @return
      */
     private synchronized static OkHttpUtils getInstance() {
-        if (mInstance != null) {
+        if (mInstance == null) {
             mInstance = new OkHttpUtils();
         }
         return mInstance;
@@ -89,7 +89,7 @@ public class OkHttpUtils {
                         sendSuccessCallBack(callback, object);
                     }
                 } catch (final Exception e) {
-                    LogUtils.e(TAG, "convert json failure", e);
+                    LogUtils.e("convert json failure", e);
                     sendFailCallback(callback, e);
                 }
 
