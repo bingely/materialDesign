@@ -80,13 +80,13 @@ android {
 
 dependencies {
     /**
-     * 下面几个都是创建该项目自带的
+     *    下面几个都是创建该项目自带的
      */
     compile fileTree(include: ['*.jar'], dir: 'libs')
     /*androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-                exclude group: 'com.android.support', module: 'support-annotations'
-            })
-            testCompile 'junit:junit:4.12'*/
+                            exclude group: 'com.android.support', module: 'support-annotations'
+                        })
+                        testCompile 'junit:junit:4.12'*/
     compile 'com.android.support:appcompat-v7:25.0.1'
     compile 'com.android.support:design:25.0.1'
     // 新特性
@@ -95,7 +95,6 @@ dependencies {
     // 图片
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'jp.wasabeef:glide-transformations:2.0.1'
-
     compile 'com.jaeger.statusbaruitl:library:1.1.1'
     // 注解
     compile 'com.jakewharton:butterknife:7.0.1'
@@ -118,6 +117,5 @@ dependencies {
     //compile 'com.loopj.android:android-async-http:1.4.9'
     // palette
     compile 'com.android.support:palette-v7:25.0.1'
-
     compile project(path: ':swipeback')
 }
