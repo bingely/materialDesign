@@ -100,7 +100,7 @@ public class ApiHttpClient {
     public static String getCookie(AppContext appContext) {
         if (TextUtils.isEmpty(appCookie)) {
             // TODO
-           // appCookie = appContext.getProperty("cookie");
+           appCookie = appContext.getProperty("cookie");
         }
         return appCookie;
     }

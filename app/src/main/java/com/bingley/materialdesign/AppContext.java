@@ -52,6 +52,22 @@ public class AppContext extends BaseApplication{
     }
 
     /**
+     * 获取cookie时传AppConfig.CONF_COOKIE
+     *
+     * @param key
+     * @return
+     */
+    public String getProperty(String key) {
+        return AppConfig.getAppConfig(this).get(key);
+    }
+
+    public void setProperty(String key, String value) {
+        AppConfig.getAppConfig(this).set(key, value);
+    }
+
+
+
+    /**
      * 获取App唯一标识
      *
      * @return
