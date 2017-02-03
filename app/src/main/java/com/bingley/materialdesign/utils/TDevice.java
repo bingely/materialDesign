@@ -39,7 +39,7 @@ public class TDevice {
     /**
      * 根据分辨率从 px(像素) 的单位 转成为 dp
      */
-    public static int px2dp(Context context, float pxValue) {
+    public static int px2dp(float pxValue) {
         final float scale = BaseApplication.context().getResources().getDisplayMetrics().density;
         return (int) (pxValue / scale + 0.5f);
     }
@@ -51,7 +51,7 @@ public class TDevice {
      * @param pxValue
      * @return
      */
-    public static int px2sp(Context context, float pxValue) {
+    public static int px2sp(float pxValue) {
         final float fontScale = BaseApplication.context().getResources().getDisplayMetrics().scaledDensity;
         return (int) (pxValue / fontScale + 0.5f);
     }
@@ -63,7 +63,7 @@ public class TDevice {
      * @param spValue
      * @return
      */
-    public static int sp2px(Context context, float spValue) {
+    public static int sp2px(float spValue) {
         final float fontScale = BaseApplication.context().getResources().getDisplayMetrics().scaledDensity;
         return (int) (spValue * fontScale + 0.5f);
     }

@@ -3,8 +3,11 @@ package com.bingley.materialdesign.http.asy;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.bingley.materialdesign.AppConfig;
 import com.bingley.materialdesign.AppContext;
+import com.bingley.materialdesign.base.BaseApplication;
 import com.bingley.materialdesign.utils.LogUtils;
+import com.bingley.materialdesign.utils.SPUtils;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -100,7 +103,8 @@ public class ApiHttpClient {
     public static String getCookie(AppContext appContext) {
         if (TextUtils.isEmpty(appCookie)) {
             // TODO
-           appCookie = appContext.getProperty("cookie");
+           //appCookie = appContext.getProperty(AppConfig.CONF_COOKIE);
+            appCookie = SPUtils.getFromPrefs(BaseApplication.context(), AppConfig.CONF_COOKIE, "0");
         }
         return appCookie;
     }

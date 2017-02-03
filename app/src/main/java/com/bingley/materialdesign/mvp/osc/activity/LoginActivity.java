@@ -1,12 +1,10 @@
 package com.bingley.materialdesign.mvp.osc.activity;
 
 
-import android.app.Dialog;
 import android.text.TextUtils;
 import android.widget.Toast;
 
 import com.bingley.materialdesign.AppConfig;
-import com.bingley.materialdesign.AppContext;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.http.asy.ApiHttpClient;
@@ -14,13 +12,12 @@ import com.bingley.materialdesign.mvp.osc.OscApi;
 import com.bingley.materialdesign.mvp.osc.bean.LoginUserBean;
 import com.bingley.materialdesign.utils.DialogUtil;
 import com.bingley.materialdesign.utils.LogUtils;
+import com.bingley.materialdesign.utils.SPUtils;
 import com.bingley.materialdesign.utils.XmlUtils;
-import com.google.gson.reflect.TypeToken;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.TextHttpResponseHandler;
 
-import java.lang.reflect.Type;
 
 import cz.msebera.android.httpclient.Header;
 import cz.msebera.android.httpclient.client.CookieStore;
@@ -29,32 +26,8 @@ import cz.msebera.android.httpclient.cookie.Cookie;
 import cz.msebera.android.httpclient.protocol.HttpContext;
 
 public class LoginActivity extends BaseActivity {
-    private final AsyncHttpResponseHandler mHandler = new AsyncHttpResponseHandler() {
 
-        @Override
-        public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
-            LoginUserBean loginUserBean = XmlUtils.toBean(LoginUserBean.class, arg2);
-            if (loginUserBean != null) {
-                handleLoginBean(loginUserBean, arg1);
-            }
-            Toast.makeText(LoginActivity.this,new String(arg2), Toast.LENGTH_SHORT).show();
-            LogUtils.e(new String(arg2));
 
-        }
-
-        @Override
-        public void onFailure(int arg0, Header[] arg1, byte[] arg2,
-                              Throwable arg3) {
-            Toast.makeText(LoginActivity.this,"网络出错" + arg0, Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onFinish() {
-            super.onFinish();
-            //hideWaitDialog();
-            DialogUtil.dimissDialog();
-        }
-    };
     @Override
     protected int getContentView() {
         return R.layout.activity_login;
@@ -89,21 +62,33 @@ public class LoginActivity extends BaseActivity {
         OscApi.login("linmb@qq.com", "lmbbest123", mHandler);
 
 
-
-        OscApi.getUserInfo(new TextHttpResponseHandler() {
-            @Override
-            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
-
-            }
-
-            @Override
-            public void onSuccess(int statusCode, Header[] headers, String responseString) {
-
-                LogUtils.e(responseString);
-                Toast.makeText(LoginActivity.this,responseString, Toast.LENGTH_SHORT).show();
-            }
-        });
     }
+    private final AsyncHttpResponseHandler mHandler = new AsyncHttpResponseHandler() {
+
+        @Override
+        public void onSuccess(int arg0, Header[] arg1, byte[] arg2) {
+            LoginUserBean loginUserBean = XmlUtils.toBean(LoginUserBean.class, arg2);
+            if (loginUserBean != null) {
+                handleLoginBean(loginUserBean, arg1);
+            }
+            Toast.makeText(LoginActivity.this, new String(arg2), Toast.LENGTH_SHORT).show();
+            LogUtils.e(new String(arg2));
+
+        }
+
+        @Override
+        public void onFailure(int arg0, Header[] arg1, byte[] arg2,
+                              Throwable arg3) {
+            Toast.makeText(LoginActivity.this, "网络出错" + arg0, Toast.LENGTH_SHORT).show();
+        }
+
+        @Override
+        public void onFinish() {
+            super.onFinish();
+            //hideWaitDialog();
+            DialogUtil.dimissDialog();
+        }
+    };
 
 
     // 处理loginBean
@@ -135,10 +120,26 @@ public class LoginActivity extends BaseActivity {
                     }
                 }
                 LogUtils.e("cookies:" + tmpcookies);
-                AppContext.getInstance().setProperty(AppConfig.CONF_COOKIE, tmpcookies);
-                ApiHttpClient.setCookie(ApiHttpClient.getCookie(AppContext
-                        .getInstance()));
-                //HttpConfig.sCookie = tmpcookies;
+
+                // 改进没必要通过property形式写，直接用sp
+                //AppContext.getInstance().setProperty(AppConfig.CONF_COOKIE, tmpcookies);
+                SPUtils.saveToPrefs(this, AppConfig.CONF_COOKIE, tmpcookies);
+                ApiHttpClient.setCookie(SPUtils.getFromPrefs(this, AppConfig.CONF_COOKIE, "0"));
+
+
+                OscApi.getUserInfo(new TextHttpResponseHandler() {
+                    @Override
+                    public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+
+                    }
+
+                    @Override
+                    public void onSuccess(int statusCode, Header[] headers, String responseString) {
+
+                        LogUtils.e(responseString);
+                        Toast.makeText(LoginActivity.this, responseString, Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
 
         } else {
