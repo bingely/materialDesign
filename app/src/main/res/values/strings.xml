@@ -20,7 +20,9 @@
     <string name="info">Info</string>
     <string name="error">Error</string>
     <string name="warning">Warning</string>
-    <string name="text_data">Your info text goes here. Loremipsum dolor sit amet, consecteturn adipisicing elit, sed do eiusmod.</string>
+    <string name="text_data">Your info text goes here. Loremipsum dolor sit amet, consecteturn
+        adipisicing elit, sed do eiusmod.
+    </string>
     <string name="prompt_dialog">Prompt Dialog</string>
     <string name="pic">Pic</string>
     <string name="text">Text</string>
@@ -36,7 +38,6 @@
     </string-array>
 
 
-
     <!-- Error View -->
     <string name="error_view_click_to_refresh">点击屏幕,重新加载</string>
     <string name="error_view_no_data">暂无内容</string>
@@ -44,5 +45,16 @@
     <string name="error_view_load_error_click_to_refresh">内容加载失败\r\n点击重新加载</string>
     <string name="error_view_network_error_click_to_refresh">没有可用的网络</string>
     <string name="tip_network_error">没有可用的网络</string>
+
+    <!--就是说按照模块的组织在一起-->
+    <string name="hint_username">输入账号/邮箱</string>
+    <string name="hint_password">密码</string>
+    <string name="login">登录</string>
+    <string name="tip_please_input_username">请输入用户名</string>
+    <string name="tip_illegal_email">请输入正确的email地址</string>
+    <string name="tip_please_input_password">请输入密码</string>
+    <string name="progress_login">正在登录…</string>
+    <string name="tip_login_error_for_network">对不起,无法登录</string>
+    <string name="tip_no_internet">当前没有可用的网络链接</string>
 
 </resources>

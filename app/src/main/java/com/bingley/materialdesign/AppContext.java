@@ -4,6 +4,9 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 import com.bingley.materialdesign.base.BaseApplication;
+import com.bingley.materialdesign.http.asy.ApiHttpClient;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.PersistentCookieStore;
 
 /**
  * Created by Administrator on 2017/1/19.
@@ -37,11 +40,11 @@ public class AppContext extends BaseApplication{
         //handler.init(this);
 
         // 初始化网络请求
-        /*AsyncHttpClient client = new AsyncHttpClient();
+        AsyncHttpClient client = new AsyncHttpClient();
         PersistentCookieStore myCookieStore = new PersistentCookieStore(this);
         client.setCookieStore(myCookieStore);
         ApiHttpClient.setHttpClient(client);
-        ApiHttpClient.setCookie(ApiHttpClient.getCookie(this));*/
+        ApiHttpClient.setCookie(ApiHttpClient.getCookie(this));
 
         // Log控制器
 

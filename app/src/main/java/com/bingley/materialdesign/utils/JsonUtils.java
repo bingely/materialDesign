@@ -1,6 +1,7 @@
 package com.bingley.materialdesign.utils;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSyntaxException;
 
@@ -16,6 +17,19 @@ import java.lang.reflect.Type;
 public class JsonUtils {
 
     private static Gson mGson = new Gson();
+
+    /**
+     * <br/> Description: 判断gson是否为空
+     * <br/> Author:  chencaisheng
+     */
+    public static  boolean isEmpty(JsonElement jsonElement){
+        if(jsonElement!=null&&!jsonElement.isJsonNull()){
+            return true;
+        }else {
+            return false;
+        }
+
+    }
 
     /**
      * 将对象准换为json字符串

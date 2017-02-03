@@ -109,6 +109,7 @@ public class MainActivity extends BaseActivity
         switch (id) {
             case R.id.project_osc:
                 //startActivity(new Intent(this, XsqMainActivity.class));
+                startActivity(new Intent(this, OscMainActivity.class));
                 break;
             case R.id.item_leanningbasic:
                 startActivity(new Intent(this, KnowlegeListActivity.class));

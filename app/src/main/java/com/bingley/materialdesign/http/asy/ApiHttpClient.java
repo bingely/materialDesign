@@ -1,4 +1,3 @@
-/*
 package com.bingley.materialdesign.http.asy;
 
 import android.text.TextUtils;
@@ -28,12 +27,10 @@ import javax.net.ssl.X509TrustManager;
 
 import cz.msebera.android.httpclient.client.params.ClientPNames;
 import cz.msebera.android.httpclient.conn.ssl.SSLSocketFactory;
-import retrofit2.http.GET;
 
-*/
 /**
  * getCookie　（）方法不太懂
- *//*
+ */
 
 
 @SuppressWarnings("WeakerAccess")
@@ -119,7 +116,7 @@ public class ApiHttpClient {
 
     public static void log(String log) {
         Log.d("BaseApi", log);
-        LogUtils.i("Test", log);
+        LogUtils.i(log);
     }
 
 
@@ -177,4 +174,3 @@ public class ApiHttpClient {
 
 
 }
-*/
