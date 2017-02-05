@@ -9,4 +9,26 @@
         android:layout_margin="@dimen/distance_10"
         android:text="我"/>
 
+
+    <com.bingley.materialdesign.view.RevealLayout
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent">
+
+        <Button
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="123dp"
+            android:layout_margin="@dimen/distance_10"
+            android:text="一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果"/>
+
+
+        <Button
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_width="123dp"
+            android:layout_margin="@dimen/distance_10"
+            android:text="一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果"/>
+
+    </com.bingley.materialdesign.view.RevealLayout>
+
 </LinearLayout>

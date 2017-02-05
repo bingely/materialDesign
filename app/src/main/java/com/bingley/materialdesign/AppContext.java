@@ -7,6 +7,16 @@ import com.bingley.materialdesign.base.BaseApplication;
 import com.bingley.materialdesign.http.asy.ApiHttpClient;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.https.HttpsUtils;
+import com.zhy.http.okhttp.log.LoggerInterceptor;
+
+import java.util.concurrent.TimeUnit;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.SSLSession;
+
+import okhttp3.OkHttpClient;
 
 /**
  * Created by Administrator on 2017/1/19.
@@ -49,6 +59,28 @@ public class AppContext extends BaseApplication{
         // Log控制器
 
         // Bitmap缓存地址
+
+
+       /* ClearableCookieJar cookieJar1 = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
+
+        HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .connectTimeout(10000L, TimeUnit.MILLISECONDS)
+                .readTimeout(10000L, TimeUnit.MILLISECONDS)
+                .addInterceptor(new LoggerInterceptor("TAG"))
+                .cookieJar(cookieJar1)
+                .hostnameVerifier(new HostnameVerifier()
+                {
+                    @Override
+                    public boolean verify(String hostname, SSLSession session)
+                    {
+                        return true;
+                    }
+                })
+                .sslSocketFactory(sslParams.sSLSocketFactory, sslParams.trustManager)
+                .build();
+        OkHttpUtils.initClient(okHttpClient);*/
     }
 
     /**

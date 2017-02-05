@@ -26,8 +26,6 @@ import cz.msebera.android.httpclient.cookie.Cookie;
 import cz.msebera.android.httpclient.protocol.HttpContext;
 
 public class LoginActivity extends BaseActivity {
-
-
     @Override
     protected int getContentView() {
         return R.layout.activity_login;
@@ -85,11 +83,13 @@ public class LoginActivity extends BaseActivity {
         @Override
         public void onFinish() {
             super.onFinish();
-            //hideWaitDialog();
             DialogUtil.dimissDialog();
         }
     };
 
+    private void handleLoginSuccess() {
+
+    }
 
     // 处理loginBean
     private void handleLoginBean(LoginUserBean loginUserBean, Header[] headers) {

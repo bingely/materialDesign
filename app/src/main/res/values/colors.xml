@@ -419,4 +419,6 @@
     <color name="swiperefresh_color4">#ffaa66cc</color>
     <color name="white_alpha_16">#10ffffff</color>
     <color name="white_alpha_240">#f0ffffff</color>
+
+    <color name="reveal_color">#1b000000</color>
 </resources>
