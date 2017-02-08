@@ -8,7 +8,7 @@ import com.bingley.materialdesign.AppConfig;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.http.asy.ApiHttpClient;
-import com.bingley.materialdesign.mvp.osc.OscApi;
+import com.bingley.materialdesign.mvp.osc.OSChinaApi;
 import com.bingley.materialdesign.mvp.osc.bean.LoginUserBean;
 import com.bingley.materialdesign.utils.DialogUtil;
 import com.bingley.materialdesign.utils.LogUtils;
@@ -57,7 +57,7 @@ public class LoginActivity extends BaseActivity {
                 });*/
 
         DialogUtil.showDialog(this);
-        OscApi.login("linmb@qq.com", "lmbbest123", mHandler);
+        OSChinaApi.login("linmb@qq.com", "lmbbest123", mHandler);
 
 
     }
@@ -87,9 +87,6 @@ public class LoginActivity extends BaseActivity {
         }
     };
 
-    private void handleLoginSuccess() {
-
-    }
 
     // 处理loginBean
     private void handleLoginBean(LoginUserBean loginUserBean, Header[] headers) {
@@ -127,7 +124,7 @@ public class LoginActivity extends BaseActivity {
                 ApiHttpClient.setCookie(SPUtils.getFromPrefs(this, AppConfig.CONF_COOKIE, "0"));
 
 
-                OscApi.getUserInfo(new TextHttpResponseHandler() {
+                OSChinaApi.getUserInfo(new TextHttpResponseHandler() {
                     @Override
                     public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
 
@@ -138,6 +135,8 @@ public class LoginActivity extends BaseActivity {
 
                         LogUtils.e(responseString);
                         Toast.makeText(LoginActivity.this, responseString, Toast.LENGTH_SHORT).show();
+
+                        finish();
                     }
                 });
             }

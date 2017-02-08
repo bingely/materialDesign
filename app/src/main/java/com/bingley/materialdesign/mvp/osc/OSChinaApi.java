@@ -11,7 +11,7 @@ import com.loopj.android.http.TextHttpResponseHandler;
  * Created by Administrator on 2017/2/3.
  */
 
-public class OscApi {
+public class OSChinaApi {
     /**
      * 登陆
      *
