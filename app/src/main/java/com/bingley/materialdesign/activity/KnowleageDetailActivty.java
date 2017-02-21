@@ -8,6 +8,7 @@ import android.widget.FrameLayout;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseSwipebackActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
+import com.bingley.materialdesign.mvp.aidldemo.MAIDLFragment;
 import com.bingley.materialdesign.mvp.anim.AnimFragment;
 import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
@@ -115,7 +116,11 @@ public class KnowleageDetailActivty extends BaseSwipebackActivity {
                 ScrollFragment scrollFragment = new ScrollFragment();
                 fragmentTransaction.add(R.id.fl_container, scrollFragment);
                 break;
-
+            case 13:
+                mTitleview.setTitle("aidl Demo");
+                MAIDLFragment maidlFragment = new MAIDLFragment();
+                fragmentTransaction.add(R.id.fl_container, maidlFragment);
+                break;
 
             case 1000:
                 mTitleview.setTitle("svg Demo");
