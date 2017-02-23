@@ -7,7 +7,7 @@ android {
 
     defaultConfig {
         applicationId "com.bingley.materialdesign"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -63,10 +63,10 @@ android {
 
     signingConfigs {
         debug {
-            storeFile file('E:\\xsq518.jks')
+            /*storeFile file('E:\\xsq518.jks')
             storePassword "123456"
             keyAlias "weytenera"
-            keyPassword "123456"
+            keyPassword "123456"*/
         }
     }
 
@@ -121,4 +121,5 @@ dependencies {
     compile 'com.android.support:palette-v7:25.0.1'
     compile project(path: ':swipeback')
     compile files('libs/xstream-1.4.7.jar')
+    compile project(path: ':MPChartLib')
 }

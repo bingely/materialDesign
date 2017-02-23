@@ -14,6 +14,7 @@ import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
+import com.bingley.materialdesign.mvp.stock.StockFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
 import com.bingley.materialdesign.mvp.materal.ElevationFragment;
 import com.bingley.materialdesign.mvp.materal.palette.PaletteActivity;
@@ -120,6 +121,11 @@ public class KnowleageDetailActivty extends BaseSwipebackActivity {
                 mTitleview.setTitle("aidl Demo");
                 MAIDLFragment maidlFragment = new MAIDLFragment();
                 fragmentTransaction.add(R.id.fl_container, maidlFragment);
+                break;
+            case 14:
+                mTitleview.setTitle("股票 Demo");
+                StockFragment stockFragment = new StockFragment();
+                fragmentTransaction.add(R.id.fl_container, stockFragment);
                 break;
 
             case 1000:
