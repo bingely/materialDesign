@@ -21,13 +21,19 @@ public class DataParse {
     private SparseArray<String> xValuesLabel=new SparseArray<>();
     private int firstDay = 10;
 
+    /**
+     * 时分图
+     * @param object
+     */
     public void parseMinutes(JSONObject object) {
+        // 第一个data数组中的数据 每个数组里面的数据时"0930 10.04 7917"
         JSONArray jsonArray = object.optJSONObject("data").optJSONObject(code).optJSONObject("data").optJSONArray("data");
+        // 时间
         String date = object.optJSONObject("data").optJSONObject(code).optJSONObject("data").optString("date");
         if (date.length() == 0) {
             return;
         }
-/*数据解析依照自己需求来定，如果服务器直接返回百分比数据，则不需要客户端进行计算*/
+        /*数据解析依照自己需求来定，如果服务器直接返回百分比数据，则不需要客户端进行计算*/
         baseValue = (float) object.optJSONObject("data").optJSONObject(code).optJSONObject("qt").optJSONArray(code).optDouble(4);
         int count = jsonArray.length();
         for (int i = 0; i < count; i++) {

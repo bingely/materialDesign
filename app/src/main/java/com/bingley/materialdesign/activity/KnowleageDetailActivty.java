@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
 import com.bingley.materialdesign.R;
+import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.base.BaseSwipebackActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
 import com.bingley.materialdesign.mvp.aidldemo.MAIDLFragment;
@@ -33,7 +34,7 @@ import butterknife.Bind;
  * 实现Google+滑动显示、隐藏toolbar
  * 我觉得应该一种容器的作用，放置的是各个fragment
  */
-public class KnowleageDetailActivty extends BaseSwipebackActivity {
+public class KnowleageDetailActivty extends BaseActivity {
     @Bind(R.id.titleview)
     TitleView mTitleview;
     @Bind(R.id.fl_container)
