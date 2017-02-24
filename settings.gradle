@@ -1,1 +1,1 @@
-include ':app', ':swipeback', ':bingpay'
+include ':app', ':swipeback', ':bingpay', ':MPChartLib'

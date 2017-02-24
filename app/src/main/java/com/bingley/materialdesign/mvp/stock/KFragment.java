@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseFragment;
@@ -105,8 +106,10 @@ public class KFragment extends BaseFragment{
         combinedchart.setBorderWidth(1);
         combinedchart.setBorderColor(getResources().getColor(R.color.minute_grayLine));
         combinedchart.setDescription("");
-        combinedchart.setDragEnabled(false);
+        combinedchart.setDragEnabled(true);
         combinedchart.setScaleYEnabled(false);
+        combinedchart.setScaleEnabled(false);
+        combinedchart.setHighlightPerDragEnabled(true);
 
         Legend combinedchartLegend = combinedchart.getLegend();
         combinedchartLegend.setEnabled(false);
