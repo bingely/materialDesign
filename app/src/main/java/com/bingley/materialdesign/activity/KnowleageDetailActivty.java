@@ -7,7 +7,6 @@ import android.widget.FrameLayout;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
-import com.bingley.materialdesign.base.BaseSwipebackActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
 import com.bingley.materialdesign.mvp.aidldemo.MAIDLFragment;
 import com.bingley.materialdesign.mvp.anim.AnimFragment;
@@ -15,7 +14,8 @@ import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
-import com.bingley.materialdesign.mvp.stock.StockFragment;
+import com.bingley.materialdesign.mvp.stock.KFragment;
+import com.bingley.materialdesign.mvp.stock.MinuntFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
 import com.bingley.materialdesign.mvp.materal.ElevationFragment;
 import com.bingley.materialdesign.mvp.materal.palette.PaletteActivity;
@@ -25,6 +25,7 @@ import com.bingley.materialdesign.mvp.materal.TintingFragment;
 import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
 import com.bingley.materialdesign.mvp.scrolldemo.ScrollFragment;
 import com.bingley.materialdesign.mvp.sqlite.SqliteFragment;
+import com.bingley.materialdesign.mvp.stock.StockFragment;
 import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.view.TitleView;
 
@@ -127,6 +128,16 @@ public class KnowleageDetailActivty extends BaseActivity {
                 mTitleview.setTitle("股票 Demo");
                 StockFragment stockFragment = new StockFragment();
                 fragmentTransaction.add(R.id.fl_container, stockFragment);
+                break;
+            case 15:
+                mTitleview.setTitle("Demo");
+                MinuntFragment minuntFragment = new MinuntFragment();
+                fragmentTransaction.add(R.id.fl_container, minuntFragment);
+                break;
+            case 16:
+                mTitleview.setTitle("Demo");
+                KFragment kFragment = new KFragment();
+                fragmentTransaction.add(R.id.fl_container, kFragment);
                 break;
 
             case 1000:

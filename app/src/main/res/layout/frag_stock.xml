@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/minute_black"
-              android:orientation="vertical">
+              android:layout_height="match_parent">
 
-    <com.bingley.materialdesign.mvp.stock.mychart.MyLineChart
-        android:id="@+id/line_chart"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2"/>
-
-    <com.bingley.materialdesign.mvp.stock.mychart.MyBarChart
-        android:id="@+id/bar_chart"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+    <Button
+        android:id="@+id/btn"
+        android:layout_margin="10dp"
+        android:text="时分图"
+        style="@style/button_common_blue"/>
+    <Button
+        android:id="@+id/btn_k"
+        android:layout_margin="10dp"
+        android:text="K线图"
+        style="@style/button_common_blue"/>
 
 </LinearLayout>
