@@ -14,6 +14,7 @@ import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
+import com.bingley.materialdesign.mvp.stock.KChartsFragment;
 import com.bingley.materialdesign.mvp.stock.KFragment;
 import com.bingley.materialdesign.mvp.stock.MinuntFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
@@ -26,6 +27,7 @@ import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
 import com.bingley.materialdesign.mvp.scrolldemo.ScrollFragment;
 import com.bingley.materialdesign.mvp.sqlite.SqliteFragment;
 import com.bingley.materialdesign.mvp.stock.StockFragment;
+import com.bingley.materialdesign.mvp.stock.TimesFragment;
 import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.view.TitleView;
 
@@ -132,11 +134,13 @@ public class KnowleageDetailActivty extends BaseActivity {
             case 15:
                 mTitleview.setTitle("Demo");
                 MinuntFragment minuntFragment = new MinuntFragment();
+                //TimesFragment minuntFragment = new TimesFragment();
                 fragmentTransaction.add(R.id.fl_container, minuntFragment);
                 break;
             case 16:
                 mTitleview.setTitle("Demo");
                 KFragment kFragment = new KFragment();
+              //  KChartsFragment kFragment = new KChartsFragment();
                 fragmentTransaction.add(R.id.fl_container, kFragment);
                 break;
 

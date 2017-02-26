@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
+import android.widget.Toast;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseFragment;
@@ -30,7 +31,9 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.YAxisValueFormatter;
+import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,6 +51,8 @@ import rx.Subscription;
    * Version: 
    * Date:  2017/2/24
    */
+ // 如何获得得平均线值
+
 
 public class MinuntFragment extends BaseFragment{
     @Bind(R.id.line_chart)
@@ -55,7 +60,6 @@ public class MinuntFragment extends BaseFragment{
     @Bind(R.id.bar_chart)
     MyBarChart barChart;
 
-    private Subscription subscriptionMinute;
     private LineDataSet d1, d2;
     MyXAxis xAxisLine;
     MyYAxis axisRightLine;
@@ -79,15 +83,41 @@ public class MinuntFragment extends BaseFragment{
         super.initWidget(root);
         initChart();
         stringSparseArray = setXLabels();
-    }
-
-    @Override
-    protected void initData() {
-        super.initData();
         getOffLineData();
+
+
+        // 此处的作用就是让上下两个图数据就行联动
+        lineChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
+//                barChart.setHighlightValue(new Highlight(h.getXIndex(), 0));
+
+                // 比如说如果触摸lineChart，barChart也会引起变化
+                barChart.highlightValue(new Highlight(h.getXIndex(), 0));
+                Toast.makeText(getActivity(),String.valueOf(e.getVal()),0).show();
+
+                // lineChart.setHighlightValue(h);
+            }
+
+            @Override
+            public void onNothingSelected() {
+                barChart.highlightValue(null);
+            }
+        });
+        barChart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+            @Override
+            public void onValueSelected(Entry e, int dataSetIndex, Highlight h) {
+                lineChart.highlightValue(new Highlight(h.getXIndex(), 0));
+                // lineChart.setHighlightValue(new Highlight(h.getXIndex(), 0));//此函数已经返回highlightBValues的变量，并且刷新，故上面方法可以注释
+                //barChart.setHighlightValue(h);
+            }
+
+            @Override
+            public void onNothingSelected() {
+                lineChart.highlightValue(null);
+            }
+        });
     }
-
-
 
     private void initChart() {
         /**
@@ -115,6 +145,7 @@ public class MinuntFragment extends BaseFragment{
         barChart.setBorderWidth(1);
         barChart.setBorderColor(getResources().getColor(R.color.minute_grayLine));
         barChart.setDescription("");
+        barChart.setHighlightPerDragEnabled(true);
         Legend barChartLegend = barChart.getLegend();
         barChartLegend.setEnabled(false);
 
@@ -354,7 +385,7 @@ public class MinuntFragment extends BaseFragment{
         d1.setColor(getResources().getColor(R.color.minute_blue));
         d2.setColor(getResources().getColor(R.color.minute_yellow));
         d1.setHighLightColor(Color.WHITE);
-        d2.setHighlightEnabled(false);
+        d2.setHighlightEnabled(true);     // 如何获得选中的值呢？？？ 这个如果是true，那么d1就没效果了
         d1.setDrawFilled(true);
 
 
