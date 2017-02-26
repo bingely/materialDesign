@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bingley.materialdesign.R;
@@ -45,20 +46,24 @@ import java.util.List;
 import butterknife.Bind;
 import rx.Subscription;
 
- /**
-   * $Description:$
-   * Author:  Mr.bingley
-   * Version: 
-   * Date:  2017/2/24
-   */
- // 如何获得得平均线值
+/**
+ * $Description:$
+ * Author:  Mr.bingley
+ * Version:
+ * Date:  2017/2/24
+ */
+// 如何获得得平均线值
 
 
-public class MinuntFragment extends BaseFragment{
+public class MinuntFragment extends BaseFragment {
     @Bind(R.id.line_chart)
     MyLineChart lineChart;
     @Bind(R.id.bar_chart)
     MyBarChart barChart;
+    @Bind(R.id.green_value)
+    TextView mGreenValue;
+    @Bind(R.id.yello_value)
+    TextView mYelloValue;
 
     private LineDataSet d1, d2;
     MyXAxis xAxisLine;
@@ -73,6 +78,7 @@ public class MinuntFragment extends BaseFragment{
     private DataParse mData;
     Integer sum = 0;
     List<Integer> listA, listB;
+
     @Override
     protected int getLayoutId() {
         return R.layout.frag_minute;
@@ -94,9 +100,14 @@ public class MinuntFragment extends BaseFragment{
 
                 // 比如说如果触摸lineChart，barChart也会引起变化
                 barChart.highlightValue(new Highlight(h.getXIndex(), 0));
-                Toast.makeText(getActivity(),String.valueOf(e.getVal()),0).show();
+                Toast.makeText(getActivity(), String.valueOf(e.getVal()), 0).show();
 
                 // lineChart.setHighlightValue(h);
+                List<Entry> yVals = d1.getYVals();
+                Entry entryForXIndex = d1.getEntryForXIndex(dataSetIndex);
+                mGreenValue.setText("x value:"+d1.getYValForXIndex(dataSetIndex)+"y value:"+yVals.get(0));
+                mYelloValue.setText("x value:"+d2.getYValForXIndex(dataSetIndex)+"y value:"+yVals.get(1));
+
             }
 
             @Override
@@ -299,6 +310,7 @@ public class MinuntFragment extends BaseFragment{
 
     /**
      * 设置数据
+     *
      * @param mData
      */
     private void setData(DataParse mData) {
@@ -395,7 +407,7 @@ public class MinuntFragment extends BaseFragment{
         barDataSet.setDrawValues(false);
         barDataSet.setHighlightEnabled(true);
         barDataSet.setColor(Color.RED);
-        List<Integer> list=new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(Color.RED);
         list.add(Color.GREEN);
         barDataSet.setColors(list);
@@ -411,7 +423,7 @@ public class MinuntFragment extends BaseFragment{
         BarData barData = new BarData(getMinutesCount(), barDataSet);
         barChart.setData(barData);
 
-       // setOffset();
+        // setOffset();
         lineChart.invalidate();//刷新图
         barChart.invalidate();
 
@@ -429,13 +441,14 @@ public class MinuntFragment extends BaseFragment{
 
     /**
      * 设置左右两边的数据
+     *
      * @param mData
      */
     private void setMarkerView(DataParse mData) {
         MyLeftMarkerView leftMarkerView = new MyLeftMarkerView(getActivity(), R.layout.mymarkerview);
         MyRightMarkerView rightMarkerView = new MyRightMarkerView(getActivity(), R.layout.mymarkerview);
         MyBottomMarkerView bottomMarkerView = new MyBottomMarkerView(getActivity(), R.layout.mymarkerview);
-        lineChart.setMarker(leftMarkerView, rightMarkerView,bottomMarkerView, mData);
-        barChart.setMarker(leftMarkerView, rightMarkerView,bottomMarkerView, mData);
+        lineChart.setMarker(leftMarkerView, rightMarkerView, bottomMarkerView, mData);
+        barChart.setMarker(leftMarkerView, rightMarkerView, bottomMarkerView, mData);
     }
 }
