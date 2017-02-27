@@ -30,6 +30,13 @@
     <color name="minute_zhoutv">#858D93</color>
     <color name="marker_bg">#1C232E</color>
 
+    <color name="ma5">#823E66</color>
+    <color name="ma10">#B99C7A</color>
+    <color name="ma20">#3C7193</color>
+    <color name="home_page_bg">#1E1E26</color>
+    <color name="common_divider">#303341</color>
+    <color name="text_grey_light">#A7ADBC</color>
+
 
     <color name="color_txt">#04A5E6</color>
     <color name="color_background">#eeeeee</color>

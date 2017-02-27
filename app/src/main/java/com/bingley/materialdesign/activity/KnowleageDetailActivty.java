@@ -2,6 +2,7 @@ package com.bingley.materialdesign.activity;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
@@ -50,7 +51,7 @@ public class KnowleageDetailActivty extends BaseActivity {
     }
 
 
-    public static void gotoActivity(Context context,int code) {
+    public static void gotoActivity(Context context, int code) {
         context.startActivity(new Intent(context, KnowleageDetailActivty.class).putExtra("material", code));
     }
 
@@ -128,20 +129,24 @@ public class KnowleageDetailActivty extends BaseActivity {
                 fragmentTransaction.add(R.id.fl_container, maidlFragment);
                 break;
             case 14:
+
+
                 mTitleview.setTitle("股票 Demo");
                 StockFragment stockFragment = new StockFragment();
                 fragmentTransaction.add(R.id.fl_container, stockFragment);
                 break;
             case 15:
+                setOrLANDSCAPE();
                 mTitleview.setTitle("Demo");
                 MinuntFragment minuntFragment = new MinuntFragment();
                 //TimesFragment minuntFragment = new TimesFragment();
                 fragmentTransaction.add(R.id.fl_container, minuntFragment);
                 break;
             case 16:
+                //setOrLANDSCAPE();
                 mTitleview.setTitle("Demo");
-               // KFragment kFragment = new KFragment();
-               //KChartsFragment kFragment = new KChartsFragment();
+                // KFragment kFragment = new KFragment();
+                //KChartsFragment kFragment = new KChartsFragment();
                 CombinedChartFragment kFragment = new CombinedChartFragment();
                 fragmentTransaction.add(R.id.fl_container, kFragment);
                 break;
@@ -174,6 +179,17 @@ public class KnowleageDetailActivty extends BaseActivity {
         }
         fragmentTransaction.commit();
     }
+
+
+    public void setOrLANDSCAPE() {
+        /**
+         * 设置为横屏
+         */
+        if(getRequestedOrientation()!= ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE){
+            setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        }
+    }
+
 
 
 }
