@@ -14,6 +14,7 @@ import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
+import com.bingley.materialdesign.mvp.stock.CombinedChartFragment;
 import com.bingley.materialdesign.mvp.stock.KChartsFragment;
 import com.bingley.materialdesign.mvp.stock.KFragment;
 import com.bingley.materialdesign.mvp.stock.MinuntFragment;
@@ -140,7 +141,8 @@ public class KnowleageDetailActivty extends BaseActivity {
             case 16:
                 mTitleview.setTitle("Demo");
                // KFragment kFragment = new KFragment();
-               KChartsFragment kFragment = new KChartsFragment();
+               //KChartsFragment kFragment = new KChartsFragment();
+                CombinedChartFragment kFragment = new CombinedChartFragment();
                 fragmentTransaction.add(R.id.fl_container, kFragment);
                 break;
 

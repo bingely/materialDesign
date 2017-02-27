@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseFragment;
-import com.bingley.materialdesign.mvp.stock.bean.DataParse;
-import com.bingley.materialdesign.mvp.stock.bean.MinutesBean;
+import com.bingley.materialdesign.mvp.stock.entity.DataParse;
+import com.bingley.materialdesign.mvp.stock.entity.MinutesBean;
 import com.bingley.materialdesign.mvp.stock.mychart.MyBarChart;
 import com.bingley.materialdesign.mvp.stock.mychart.MyBottomMarkerView;
 import com.bingley.materialdesign.mvp.stock.mychart.MyLeftMarkerView;
@@ -44,7 +44,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
-import rx.Subscription;
 
 /**
  * $Description:$

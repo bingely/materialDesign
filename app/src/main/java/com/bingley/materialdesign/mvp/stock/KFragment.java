@@ -7,12 +7,11 @@ import android.os.Message;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseFragment;
-import com.bingley.materialdesign.mvp.stock.bean.DataParse;
-import com.bingley.materialdesign.mvp.stock.bean.KLineBean;
+import com.bingley.materialdesign.mvp.stock.entity.DataParse;
+import com.bingley.materialdesign.mvp.stock.entity.KLineBean;
 import com.bingley.materialdesign.mvp.stock.mychart.CoupleChartGestureListener;
 import com.bingley.materialdesign.mvp.stock.utils.MyUtils;
 import com.bingley.materialdesign.mvp.stock.utils.VolFormatter;

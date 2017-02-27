@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.mvp.stock.bean;
+package com.bingley.materialdesign.mvp.stock.entity;
 
 
 public class MinutesBean {
