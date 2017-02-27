@@ -25,6 +25,10 @@ public class Model {
         return new Gson().fromJson(moreData, StockListBean.class).getContent();
     }
 
+    /**
+     * 作用就是把原生的数据改为CandleEntry类型数据
+     * @return
+     */
     public static List<CandleEntry> getCandlEntries(){
         List<StockListBean.StockBean> rawData = getData();
         return getCandleEntries(rawData, 0);
@@ -39,7 +43,7 @@ public class Model {
                 Log.e("xxx", "第" + i + "StrockBean == null");
                 continue;
             }
-            CandleEntry entry = new CandleEntry(startIndex+i, stock.getHigh(), stock.getLow(), stock.getOpen(), stock.getClose());
+            CandleEntry entry = new CandleEntry(startIndex+i, stock.getHigh(), stock.getLow(), stock.getOpen(), stock.getClose(),stock);
             entries.add(entry);
         }
         return entries;

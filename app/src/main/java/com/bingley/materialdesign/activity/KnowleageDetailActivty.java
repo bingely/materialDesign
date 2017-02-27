@@ -134,8 +134,8 @@ public class KnowleageDetailActivty extends BaseActivity {
                 break;
             case 15:
                 mTitleview.setTitle("Demo");
-                //MinuntFragment minuntFragment = new MinuntFragment();
-                TimesFragment minuntFragment = new TimesFragment();
+                MinuntFragment minuntFragment = new MinuntFragment();
+                //TimesFragment minuntFragment = new TimesFragment();
                 fragmentTransaction.add(R.id.fl_container, minuntFragment);
                 break;
             case 16:
