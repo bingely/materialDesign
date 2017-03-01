@@ -9,19 +9,19 @@
 // When using protoc.exe compiling it, compilier will create a Java file using the given package structure, and named Java file
 // using the given classname.
 // Ex. com.carter.roster.proto.Roster.java
-option java_package = "com.bingley.materialdesign";
+option java_package = "com.hthy.futures.protocal";
 option java_outer_classname = "Roster";
 
 
 message Student{
 	required int32 id = 1;
 	required string name = 2;
-
+	
 	enum Sex{
 		MALE = 0;
 		FEMALE = 1;
 	}
-
+	
 	required Sex sex = 3;
 
 }

@@ -145,9 +145,9 @@ public class KnowleageDetailActivty extends BaseActivity {
             case 16:
                 //setOrLANDSCAPE();
                 mTitleview.setTitle("Demo");
-                // KFragment kFragment = new KFragment();
+                 KFragment kFragment = new KFragment();
                 //KChartsFragment kFragment = new KChartsFragment();
-                CombinedChartFragment kFragment = new CombinedChartFragment();
+               // CombinedChartFragment kFragment = new CombinedChartFragment();
                 fragmentTransaction.add(R.id.fl_container, kFragment);
                 break;
 

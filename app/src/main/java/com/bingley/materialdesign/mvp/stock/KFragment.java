@@ -2,6 +2,7 @@ package com.bingley.materialdesign.mvp.stock;
 
 import android.graphics.Color;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
@@ -70,7 +71,9 @@ public class KFragment extends BaseFragment{
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
-            barChart.setAutoScaleMinMaxEnabled(true);
+            if (barChart != null) {
+                barChart.setAutoScaleMinMaxEnabled(true);
+            }
             combinedchart.setAutoScaleMinMaxEnabled(true);
 
             combinedchart.notifyDataSetChanged();
@@ -294,6 +297,14 @@ public class KFragment extends BaseFragment{
         candleDataSet.setColor(Color.RED);
         candleDataSet.setShadowWidth(1f);
         candleDataSet.setAxisDependency(YAxis.AxisDependency.LEFT);
+
+        candleDataSet.setDecreasingColor(Color.RED);
+        candleDataSet.setDecreasingPaintStyle(Paint.Style.FILL);
+        candleDataSet.setIncreasingColor(Color.GREEN);
+        candleDataSet.setIncreasingPaintStyle(Paint.Style.FILL);
+        candleDataSet.setNeutralColor(Color.RED);
+        candleDataSet.setShadowColorSameAsCandle(true);
+
         CandleData candleData = new CandleData(xVals, candleDataSet);
 
 
@@ -323,7 +334,7 @@ public class KFragment extends BaseFragment{
         final ViewPortHandler viewPortHandlerCombin = combinedchart.getViewPortHandler();
         viewPortHandlerCombin.setMaximumScaleX(culcMaxscale(xVals.size()));
         Matrix matrixCombin = viewPortHandlerCombin.getMatrixTouch();
-        final float xscaleCombin = 3;
+        final float xscaleCombin = 2;
         matrixCombin.postScale(xscaleCombin, 1f);
 
         combinedchart.moveViewToX(mData.getKLineDatas().size() - 1);
