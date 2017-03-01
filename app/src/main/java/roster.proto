@@ -1,0 +1,33 @@
+// This is a file in Proto format. Defines a Roster data-structure.
+// It's my first .proto file, if you have something wanna know, please contact me.
+// EMAIL: brokenrings@163.com
+// CSDN_BLOG: http://my.csdn.net/carterjin
+
+
+
+// The following two lines defines the package and classname field.
+// When using protoc.exe compiling it, compilier will create a Java file using the given package structure, and named Java file
+// using the given classname.
+// Ex. com.carter.roster.proto.Roster.java
+option java_package = "com.bingley.materialdesign";
+option java_outer_classname = "Roster";
+
+
+message Student{
+	required int32 id = 1;
+	required string name = 2;
+
+	enum Sex{
+		MALE = 0;
+		FEMALE = 1;
+	}
+
+	required Sex sex = 3;
+
+}
+
+
+
+message StudentRoster{
+	repeated Student student = 1;
+}

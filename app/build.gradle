@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.google.protobuf'
 
 android {
     compileSdkVersion 25
@@ -12,6 +13,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
 
 
@@ -76,6 +78,34 @@ android {
             maven { url "https://jitpack.io" }
         }
     }
+
+    protobuf {
+        protoc {
+            artifact = 'com.google.protobuf:protoc:3.0.0'
+        }
+
+        generateProtoTasks {
+            all().each { task ->
+                task.builtins {
+                    remove java
+                }
+                task.builtins {
+                    java { }
+                    cpp { }
+                }
+            }
+        }
+    }
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+            proto {
+                srcDir 'src/main/proto'
+            }
+        }
+    }
 }
 
 dependencies {
@@ -122,4 +152,8 @@ dependencies {
     compile project(path: ':swipeback')
     compile files('libs/xstream-1.4.7.jar')
     compile project(path: ':MPChartLib')
+
+
+    compile 'com.google.protobuf:protobuf-java:3.0.0'
+    compile 'com.android.support:multidex:1.0.1'
 }

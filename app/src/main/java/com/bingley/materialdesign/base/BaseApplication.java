@@ -3,12 +3,14 @@ package com.bingley.materialdesign.base;
 import android.app.Application;
 import android.content.Context;
 import android.os.Build;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
 
 /**
  * Created by Administrator on 2017/1/19.
  */
 
-public class BaseApplication extends Application {
+public class BaseApplication extends MultiDexApplication {
 
     public static boolean release = true;//是否是正式环境
 
@@ -25,6 +27,7 @@ public class BaseApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        MultiDex.install(this);
         _context = getApplicationContext();
     }
 
