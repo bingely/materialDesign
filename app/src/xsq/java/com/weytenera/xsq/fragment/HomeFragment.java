@@ -9,7 +9,7 @@ import com.bingley.materialdesign.base.BaseFragment;
 import com.bingley.materialdesign.http.okhttp.OkHttpUtils;
 import com.bingley.materialdesign.interf.OnTabReselectListener;
 import com.bingley.materialdesign.utils.LogUtils;
-import com.bingley.materialdesign.view.EmptyLayout;
+import com.bingley.materialdesign.view.EmptyLayout2;
 import com.bingley.materialdesign.view.RecyclerRefreshLayout;
 import com.weytenera.xsq.Urls;
 

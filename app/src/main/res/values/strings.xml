@@ -28,6 +28,11 @@
     <string name="text">Text</string>
     <string name="text_and_pic">Text And Pic</string>
 
+    <string name="footer_type_loading">正在加载中…</string>
+    <string name="footer_type_error">加载失败</string>
+    <string name="footer_type_net_error">网络错误</string>
+    <string name="footer_type_not_more">没有更多数据</string>
+
 
     <string-array name="recycler_list">
 

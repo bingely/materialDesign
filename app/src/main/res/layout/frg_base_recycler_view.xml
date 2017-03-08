@@ -19,7 +19,7 @@
             android:scrollbars="vertical" />
     </com.bingley.materialdesign.view.RecyclerRefreshLayout>
 
-    <com.bingley.materialdesign.view.EmptyLayout
+    <com.bingley.materialdesign.view.EmptyLayout2
         android:id="@+id/error_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

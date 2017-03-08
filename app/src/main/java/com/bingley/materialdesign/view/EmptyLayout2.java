@@ -12,7 +12,7 @@ import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.utils.TDevice;
 
 
-public class EmptyLayout extends LinearLayout implements
+public class EmptyLayout2 extends LinearLayout implements
         View.OnClickListener {// , ISkinUIObserver {
 
     public static final int HIDE_LAYOUT = 4;
@@ -22,6 +22,7 @@ public class EmptyLayout extends LinearLayout implements
     public static final int NODATA_ENABLE_CLICK = 5;
     public static final int NO_LOGIN = 6;
 
+
     private boolean clickEnable = true;
     private final Context context;
     public ImageView img;
@@ -29,15 +30,17 @@ public class EmptyLayout extends LinearLayout implements
     private int mErrorState;
     private String strNoDataContent = "";
     private TextView tv;
-    private LinearLayout mLoading;
 
-    public EmptyLayout(Context context) {
+    private LinearLayout mLordingProgress;
+    private IosProgress mLoading;
+
+    public EmptyLayout2(Context context) {
         super(context);
         this.context = context;
         init();
     }
 
-    public EmptyLayout(Context context, AttributeSet attrs) {
+    public EmptyLayout2(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
         init();
@@ -48,7 +51,8 @@ public class EmptyLayout extends LinearLayout implements
         img = (ImageView) view.findViewById(R.id.img_error_layout);
         tv = (TextView) view.findViewById(R.id.tv_error_layout);
         RelativeLayout mLayout = (RelativeLayout) view.findViewById(R.id.pageerrLayout);
-        mLoading = (LinearLayout) view.findViewById(R.id.loading_progress);
+        mLordingProgress = (LinearLayout) view.findViewById(R.id.loading_progress);
+        mLoading = (IosProgress) view.findViewById(R.id.animProgress);
         setBackgroundColor(-1);
         setOnClickListener(this);
         img.setOnClickListener(new OnClickListener() {
@@ -141,13 +145,13 @@ public class EmptyLayout extends LinearLayout implements
                 // img.setBackgroundDrawable(SkinsUtil.getDrawable(context,"pagefailed_bg"));
                 if (TDevice.hasInternet()) {
                     tv.setText(R.string.error_view_load_error_click_to_refresh);
-                    img.setBackgroundResource(R.drawable.pagefailed_bg);
+                    img.setBackgroundResource(R.mipmap.pagefailed_bg);
                 } else {
                     tv.setText(R.string.error_view_network_error_click_to_refresh);
-                    img.setBackgroundResource(R.drawable.page_icon_network);
+                    img.setBackgroundResource(R.mipmap.page_icon_network);
                 }
                 img.setVisibility(View.VISIBLE);
-                //mLoading.stop();
+                mLoading.stop();
                 mLoading.setVisibility(View.GONE);
                 clickEnable = true;
                 break;
@@ -155,7 +159,7 @@ public class EmptyLayout extends LinearLayout implements
                 mErrorState = NETWORK_LOADING;
                 // mLoading.setBackgroundDrawable(SkinsUtil.getDrawable(context,"loadingpage_bg"));
                 mLoading.setVisibility(View.VISIBLE);
-                //mLoading.start();
+                mLoading.start();
                 img.setVisibility(View.GONE);
                 tv.setText(R.string.error_view_loading);
                 clickEnable = false;
@@ -163,23 +167,23 @@ public class EmptyLayout extends LinearLayout implements
             case NODATA:
                 mErrorState = NODATA;
                 // img.setBackgroundDrawable(SkinsUtil.getDrawable(context,"page_icon_empty"));
-                img.setBackgroundResource(R.drawable.page_icon_empty);
+                img.setBackgroundResource(R.mipmap.page_icon_empty);
                 img.setVisibility(View.VISIBLE);
-                //mLoading.stop();
+                mLoading.stop();
                 mLoading.setVisibility(View.GONE);
                 setTvNoDataContent();
                 clickEnable = true;
                 break;
             case HIDE_LAYOUT:
-                //mLoading.stop();
+                mLoading.stop();
                 setVisibility(View.GONE);
                 break;
             case NODATA_ENABLE_CLICK:
                 mErrorState = NODATA_ENABLE_CLICK;
-                img.setBackgroundResource(R.drawable.page_icon_empty);
+                img.setBackgroundResource(R.mipmap.page_icon_empty);
                 // img.setBackgroundDrawable(SkinsUtil.getDrawable(context,"page_icon_empty"));
                 img.setVisibility(View.VISIBLE);
-                //mLoading.stop();
+                mLoading.stop();
                 mLoading.setVisibility(View.GONE);
                 setTvNoDataContent();
                 clickEnable = true;
