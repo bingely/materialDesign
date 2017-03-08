@@ -1,3 +1,4 @@
+/*
 package com.bingley.materialdesign.utils.pay.alipay;
 
 import android.app.Activity;
@@ -9,10 +10,12 @@ import com.alipay.sdk.app.PayTask;
 
 import java.util.Map;
 
+*/
 /**
  * 支付宝支付
  * Created by tsy on 16/6/1.
- */
+ *//*
+
 public class Alipay {
     private String mParams;
     private PayTask mPayTask;
@@ -72,3 +75,4 @@ public class Alipay {
         }).start();
     }
 }
+*/

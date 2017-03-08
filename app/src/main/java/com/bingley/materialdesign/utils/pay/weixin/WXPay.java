@@ -1,3 +1,4 @@
+/*
 package com.bingley.materialdesign.utils.pay.weixin;
 
 import android.content.Context;
@@ -11,10 +12,12 @@ import com.tencent.mm.sdk.openapi.WXAPIFactory;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+*/
 /**
  * 微信支付
  * Created by tsy on 16/6/1.
- */
+ *//*
+
 public class WXPay {
 
     private static WXPay mWXPay;
@@ -49,9 +52,11 @@ public class WXPay {
     public IWXAPI getWXApi() {
         return mWXApi;
     }
-    /**
+    */
+/**
      * 发起微信支付
-     */
+     *//*
+
     public void doPay(String pay_param, WXPayResultCallBack callback) {
         mPayParam = pay_param;
         mCallback = callback;
@@ -117,3 +122,4 @@ public class WXPay {
         return mWXApi.isWXAppInstalled() && mWXApi.getWXAppSupportAPI() >= Build.PAY_SUPPORTED_SDK_INT;
     }
 }
+*/

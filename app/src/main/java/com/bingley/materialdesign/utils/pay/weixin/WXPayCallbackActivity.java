@@ -1,3 +1,4 @@
+/*
 package com.bingley.materialdesign.utils.pay.weixin;
 
 import android.app.Activity;
@@ -52,3 +53,4 @@ public class WXPayCallbackActivity extends Activity implements IWXAPIEventHandle
         }
     }
 }
+*/
