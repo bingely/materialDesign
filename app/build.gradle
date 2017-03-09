@@ -175,8 +175,12 @@ dependencies {
     compile 'com.android.support:palette-v7:25.0.1'
 
 
-    // protobuf
+    // protobuf  比gson更强大
     compile 'com.google.protobuf:protobuf-java:3.0.0'
     // multidex
     compile 'com.android.support:multidex:1.0.1'
+
+    //  Custom Tabs Support Library 学习
+    compile 'com.android.support:customtabs:25.1.1'
+
 }

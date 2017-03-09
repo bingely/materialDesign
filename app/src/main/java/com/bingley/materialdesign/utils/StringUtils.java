@@ -357,4 +357,12 @@ public final class StringUtils {
         return "";
     }
 
+    public String DoubanDateFormat(long date){
+        String sDate;
+        Date d = new Date(date);
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        sDate = format.format(d);
+        return sDate;
+    }
+
 }

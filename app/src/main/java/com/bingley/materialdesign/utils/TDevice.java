@@ -129,12 +129,28 @@ public class TDevice {
         return true;
     }
 
+    /**
+     * 检查移动网络是否连接
+     * @param context
+     * @return
+     */
+    public static boolean isMobileDataConnected(Context context){
+        if (context != null){
+            ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo info = manager.getActiveNetworkInfo();
+            if (info != null){
+                if (info.getType() == ConnectivityManager.TYPE_MOBILE)
+                    return true;
+            }
+        }
+        return false;
+    }
+
 
     /**
      * 软键盘隐藏
      * @param view
      */
-
     public static void hideSoftKeyboard(View view) {
         if (view == null) return;
         View mFocusView = view;
@@ -170,7 +186,6 @@ public class TDevice {
      * 以下两个个方法分别为得到版本号，名字
      * @return
      */
-
     public static int getVersionCode() {
         return getVersionCode(BaseApplication.context().getPackageName());
     }
