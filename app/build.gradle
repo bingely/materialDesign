@@ -183,4 +183,7 @@ dependencies {
     //  Custom Tabs Support Library 学习
     compile 'com.android.support:customtabs:25.1.1'
 
+    // K线开源
+    compile 'com.github.zhangliangzs:KDemo:1.0.0'
+
 }
