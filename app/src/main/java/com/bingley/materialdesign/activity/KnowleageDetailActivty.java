@@ -9,14 +9,13 @@ import android.widget.FrameLayout;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
+import com.bingley.materialdesign.mvp.socket.MySocketFragment;
 import com.bingley.materialdesign.mvp.aidldemo.MAIDLFragment;
 import com.bingley.materialdesign.mvp.anim.AnimFragment;
 import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
 import com.bingley.materialdesign.mvp.jdong.JdFragment;
-import com.bingley.materialdesign.mvp.stock.CombinedChartFragment;
-import com.bingley.materialdesign.mvp.stock.KChartsFragment;
 import com.bingley.materialdesign.mvp.stock.KFragment;
 import com.bingley.materialdesign.mvp.stock.MinuntFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
@@ -29,7 +28,6 @@ import com.bingley.materialdesign.mvp.popwindow.PopwindowFragment;
 import com.bingley.materialdesign.mvp.scrolldemo.ScrollFragment;
 import com.bingley.materialdesign.mvp.sqlite.SqliteFragment;
 import com.bingley.materialdesign.mvp.stock.StockFragment;
-import com.bingley.materialdesign.mvp.stock.TimesFragment;
 import com.bingley.materialdesign.mvp.textview.TextViewFragment;
 import com.bingley.materialdesign.view.TitleView;
 
@@ -149,6 +147,13 @@ public class KnowleageDetailActivty extends BaseActivity {
                 //KChartsFragment kFragment = new KChartsFragment();
                // CombinedChartFragment kFragment = new CombinedChartFragment();
                 fragmentTransaction.add(R.id.fl_container, kFragment);
+                break;
+
+            case 17:
+                //setOrLANDSCAPE();
+                mTitleview.setTitle("Demo");
+                MySocketFragment mySocketFragment = new MySocketFragment();
+                fragmentTransaction.add(R.id.fl_container, mySocketFragment);
                 break;
 
             case 1000:

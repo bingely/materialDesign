@@ -186,4 +186,16 @@ dependencies {
     // K线开源
     compile 'com.github.zhangliangzs:KDemo:1.0.0'
 
+    // 研究socket
+    compile 'com.github.vilyever:AndroidSocketClient:3.0.3'
+
+    compile ('io.socket:socket.io-client:0.8.3') {
+        // excluding org.json which is provided by Android
+        exclude group: 'org.json', module: 'json'
+    }
+
+    compile 'com.koushikdutta.async:androidasync:2.+'
+
+
+
 }
