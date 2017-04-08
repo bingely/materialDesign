@@ -15,7 +15,7 @@ import com.bingley.materialdesign.mvp.anim.AnimFragment;
 import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
-import com.bingley.materialdesign.mvp.jdong.JdFragment;
+import com.bingley.materialdesign.mvp.pullreflsh.jdong.JdFragment;
 import com.bingley.materialdesign.mvp.stock.KFragment;
 import com.bingley.materialdesign.mvp.stock.MinuntFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;

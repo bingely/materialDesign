@@ -16,6 +16,13 @@ import android.widget.TextView;
 
 import com.bingley.materialdesign.R;
 
+ /**
+   * 自定义toast视图
+   * Author:  Mr.bingley
+   * Version:
+   * Date:  2017/4/8
+   */
+
 @TargetApi(Build.VERSION_CODES.HONEYCOMB)
 public class CommonToast {
     public static final long DURATION_LONG = 5000L;
