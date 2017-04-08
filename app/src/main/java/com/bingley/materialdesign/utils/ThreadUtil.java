@@ -10,6 +10,7 @@ import android.os.Handler;
    */
 /**
  *
+ * 使用帮助  1
  ThreadUtil.runInUIThread(new Runnable() {
         @Override
         public void run() {
@@ -18,6 +19,15 @@ import android.os.Handler;
         mAdapter.addMoreData(response.body());
 }
 }, MainActivity.LOADING_DURATION);
+
+
+  2  这个是一个view调用延时的操作
+ findViewById(R.id.app_start_view).postDelayed(new Runnable() {
+    @Override
+    public void run() {
+    redirectTo();
+    }
+}, 100);
  *
  */
 public class ThreadUtil {
