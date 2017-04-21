@@ -3,28 +3,34 @@ package com.example.bingpay;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.bingpay.bean.MarketChartData;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.util.List;
+
 /*
 * 一个是你的AIDL文件与它的Service所在的Module ---- 作为aidl示例代码
 *
 * */
 
 public class MainActivity extends AppCompatActivity {
+    MyKView mMyChartsView;
+    public String test = "[{\"closePrice\":6850.0,\"highPrice\":6850.0,\"lowPrice\":6850.0,\"openPrice\":6850.0,\"time\":1490864400,\"vol\":0.0},{\"closePrice\":6850.0,\"highPrice\":6880.0,\"lowPrice\":6850.0,\"openPrice\":6880.0,\"time\":1490863500,\"vol\":0.0},{\"closePrice\":6880.0,\"highPrice\":6920.0,\"lowPrice\":6880.0,\"openPrice\":6885.0,\"time\":1490862600,\"vol\":0.0},{\"closePrice\":6885.0,\"highPrice\":6900.1,\"lowPrice\":6882.0,\"openPrice\":6900.1,\"time\":1490861700,\"vol\":0.0},{\"closePrice\":6900.0,\"highPrice\":6921.0,\"lowPrice\":6900.0,\"openPrice\":6918.0,\"time\":1490860800,\"vol\":0.0},{\"closePrice\":6918.0,\"highPrice\":6929.99,\"lowPrice\":6918.0,\"openPrice\":6929.99,\"time\":1490859900,\"vol\":0.0},{\"closePrice\":6937.99,\"highPrice\":6937.99,\"lowPrice\":6937.99,\"openPrice\":6937.99,\"time\":1490859000,\"vol\":0.0},{\"closePrice\":6937.99,\"highPrice\":6937.99,\"lowPrice\":6920.0,\"openPrice\":6920.0,\"time\":1490858100,\"vol\":0.0},{\"closePrice\":6920.0,\"highPrice\":6938.0,\"lowPrice\":6915.0,\"openPrice\":6916.0,\"time\":1490857200,\"vol\":0.0},{\"closePrice\":6916.0,\"highPrice\":6918.68,\"lowPrice\":6916.0,\"openPrice\":6918.68,\"time\":1490856300,\"vol\":0.0},{\"closePrice\":6938.0,\"highPrice\":6939.99,\"lowPrice\":6917.0,\"openPrice\":6917.0,\"time\":1490855400,\"vol\":0.0},{\"closePrice\":6915.12,\"highPrice\":6915.12,\"lowPrice\":6915.0,\"openPrice\":6915.11,\"time\":1490854500,\"vol\":0.0},{\"closePrice\":6915.11,\"highPrice\":6915.11,\"lowPrice\":6915.0,\"openPrice\":6915.0,\"time\":1490853600,\"vol\":0.0},{\"closePrice\":6913.1,\"highPrice\":6913.2,\"lowPrice\":6913.1,\"openPrice\":6913.15,\"time\":1490852700,\"vol\":0.0},{\"closePrice\":6912.1,\"highPrice\":6918.59,\"lowPrice\":6912.1,\"openPrice\":6918.59,\"time\":1490851800,\"vol\":0.0},{\"closePrice\":6909.13,\"highPrice\":6909.13,\"lowPrice\":6900.0,\"openPrice\":6900.01,\"time\":1490850900,\"vol\":0.0},{\"closePrice\":6905.96,\"highPrice\":6907.0,\"lowPrice\":6900.01,\"openPrice\":6907.0,\"time\":1490850000,\"vol\":0.0},{\"closePrice\":6906.0,\"highPrice\":6933.99,\"lowPrice\":6906.0,\"openPrice\":6933.99,\"time\":1490849100,\"vol\":0.0},{\"closePrice\":6940.0,\"highPrice\":6950.02,\"lowPrice\":6935.22,\"openPrice\":6943.0,\"time\":1490848200,\"vol\":0.0},{\"closePrice\":6942.0,\"highPrice\":6942.0,\"lowPrice\":6940.0,\"openPrice\":6940.01,\"time\":1490847300,\"vol\":0.0},{\"closePrice\":6970.0,\"highPrice\":6970.0,\"lowPrice\":6970.0,\"openPrice\":6970.0,\"time\":1490846400,\"vol\":0.0},{\"closePrice\":6962.0,\"highPrice\":6962.0,\"lowPrice\":6940.0,\"openPrice\":6940.0,\"time\":1490845500,\"vol\":0.0},{\"closePrice\":6950.0,\"highPrice\":6970.0,\"lowPrice\":6950.0,\"openPrice\":6970.0,\"time\":1490844600,\"vol\":0.0},{\"closePrice\":6978.0,\"highPrice\":6978.0,\"lowPrice\":6978.0,\"openPrice\":6978.0,\"time\":1490843700,\"vol\":0.0},{\"closePrice\":6968.0,\"highPrice\":6968.0,\"lowPrice\":6940.01,\"openPrice\":6960.01,\"time\":1490842800,\"vol\":0.0},{\"closePrice\":6960.0,\"highPrice\":6961.0,\"lowPrice\":6921.05,\"openPrice\":6961.0,\"time\":1490841900,\"vol\":0.0},{\"closePrice\":6940.0,\"highPrice\":6961.0,\"lowPrice\":6920.0,\"openPrice\":6920.0,\"time\":1490841000,\"vol\":0.0},{\"closePrice\":6919.0,\"highPrice\":6940.03,\"lowPrice\":6919.0,\"openPrice\":6940.03,\"time\":1490840100,\"vol\":0.0},{\"closePrice\":6978.0,\"highPrice\":6979.0,\"lowPrice\":6940.03,\"openPrice\":6979.0,\"time\":1490839200,\"vol\":0.0},{\"closePrice\":6979.0,\"highPrice\":6979.78,\"lowPrice\":6942.21,\"openPrice\":6961.0,\"time\":1490838300,\"vol\":0.0},{\"closePrice\":6980.78,\"highPrice\":6986.39,\"lowPrice\":6980.78,\"openPrice\":6986.38,\"time\":1490837400,\"vol\":0.0},{\"closePrice\":6942.21,\"highPrice\":6942.21,\"lowPrice\":6942.21,\"openPrice\":6942.21,\"time\":1490836500,\"vol\":0.0},{\"closePrice\":6942.21,\"highPrice\":6942.22,\"lowPrice\":6942.21,\"openPrice\":6942.22,\"time\":1490835600,\"vol\":0.0},{\"closePrice\":6942.22,\"highPrice\":6961.0,\"lowPrice\":6942.21,\"openPrice\":6961.0,\"time\":1490834700,\"vol\":0.0},{\"closePrice\":6982.0,\"highPrice\":6982.0,\"lowPrice\":6982.0,\"openPrice\":6982.0,\"time\":1490833800,\"vol\":0.0},{\"closePrice\":6940.03,\"highPrice\":7000.0,\"lowPrice\":6940.03,\"openPrice\":7000.0,\"time\":1490832900,\"vol\":0.0},{\"closePrice\":7000.0,\"highPrice\":7000.0,\"lowPrice\":6919.0,\"openPrice\":6919.0,\"time\":1490832000,\"vol\":0.0},{\"closePrice\":6920.0,\"highPrice\":6960.0,\"lowPrice\":6920.0,\"openPrice\":6930.0,\"time\":1490831100,\"vol\":0.0},{\"closePrice\":6930.0,\"highPrice\":6930.01,\"lowPrice\":6921.0,\"openPrice\":6930.01,\"time\":1490830200,\"vol\":0.0},{\"closePrice\":6930.01,\"highPrice\":6960.0,\"lowPrice\":6930.01,\"openPrice\":6960.0,\"time\":1490829300,\"vol\":0.0},{\"closePrice\":6935.01,\"highPrice\":6950.0,\"lowPrice\":6935.01,\"openPrice\":6950.0,\"time\":1490828400,\"vol\":0.0},{\"closePrice\":6941.0,\"highPrice\":6941.0,\"lowPrice\":6939.0,\"openPrice\":6939.0,\"time\":1490827500,\"vol\":0.0},{\"closePrice\":6940.0,\"highPrice\":6940.0,\"lowPrice\":6940.0,\"openPrice\":6940.0,\"time\":1490826600,\"vol\":0.0},{\"closePrice\":6940.0,\"highPrice\":6940.0,\"lowPrice\":6940.0,\"openPrice\":6940.0,\"time\":1490825700,\"vol\":0.0},{\"closePrice\":6980.0,\"highPrice\":6980.0,\"lowPrice\":6970.0,\"openPrice\":6970.0,\"time\":1490824800,\"vol\":0.0},{\"closePrice\":6980.0,\"highPrice\":6980.0,\"lowPrice\":6940.0,\"openPrice\":6940.0,\"time\":1490816700,\"vol\":0.0},{\"closePrice\":6920.0,\"highPrice\":6920.01,\"lowPrice\":6920.0,\"openPrice\":6920.01,\"time\":1490815800,\"vol\":0.0},{\"closePrice\":6920.01,\"highPrice\":6979.88,\"lowPrice\":6920.01,\"openPrice\":6979.88,\"time\":1490814900,\"vol\":0.0},{\"closePrice\":6908.11,\"highPrice\":6908.11,\"lowPrice\":6908.11,\"openPrice\":6908.11,\"time\":1490813100,\"vol\":0.0},{\"closePrice\":6906.0,\"highPrice\":6940.0,\"lowPrice\":6906.0,\"openPrice\":6940.0,\"time\":1490812200,\"vol\":0.0},{\"closePrice\":6980.0,\"highPrice\":6980.0,\"lowPrice\":6939.0,\"openPrice\":6940.0,\"time\":1490811300,\"vol\":0.0},{\"closePrice\":6961.0,\"highPrice\":6961.0,\"lowPrice\":6961.0,\"openPrice\":6961.0,\"time\":1490810400,\"vol\":0.0},{\"closePrice\":6961.0,\"highPrice\":6961.0,\"lowPrice\":6961.0,\"openPrice\":6961.0,\"time\":1490807700,\"vol\":0.0},{\"closePrice\":6940.0,\"highPrice\":6940.0,\"lowPrice\":6940.0,\"openPrice\":6940.0,\"time\":1490804100,\"vol\":0.0},{\"closePrice\":6940.0,\"highPrice\":6940.0,\"lowPrice\":6900.02,\"openPrice\":6920.0,\"time\":1490802300,\"vol\":0.0},{\"closePrice\":6940.0,\"highPrice\":6971.0,\"lowPrice\":6917.0,\"openPrice\":6971.0,\"time\":1490801400,\"vol\":0.0},{\"closePrice\":6971.0,\"highPrice\":6979.99,\"lowPrice\":6940.0,\"openPrice\":6945.0,\"time\":1490800500,\"vol\":0.0},{\"closePrice\":6941.0,\"highPrice\":6999.0,\"lowPrice\":6941.0,\"openPrice\":6971.0,\"time\":1490799600,\"vol\":0.0},{\"closePrice\":6970.0,\"highPrice\":7000.0,\"lowPrice\":6970.0,\"openPrice\":6999.0,\"time\":1490798700,\"vol\":0.0},{\"closePrice\":6980.0,\"highPrice\":6982.0,\"lowPrice\":6920.8,\"openPrice\":6940.0,\"time\":1490797800,\"vol\":0.0},{\"closePrice\":6960.0,\"highPrice\":6963.99,\"lowPrice\":6930.02,\"openPrice\":6963.99,\"time\":1490796900,\"vol\":0.0},{\"closePrice\":6982.0,\"highPrice\":7024.99,\"lowPrice\":6982.0,\"openPrice\":7003.0,\"time\":1490796000,\"vol\":0.0}]";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        mMyChartsView = (MyKView) findViewById(R.id.my_charts_view);
 
-       /*
-        这个项目难在什么地方呢？？？
-        第一 socket通讯（我存在无法获取消息的苦恼）
-        第二 K线图的绘制
-        第三  协议的理解
 
-        这尼玛不是人做的事啊，太尼玛的难了。
-        时间在慢慢的流逝当中，而自己的进度又是没有进展啊，苦恼苦恼
-
-        */
+        Gson gson = new Gson();
+        List<MarketChartData> datas = gson.fromJson(test, new TypeToken<List<MarketChartData>>() {}.getType());
+        String strJson = gson.toJson(datas);
+        mMyChartsView.setOHLCData(datas);
+        mMyChartsView.postInvalidate();
     }
 }

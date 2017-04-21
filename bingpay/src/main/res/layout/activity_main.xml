@@ -5,9 +5,10 @@
     tools:context="com.example.bingpay.MainActivity">
 
 
-    <com.example.bingpay.MyGridChartView
+    <com.example.bingpay.MyKView
+        android:id="@+id/my_charts_view"
         android:layout_marginTop="4dp"
         android:layout_width="match_parent" android:layout_height="match_parent">
 
-    </com.example.bingpay.MyGridChartView>
+    </com.example.bingpay.MyKView>
 </RelativeLayout>
