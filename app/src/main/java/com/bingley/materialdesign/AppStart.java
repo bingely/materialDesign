@@ -32,11 +32,6 @@ public class AppStart extends Activity {
         }, 100);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
     /**
      * 跳转到...
      */

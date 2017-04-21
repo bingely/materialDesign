@@ -187,15 +187,16 @@ dependencies {
     compile 'com.github.zhangliangzs:KDemo:1.0.0'
 
     // 研究socket
-    compile 'com.github.vilyever:AndroidSocketClient:3.0.3'
+    compile 'com.github.vilyever:AndroidSocketClient:2.0.1'
 
     compile ('io.socket:socket.io-client:0.8.3') {
         // excluding org.json which is provided by Android
         exclude group: 'org.json', module: 'json'
     }
 
-    compile 'com.koushikdutta.async:androidasync:2.+'
-
+    // bga
+    compile 'cn.bingoogolapple:bga-refreshlayout:1.1.7@aar'
+    compile 'cn.bingoogolapple:bga-adapter:1.1.9@aar'
 
 
 }

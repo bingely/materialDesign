@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--这个目录主要成分TextView字体变化颜色的xml-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/blue" android:state_pressed="true" />
+    <item android:color="@color/blue" android:state_selected="true" />
+    <item android:color="@android:color/white" />
+</selector>

@@ -13,11 +13,11 @@ public class AppConfig {
 
 
     // 远程IP
-    // public final static String REMOTE_IP = "116.62.24.125";
-    public final static String REMOTE_IP = "192.168.10.234";
+     public final static String REMOTE_IP = "116.62.24.125";
+   // public final static String REMOTE_IP = "192.168.31.206";
     // 远程Port
     //public final static String REMOTE_PORT = "8911";
-    public final static String REMOTE_PORT = "60000";
+    public final static String REMOTE_PORT = "8511";
     public final static String REMOTE_PORT2 = "9010";
 
     public static final String HOST = BaseApplication.release ? "https://www.xsq518.com/" : "https://www.51zlcm.com/";//host  8800

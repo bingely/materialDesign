@@ -9,13 +9,14 @@ import android.widget.FrameLayout;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MaterialListFragment;
+import com.bingley.materialdesign.mvp.pullreflsh.bga.ScrollViewFragment;
 import com.bingley.materialdesign.mvp.socket.MySocketFragment;
 import com.bingley.materialdesign.mvp.aidldemo.MAIDLFragment;
 import com.bingley.materialdesign.mvp.anim.AnimFragment;
 import com.bingley.materialdesign.mvp.customview.CustomViewFragment;
 import com.bingley.materialdesign.mvp.dialog.DialogFragment;
 import com.bingley.materialdesign.mvp.elmssearch.ElmFrament;
-import com.bingley.materialdesign.mvp.jdong.JdFragment;
+import com.bingley.materialdesign.mvp.pullreflsh.jdong.JdFragment;
 import com.bingley.materialdesign.mvp.stock.KFragment;
 import com.bingley.materialdesign.mvp.stock.MinuntFragment;
 import com.bingley.materialdesign.mvp.lunbo.LunboFragment;
@@ -71,7 +72,7 @@ public class KnowleageDetailActivty extends BaseActivity {
                 break;
             case 2:
                 mTitleview.setTitle("下拉刷新");
-                JdFragment jdFragment = new JdFragment();
+                ScrollViewFragment jdFragment = new ScrollViewFragment();
                 fragmentTransaction.add(R.id.fl_container, jdFragment);
                 break;
             case 3:

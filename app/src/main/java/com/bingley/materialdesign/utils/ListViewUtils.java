@@ -8,7 +8,7 @@ import android.widget.ListView;
 /**
  * @author Mr.bingley
  * @version 1.0.0
- * @des $des$
+ * @des 当listview孩子多的情况下使用的
  * @since 2016/11/14.
  */
 public class ListViewUtils {
