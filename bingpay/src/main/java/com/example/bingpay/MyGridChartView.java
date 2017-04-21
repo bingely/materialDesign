@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Paint;
+import android.graphics.Path;
 import android.graphics.PathEffect;
 import android.graphics.PointF;
 import android.util.AttributeSet;
@@ -168,7 +169,8 @@ public class MyGridChartView extends View {
         DEFAULT_AXIS_XYCLICK_COLOR= context.getResources().getColor(R.color.kViewclickblack);
         DEFAULT_AXIS_COLOR = DEFAULT_AXIS_TITLE_COLOR;
         mAxisColor = DEFAULT_AXIS_COLOR;
-        mLongiLatitudeColor = DEFAULT_LONGI_LAITUDE_COLOR;
+        //mLongiLatitudeColor = DEFAULT_LONGI_LAITUDE_COLOR;
+        mLongiLatitudeColor = Color.RED;
         initSize();
         mDashEffect = DEFAULT_DASH_EFFECT;
         mBorderColor = Color.RED;
@@ -203,15 +205,138 @@ public class MyGridChartView extends View {
         int viewHeight = getHeight();
         int viewWidth = getWidth();
 
+        //经度(竖线) (间隔距离）
+        longitudeSpacing = (viewWidth - DEFAULT_AXIS_MARGIN_RIGHT-2)/DEFAULT_LOGITUDE_NUM;
+        //维度#####4-8 (间隔距离）
+        //latitudeSpacing =(viewHeight - TITLE_HEIGHT*9)/(DEFAULT_UPER_LATITUDE_NUM+DEFAULT_LOWER_LATITUDE_NUM+DEFAULT_MIDDLE_LATITUDE_NUM);
+        latitudeSpacing =(viewHeight - TITLE_HEIGHT*9)/(DEFAULT_UPER_LATITUDE_NUM);
+
+        // 上、中、下表距离
+        mUperChartHeight = DEFAULT_UPER_LATITUDE_NUM*latitudeSpacing;
+        mMiddleChartHeight = DEFAULT_MIDDLE_LATITUDE_NUM*latitudeSpacing;
+        mLowerChartHeight = DEFAULT_LOWER_LATITUDE_NUM*latitudeSpacing;
+
+
+        UPER_CHART_MARGIN_TOP = 3*TITLE_HEIGHT;
+        //###加上表间隔
+        UPER_CHART_TOP = TITLE_HEIGHT+UPER_CHART_MARGIN_TOP;
+        UPER_CHART_MARGIN_BOTTOM = 2*TITLE_HEIGHT;
+
+        MIDDLE_CHART_TOP = 3*TITLE_HEIGHT+mUperChartHeight+UPER_CHART_MARGIN_BOTTOM+UPER_CHART_MARGIN_TOP;
+        LOWER_CHART_TOP =MIDDLE_CHART_TOP+mMiddleChartHeight+TITLE_HEIGHT;
+
         // 绘制边框
         drawBorders(canvas, viewHeight, viewWidth);
+
+        // 绘制纬线
+        drawLatitudes(canvas, viewWidth, latitudeSpacing);
+        // 绘制经线
+        drawLongitudes(canvas,longitudeSpacing);
 
     }
 
 
 
     /**
-     * 绘制边框
+     * 绘制经线
+     *
+     * @param canvas
+     */
+    private void drawLongitudes(Canvas canvas, float longitudeSpacing) {
+        if(axisXTitles==null)
+            return;
+        Paint paint = new Paint();
+        paint.setColor(mLongiLatitudeColor);
+        paint.setPathEffect(mDashEffect);
+        paint.setTextSize(DEFAULT_AXIS_TITLE_SIZE);
+
+
+        Paint paintAxis = new Paint();
+        paintAxis.setColor(mAxisColor);
+        paintAxis.setTextSize(DEFAULT_AXIS_TITLE_SIZE);
+
+        for (int i = 0; i < axisXTitles.size(); i++) {
+            float tWidth = paint.measureText(axisXTitles.get(i));
+            // 绘制刻度
+            canvas.drawText(axisXTitles.get(i), super.getWidth()-DEFAULT_AXIS_MARGIN_RIGHT-longitudeSpacing * (i)-tWidth, TITLE_HEIGHT + mUperChartHeight +UPER_CHART_MARGIN_BOTTOM+UPER_CHART_MARGIN_TOP+DEFAULT_AXIS_TITLE_SIZE, paintAxis);
+
+        }
+    }
+
+
+
+    /**
+     * 绘制纬线
+     *
+     * @param canvas
+     * @param viewWidth
+     */
+    private void drawLatitudes(Canvas canvas, int viewWidth, float latitudeSpacing) {
+        Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+        paint.setColor(Color.RED);
+        paint.setPathEffect(mDashEffect);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1);
+        paint.setTextSize(DEFAULT_AXIS_TITLE_SIZE);
+
+        Paint paintAxis = new Paint();
+        paintAxis.setColor(Color.RED);
+        paintAxis.setTextSize(DEFAULT_AXIS_TITLE_SIZE);
+
+        Path path = new Path();
+        path.moveTo(0, UPER_CHART_TOP);
+        path.lineTo(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,UPER_CHART_TOP);   //第二条
+        canvas.drawPath(path, paint);
+
+
+        path.moveTo(0, TITLE_HEIGHT);
+        path.lineTo(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,TITLE_HEIGHT);  // 最上面一条虚线
+        canvas.drawPath(path, paint);
+
+        path.moveTo(0, MIDDLE_CHART_TOP-2*TITLE_HEIGHT-UPER_CHART_MARGIN_BOTTOM);
+        path.lineTo(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,MIDDLE_CHART_TOP-2*TITLE_HEIGHT-UPER_CHART_MARGIN_BOTTOM); // 最底下第二个个虚线
+        canvas.drawPath(path, paint);
+
+        path.moveTo(0, MIDDLE_CHART_TOP-TITLE_HEIGHT);
+        path.lineTo(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,MIDDLE_CHART_TOP-TITLE_HEIGHT);  // 最底下一个虚线
+        canvas.drawPath(path, paint);
+
+        path.moveTo(0, MIDDLE_CHART_TOP-2*TITLE_HEIGHT);
+        path.lineTo(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,MIDDLE_CHART_TOP-2*TITLE_HEIGHT);
+        canvas.drawPath(path, paint);
+
+        path.moveTo(0, LOWER_CHART_TOP-TITLE_HEIGHT);
+        path.lineTo(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,LOWER_CHART_TOP-TITLE_HEIGHT);
+        canvas.drawPath(path, paint);   // 控制最高最低，横坐标的横线。  // 为啥现在画看不到效果
+
+
+        //刻度颜色
+        paint.setColor(mLongiLatitudeColor);
+        for (int i = 0; i <DEFAULT_UPER_LATITUDE_NUM; i++) {
+            //线
+
+            path.moveTo(0, UPER_CHART_TOP+latitudeSpacing * (i+1));
+            path.lineTo(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,UPER_CHART_TOP  + latitudeSpacing * (i+1));
+            // canvas.drawPath(path, paint);
+
+            if(axisYTitles!=null)
+            {
+                // 绘制Y刻度
+                canvas.drawText(axisYTitles.get(i), viewWidth-DEFAULT_AXIS_MARGIN_RIGHT, MIDDLE_CHART_TOP-2*TITLE_HEIGHT-UPER_CHART_MARGIN_BOTTOM-latitudeSpacing*(i), paintAxis);
+                if(i==DEFAULT_UPER_LATITUDE_NUM-1)
+                {
+                    canvas.drawText(axisYTitles.get(DEFAULT_UPER_LATITUDE_NUM), viewWidth-DEFAULT_AXIS_MARGIN_RIGHT, MIDDLE_CHART_TOP-2*TITLE_HEIGHT-UPER_CHART_MARGIN_BOTTOM-latitudeSpacing*(DEFAULT_UPER_LATITUDE_NUM), paintAxis);
+
+                }
+            }
+
+        }
+
+    }
+
+
+    /**
+     * 绘制边框   以屏幕左上角作为起始值（0,0），向下为正值
      *
      * @param canvas
      */
@@ -219,13 +344,25 @@ public class MyGridChartView extends View {
         Paint paint = new Paint();
         paint.setColor(mBorderColor);
         paint.setStrokeWidth(1);
-        canvas.drawLine(0, 0, 0,viewHeight, paint);
-        canvas.drawLine(0, 0, viewWidth,0, paint);
-     /*   canvas.drawLine(viewWidth-1, 0, viewWidth-1,viewHeight-1, paint);
+        canvas.drawLine(0, 0, 0,viewHeight, paint);  // 最左侧的竖线
+        canvas.drawLine(0, 0, viewWidth,0, paint);  // 最上面的竖线
+        canvas.drawLine(viewWidth-1, 0, viewWidth-1,viewHeight-1, paint);  // 最右侧的竖线
         canvas.drawLine(0,viewHeight-1, viewWidth-1,viewHeight-1, paint);
-        canvas.drawLine(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,0, viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,viewHeight, paint);*/
-
+        canvas.drawLine(viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,0, viewWidth-DEFAULT_AXIS_MARGIN_RIGHT,viewHeight, paint);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     private int measureWidth(int measureSpec) {
         int result = 0;
