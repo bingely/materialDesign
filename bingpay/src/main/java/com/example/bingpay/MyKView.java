@@ -40,7 +40,7 @@ public class MyKView extends MyGridChartView{
     private int mDataStartIndext;
 
     /**
-     * 显示的OHLC数据个数
+     * 显示的OHLC数据个数(ohlc是外汇;O:代表开盘汇率Open;H:代表最高汇率High;L:代表最低汇率Low;C:代表收盘汇率Close)
      */
     private int mShowDataNum;
     private int showNum = 0;
@@ -143,15 +143,50 @@ public class MyKView extends MyGridChartView{
     private MarketChartData topMarketInfo;
 
 
-
     public MyKView(Context context) {
         super(context);
+        initInvioment(context);
+        initBaseData();
     }
+
+
 
     public MyKView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initInvioment(context);
+        initBaseData();
     }
 
+    /**
+     * 初始化上下文环境
+     * @param context
+     */
+    private void initInvioment(Context context) {
+        mConext = context;
+        res = mConext.getResources();
+    }
+
+    /**
+     * 初始化基础数据
+     */
+    private void initBaseData() {
+        mShowDataNum = DEFAULT_CANDLE_NUM;    // 定义为变量而不是 具体的值 ，这与下面几个有区别的
+        mDataStartIndext = 0;
+        mMaxPrice = 0;
+        mMinPrice = 0;
+        mShowMACD = false;
+        mShowJKD = false;
+        kline5dayline = res.getColor(R.color.kline5dayline);
+        kline10dayline = res.getColor(R.color.kline10dayline);
+        kline30dayline = res.getColor(R.color.kline30dayline);
+        klineRed = res.getColor(R.color.klinered);
+        klineGreen = res.getColor(R.color.klinegreen);
+    }
+
+    /**
+     * 设置K线数据
+     * @param OHLCData
+     */
     public void setOHLCData(List<MarketChartData> OHLCData) {
         //分时，小时切换，重置  mDataStartIndext
         mDataStartIndext = 0;

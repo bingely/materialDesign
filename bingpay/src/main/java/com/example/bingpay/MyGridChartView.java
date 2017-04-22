@@ -144,24 +144,24 @@ public class MyGridChartView extends View {
 
     public MyGridChartView(Context context) {
         super(context);
-        init(context);
+        initBaseData(context);
     }
 
     public MyGridChartView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context);
+        initBaseData(context);
     }
 
     public MyGridChartView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context);
+        initBaseData(context);
     }
 
     /**
      * 初始化一些数值
      * @param context
      */
-    private void init(Context context) {
+    private void initBaseData(Context context) {
         mContext = context;
         mBackGround = context.getResources().getColor(R.color.klinebg);
         DEFAULT_AXIS_TITLE_COLOR = context.getResources().getColor(R.color.kViewztblack);
@@ -242,7 +242,7 @@ public class MyGridChartView extends View {
      *
      * @param canvas
      */
-    private void drawLongitudes(Canvas canvas, float longitudeSpacing) {
+    private void drawLongitudes(Canvas canvas, float longitudeSpacing)  {
         if(axisXTitles==null)
             return;
         Paint paint = new Paint();
@@ -355,7 +355,21 @@ public class MyGridChartView extends View {
 
 
 
+    /**
+     * 单点击事件
+     */
+    protected void drawWithFingerClick(Canvas canvas) {
+        Paint paint = new Paint();
+        paint.setColor(getResources().getColor(R.color.colorPrimary));   // 上次为什么识别不了放在其它目录的颜色值
+        paint.setStrokeWidth(2);
 
+        float lineVlenth = getHeight() - 2f;       // 为啥钟爱 float类型的数据
+
+
+        float startX = touchPoint.x > super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT ? super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT : touchPoint.x;
+        float StopX = touchPoint.x > super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT ? super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT : touchPoint.x;
+        canvas.drawLine(startX,1f,StopX,lineVlenth,paint);
+    }
 
 
 
