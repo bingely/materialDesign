@@ -1,16 +1,17 @@
 package com.bingley.materialdesign.mvp.ikvstock.compat;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
+import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.mvp.ikvstock.entry.SizeColor;
 
 /**
-   *
-   * Author:  Mr.bingley
-   * Version:
-   * Date:  2017/5/11
-   */
+ * Author:  Mr.bingley
+ * Version:
+ * Date:  2017/5/11
+ */
 
 public class ViewUtils {
     /**
@@ -34,10 +35,36 @@ public class ViewUtils {
      * 初始化 SizeColor
      */
     public static SizeColor getSizeColor(Context context, AttributeSet attrs, int defStyleAttr) {
+        TypedArray a = context.getTheme().obtainStyledAttributes(attrs, R.styleable.InteractiveKLineView, defStyleAttr, defStyleAttr);
 
-        return null;
+        SizeColor sizeColor = new SizeColor();
+
+
+        try {
+            // 与轴、网格有关的属性
+            sizeColor.setXLabelSize(a.getDimension(R.styleable.InteractiveKLineView_xLabelSize,
+                    sizeColor.getXLabelSize()));
+
+            sizeColor.setXLabelColor(a.getColor(R.styleable.InteractiveKLineView_xLabelColor,
+                    sizeColor.getXLabelColor()));
+
+            sizeColor.setXLabelViewHeight(a.getDimension(R.styleable.InteractiveKLineView_xLabelViewHeight,
+                    sizeColor.getXLabelViewHeight()));
+
+            sizeColor.setYLabelSize(a.getDimension(R.styleable.InteractiveKLineView_yLabelSize,
+                    sizeColor.getYLabelSize()));
+
+            sizeColor.setYLabelColor(a.getColor(R.styleable.InteractiveKLineView_yLabelColor,
+                    sizeColor.getYLabelColor()));
+
+
+            //int align = a.getInteger(R.styleable.inal)
+
+        } catch (Exception e) {
+            a.recycle();
+        }
+        return sizeColor;
     }
-
 
 
 }
