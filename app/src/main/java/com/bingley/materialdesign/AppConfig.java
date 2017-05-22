@@ -13,8 +13,8 @@ public class AppConfig {
 
 
     // 远程IP
-     public final static String REMOTE_IP = "116.62.24.125";
-   // public final static String REMOTE_IP = "192.168.31.206";
+    public final static String REMOTE_IP = "116.62.24.125";
+    // public final static String REMOTE_IP = "192.168.31.206";
     // 远程Port
     //public final static String REMOTE_PORT = "8911";
     public final static String REMOTE_PORT = "8511";
@@ -41,4 +41,5 @@ public class AppConfig {
             + File.separator
             + "OSChina"
             + File.separator + "download" + File.separator;
+    public static final String OSCINFO = "oscinfo";
 }

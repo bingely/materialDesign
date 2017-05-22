@@ -1,8 +1,10 @@
-package com.example.bingpay;
+package com.example.bingpay.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.bingpay.MyKView;
+import com.example.bingpay.R;
 import com.example.bingpay.bean.MarketChartData;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

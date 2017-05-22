@@ -32,169 +32,178 @@
     </com.bingley.materialdesign.view.RevealLayout>
 
 
-<!--    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/bt_meinfo"
         android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:orientation="vertical">
+        android:layout_width="123dp"
+        android:layout_margin="@dimen/distance_10"
+        android:text="一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果"/>
 
-        <LinearLayout
+
+
+    <!--    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@android:color/white"
+            android:gravity="bottom"
             android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/rl_message"
-                style="@style/option_item_rl">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
 
-                <ImageView
-                    style="@style/option_item_img"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_my_messege" />
+                <LinearLayout
+                    android:id="@+id/rl_message"
+                    style="@style/option_item_rl">
 
-                <TextView
-                    style="@style/option_item_text"
-                    android:text="@string/message" />
+                    <ImageView
+                        style="@style/option_item_img"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_messege" />
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:text="@string/message" />
+
+                    <View
+                        android:id="@+id/user_info_notice_message"
+                        android:layout_width="8dp"
+                        android:layout_height="8dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:background="@drawable/ic_red_dot"
+                        android:visibility="invisible" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="10dp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:id="@+id/imageView10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
 
                 <View
-                    android:id="@+id/user_info_notice_message"
-                    android:layout_width="8dp"
-                    android:layout_height="8dp"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="4dp"
-                    android:background="@drawable/ic_red_dot"
-                    android:visibility="invisible" />
+                    style="@style/h_line"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="46dp"
+                    android:background="@color/list_divider_color" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/rl_blog"
+                    style="@style/option_item_rl">
+
+                    <ImageView
+                        style="@style/option_item_img"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_blog" />
+
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/blog" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
 
                 <View
-                    android:layout_width="0dp"
-                    android:layout_height="10dp"
-                    android:layout_weight="1" />
-
-                <ImageView
-                    android:id="@+id/imageView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_arrow_right" />
+                    style="@style/h_line"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="46dp"
+                    android:background="@color/list_divider_color" />
             </LinearLayout>
-
-            <View
-                style="@style/h_line"
-                android:layout_height="1px"
-                android:layout_marginLeft="46dp"
-                android:background="@color/list_divider_color" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/rl_blog"
-                style="@style/option_item_rl">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
 
-                <ImageView
-                    style="@style/option_item_img"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_my_blog" />
+                <LinearLayout
+                    android:id="@+id/rl_info_avtivities"
+                    style="@style/option_item_rl">
 
-                <TextView
-                    style="@style/option_item_text"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/blog" />
+                    <ImageView
+                        style="@style/option_item_img"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_event" />
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_arrow_right" />
+                    <TextView
+                        style="@style/option_item_text"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/actionbar_title_event" />
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
+
+                <View
+                    style="@style/h_line"
+                    android:layout_height="1px"
+                    android:layout_marginLeft="46dp"
+                    android:background="@color/list_divider_color" />
+
             </LinearLayout>
-
-            <View
-                style="@style/h_line"
-                android:layout_height="1px"
-                android:layout_marginLeft="46dp"
-                android:background="@color/list_divider_color" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/rl_info_avtivities"
-                style="@style/option_item_rl">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:orientation="vertical">
 
-                <ImageView
-                    style="@style/option_item_img"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_my_event" />
+                <LinearLayout
+                    android:id="@+id/rl_team"
+                    style="@style/option_item_rl">
 
-                <TextView
-                    style="@style/option_item_text"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/actionbar_title_event" />
+                    <ImageView
+                        style="@style/option_item_img"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_my_team" />
 
-                <ImageView
-                    android:id="@+id/imageView5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_arrow_right" />
+                    <TextView
+                        android:id="@+id/textView3"
+                        style="@style/option_item_text"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:text="@string/team" />
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:contentDescription="@null"
+                        android:src="@mipmap/ic_arrow_right" />
+                </LinearLayout>
+
+                &lt;!&ndash;<View&ndash;&gt;
+                &lt;!&ndash;style="@style/h_line"&ndash;&gt;
+                &lt;!&ndash;android:layout_height="1px"&ndash;&gt;
+                &lt;!&ndash;android:background="@color/list_divider_color" />&ndash;&gt;
             </LinearLayout>
 
-            <View
-                style="@style/h_line"
-                android:layout_height="1px"
-                android:layout_marginLeft="46dp"
-                android:background="@color/list_divider_color" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@android:color/white"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/rl_team"
-                style="@style/option_item_rl">
-
-                <ImageView
-                    style="@style/option_item_img"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_my_team" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    style="@style/option_item_text"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:text="@string/team" />
-
-                <ImageView
-                    android:id="@+id/imageView4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:contentDescription="@null"
-                    android:src="@mipmap/ic_arrow_right" />
-            </LinearLayout>
-
-            &lt;!&ndash;<View&ndash;&gt;
-            &lt;!&ndash;style="@style/h_line"&ndash;&gt;
-            &lt;!&ndash;android:layout_height="1px"&ndash;&gt;
-            &lt;!&ndash;android:background="@color/list_divider_color" />&ndash;&gt;
-        </LinearLayout>
-
-    </LinearLayout>-->
+        </LinearLayout>-->
 
 </LinearLayout>

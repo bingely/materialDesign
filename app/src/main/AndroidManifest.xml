@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.bingley.materialdesign">
+<manifest package="com.bingley.materialdesign"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
     <application
         android:name=".AppContext"
@@ -21,29 +21,29 @@
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppStartLoad">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
             android:name=".activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.KnowlegeListActivity" />
-        <activity android:name=".activity.KnowleageDetailActivty" />
-        <activity android:name=".mvp.osc.OscMainActivity" />
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.KnowlegeListActivity"/>
+        <activity android:name=".activity.KnowleageDetailActivty"/>
+        <activity android:name=".mvp.osc.OscMainActivity"/>
         <activity
             android:name=".mvp.elmssearch.ElemsSearchActivity"
-            android:theme="@style/Translucent" />
-        <activity android:name=".mvp.listviewdemo.ScrollHideListViewActivity" />
-        <activity android:name=".mvp.materal.palette.PaletteActivity" />
-        <activity android:name=".mvp.materal.palette.XiTuActivity" />
-        <activity android:name=".mvp.materal.trans.TransListActitity" />
-        <activity android:name=".mvp.materal.trans.TransitionsActivity" />
-        <activity android:name=".mvp.osc.activity.LoginActivity" />
-        <activity android:name=".mvp.stock.BarChartDemoActivity" />
-        <activity android:name=".mvp.stock.kdemo.KDiagramActivity"></activity>
+            android:theme="@style/Translucent"/>
+        <activity android:name=".mvp.listviewdemo.ScrollHideListViewActivity"/>
+        <activity android:name=".mvp.materal.palette.PaletteActivity"/>
+        <activity android:name=".mvp.materal.palette.XiTuActivity"/>
+        <activity android:name=".mvp.materal.trans.TransListActitity"/>
+        <activity android:name=".mvp.materal.trans.TransitionsActivity"/>
+        <activity android:name=".mvp.osc.activity.LoginActivity"/>
+        <activity android:name=".mvp.stock.BarChartDemoActivity"/>
+        <activity android:name=".mvp.stock.kdemo.KDiagramActivity"/>
     </application>
 
 </manifest>

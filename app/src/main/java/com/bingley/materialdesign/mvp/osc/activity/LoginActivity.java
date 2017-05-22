@@ -136,6 +136,7 @@ public class LoginActivity extends BaseActivity {
                         LogUtils.e(responseString);
                         Toast.makeText(LoginActivity.this, responseString, Toast.LENGTH_SHORT).show();
 
+                        SPUtils.saveToPrefs(LoginActivity.this, AppConfig.OSCINFO, responseString);
                         finish();
                     }
                 });

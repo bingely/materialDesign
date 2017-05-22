@@ -19,9 +19,4 @@
     </declare-styleable>
 
 
-    <!-- <declare-styleable name="TopBar">
-         <attr name="title" format="string"/>
-         <attr name="titleTextSize" format="dimension"/>
-         <attr name="titleTextColor" format="color|reference"/>
-     </declare-styleable>-->
 </resources>

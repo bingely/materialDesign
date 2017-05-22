@@ -11,15 +11,16 @@
 
 
         <LinearLayout
-            android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp">
+
             <Button
-                android:text="asdfasfd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_selector"/>
+                android:background="@drawable/shape_selector"
+                android:text="asdfasfd"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -61,13 +62,14 @@
             </com.bingley.materialdesign.view.MyToggleButton>
 
             <com.bingley.materialdesign.mvp.textview.MyTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
                 android:padding="15dp"
-                android:text="如果爱---textview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:text="如果爱---textview">
 
             </com.bingley.materialdesign.mvp.textview.MyTextView>
+
 
         </LinearLayout>
 
