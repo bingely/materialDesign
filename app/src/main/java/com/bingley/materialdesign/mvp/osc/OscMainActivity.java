@@ -8,9 +8,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.bingley.materialdesign.R;
+import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.base.BaseFragment;
-import com.bingley.materialdesign.base.BaseSwipebackActivity;
-import com.bingley.materialdesign.mvp.osc.fragment.HomeFragment;
+import com.bingley.materialdesign.mvp.osc.fragment.GeneralViewPagerFragment;
 import com.bingley.materialdesign.mvp.osc.fragment.MeFragment;
 
 import butterknife.Bind;
@@ -24,7 +24,7 @@ import butterknife.OnClick;
  * Date:  2016/12/22
  */
 
-public class OscMainActivity extends BaseSwipebackActivity {
+public class OscMainActivity extends BaseActivity {
     @Bind(R.id.iv_home)
     ImageView mIvHome;
     @Bind(R.id.iv_goods)
@@ -53,7 +53,7 @@ public class OscMainActivity extends BaseSwipebackActivity {
     protected void initWidget() {
         super.initWidget();
         mContent = new Fragment();
-        mBaseFragment = new HomeFragment();
+        mBaseFragment = new GeneralViewPagerFragment();
         mIvHome.setBackgroundResource(R.drawable.home_press);
         switchContent(mContent, mBaseFragment);
     }
@@ -69,14 +69,10 @@ public class OscMainActivity extends BaseSwipebackActivity {
         switch (id) {
             case R.id.ll_tab_home:  // 首页
                 if (mBaseFragment == null) {
-                    mBaseFragment = new HomeFragment();
+                    mBaseFragment = new GeneralViewPagerFragment();
                 }
                 mIvHome.setBackgroundResource(R.drawable.home_press);
                 switchContent(mContent, mBaseFragment);
-               /* if(homeFragment.refresh){//登录成功后刷新页面
-                    homeFragment.getHomeContent();
-                    homeFragment.refresh=false;
-                }*/
 
                /* if (mBaseFragment != null
                         && mBaseFragment instanceof OnTabReselectListener) {
@@ -86,29 +82,17 @@ public class OscMainActivity extends BaseSwipebackActivity {
                 break;
             case R.id.ll_tab_goods:  // 优品
                 if (mBaseFragment == null) {
-                    mBaseFragment = new HomeFragment();
+                    mBaseFragment = new GeneralViewPagerFragment();
                 }
                 mIvGoods.setBackgroundResource(R.drawable.goods_press);
                 switchContent(mContent, mBaseFragment);
-                //Toast.makeText(MainActivity.this, "敬请期待", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.ll_tab_add:   // 发布
-                /*if (BaseApplication.isLogin) {
-
-                    final QuickPostDialog dialog = new QuickPostDialog(
-                            MainActivity.this);
-                    dialog.setCancelable(false);
-                    dialog.setCanceledOnTouchOutside(true);
-                    dialog.show();
-                } else {
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
-
-                }*/
+            case R.id.ll_tab_add:
 
                 break;
             case R.id.ll_tab_circle:  // 圈子
                 if (mBaseFragment == null) {
-                    mBaseFragment = new HomeFragment();
+                    mBaseFragment = new GeneralViewPagerFragment();
                 }
 
                 mIvFriendCircle.setBackgroundResource(R.drawable.friend_circle_press);

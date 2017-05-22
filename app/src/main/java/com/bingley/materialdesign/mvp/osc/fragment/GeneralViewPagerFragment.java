@@ -4,18 +4,18 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.bingley.materialdesign.R;
+import com.bingley.materialdesign.adapter.ViewPageFragmentAdapter;
 import com.bingley.materialdesign.base.BaseFragment;
+import com.bingley.materialdesign.base.BaseViewPagerFragment;
 import com.bingley.materialdesign.interf.OnTabReselectListener;
 
-/**
- * Created by Administrator on 2017/1/19.
- */
-public class HomeFragment extends BaseFragment implements OnTabReselectListener {
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.frg_home;
-    }
+ /**
+   * 综合Tab界面
+   * Author:  Mr.bingley
+   * Version:
+   * Date:  2017/5/22
+   */
+public class GeneralViewPagerFragment extends BaseViewPagerFragment implements OnTabReselectListener {
 
     @Override
     protected void initWidget(View root) {
@@ -28,4 +28,8 @@ public class HomeFragment extends BaseFragment implements OnTabReselectListener 
         Toast.makeText(getActivity(), "homefragment", Toast.LENGTH_SHORT).show();
     }
 
-}
+     @Override
+     protected void onSetupTabAdapter(ViewPageFragmentAdapter adapter) {
+        // getResources().getStringArray()
+     }
+ }

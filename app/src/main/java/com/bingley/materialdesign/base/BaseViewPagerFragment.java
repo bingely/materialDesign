@@ -78,14 +78,6 @@ public abstract class BaseViewPagerFragment extends BaseFragment {
     protected void setScreenPageLimit() {
     }
 
-    // @Override
-    // public void onSaveInstanceState(Bundle outState) {
-    // //No call for super(). Bug on API Level > 11.
-    // if (outState != null && mViewPager != null) {
-    // outState.putInt("position", mViewPager.getCurrentItem());
-    // }
-    // //super.onSaveInstanceState(outState);
-    // }
 
     protected abstract void onSetupTabAdapter(ViewPageFragmentAdapter adapter);
 }

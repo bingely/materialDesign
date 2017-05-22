@@ -61,7 +61,9 @@ public abstract class BaseFragment extends Fragment {
         mBundle = null;
     }
 
-    protected abstract int getLayoutId();
+    protected  int getLayoutId(){
+        return 0;
+    }
 
     protected void initBundle(Bundle bundle) {
 
