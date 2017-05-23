@@ -56,6 +56,9 @@ public class OscMainActivity extends BaseActivity {
         mBaseFragment = new GeneralViewPagerFragment();
         mIvHome.setBackgroundResource(R.drawable.home_press);
         switchContent(mContent, mBaseFragment);
+
+
+
     }
 
     @OnClick({R.id.ll_tab_home, R.id.ll_tab_goods, R.id.ll_tab_add, R.id.ll_tab_circle, R.id.ll_tab_me})
