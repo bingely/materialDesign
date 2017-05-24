@@ -50,6 +50,12 @@ public class LogUtils {
         }
     }
 
+    public static void e(String tag, String message) {
+        if (DEBUG) {
+            Log.e(tag, message);
+        }
+    }
+
     public static void e( String message, Exception e) {
         if (DEBUG) {
             Log.e(TAG, message, e);

@@ -31,6 +31,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements
     public static final int TYPE_NO_MORE = 2;
     public static final int TYPE_ERROR = 3;
     public static final int TYPE_NET_ERROR = 4;
+    public static final String BUNDLE_KEY_CATALOG = "asdfa";
     protected ListView mListView;
     protected CBSwipeRefreshLayout mRefreshLayout;
     protected EmptyLayout mErrorLayout;
@@ -94,34 +95,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements
 
     @Override
     protected void initData() {
-        super.initData();
         mAdapter = getListAdapter();
-
-        /*mCallback = new Callback<JsonObject>() {
-            @Override
-            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                try {
-                    JsonObject body = response.body();
-                    if (body != null && body.get("Success").getAsBoolean()) {
-                        Log.e("ss", body.toString());
-                        Gson gson = new Gson();
-                        datas = gson.fromJson(body.getAsJsonArray("Data").toString(), new TypeToken<List<T>>() {}.getType());
-                        loadDataSuccess(datas);
-                        isFrist = false;
-                    } else {
-                        setFooterType(TYPE_NO_MORE);
-                    }
-                    onRequestFinish();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    onfailed();
-                }
-            }
-            @Override
-            public void onFailure(Call<JsonObject> call, Throwable t) {
-                onfailed();
-            }
-        };*/
 
         requestData();
 

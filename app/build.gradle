@@ -60,6 +60,10 @@ android {
             applicationId "com.weytenera.xsq"   // 注意格式""
         }
         md{}
+
+        osc{
+            applicationId "com.bingley.osc"
+        }
     }
 
 

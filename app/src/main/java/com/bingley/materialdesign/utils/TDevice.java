@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 
+import com.bingley.materialdesign.AppContext;
 import com.bingley.materialdesign.base.BaseApplication;
 
 /**
@@ -28,6 +29,11 @@ import com.bingley.materialdesign.base.BaseApplication;
  */
 
 public class TDevice {
+
+    // 手机网络类型
+    public static final int NETTYPE_WIFI = 0x01;
+    public static final int NETTYPE_CMWAP = 0x02;
+    public static final int NETTYPE_CMNET = 0x03;
     /**
      * 根据分辨率从 dp 的单位 转成为 px(像素)
      */
@@ -47,7 +53,6 @@ public class TDevice {
     /**
      * 将px值转换为sp值，保证文字大小不变
      *
-     * @param context
      * @param pxValue
      * @return
      */
@@ -59,7 +64,6 @@ public class TDevice {
     /**
      * 将sp值转换为px值，保证文字大小不变
      *
-     * @param context
      * @param spValue
      * @return
      */
@@ -231,4 +235,32 @@ public class TDevice {
     }
 
 
+    /**
+     * 获取当前网络类型
+     *
+     * @return 0：没有网络 1：WIFI网络 2：WAP网络 3：NET网络
+     */
+    public static int getNetworkType() {
+        int netType = 0;
+        ConnectivityManager connectivityManager = (ConnectivityManager) AppContext
+                .getInstance().getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+        if (networkInfo == null) {
+            return netType;
+        }
+        int nType = networkInfo.getType();
+        if (nType == ConnectivityManager.TYPE_MOBILE) {
+            String extraInfo = networkInfo.getExtraInfo();
+            if (!StringUtils.isEmpty(extraInfo)) {
+                if (extraInfo.toLowerCase().equals("cmnet")) {
+                    netType = NETTYPE_CMNET;
+                } else {
+                    netType = NETTYPE_CMWAP;
+                }
+            }
+        } else if (nType == ConnectivityManager.TYPE_WIFI) {
+            netType = NETTYPE_WIFI;
+        }
+        return netType;
+    }
 }

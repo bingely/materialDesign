@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import com.bingley.materialdesign.api.Engine;
 import com.bingley.materialdesign.base.BaseApplication;
 import com.bingley.materialdesign.http.asy.ApiHttpClient;
+import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -125,4 +126,10 @@ public class AppContext extends BaseApplication{
         return info;
     }
 
+    public static Gson createGson() {
+        com.google.gson.GsonBuilder gsonBuilder = new com.google.gson.GsonBuilder();
+        //gsonBuilder.setExclusionStrategies(new SpecificClassExclusionStrategy(null, Model.class));
+        gsonBuilder.setDateFormat("yyyy-MM-dd HH:mm:ss");
+        return gsonBuilder.create();
+    }
 }
