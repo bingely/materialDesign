@@ -5,12 +5,14 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
 import com.bingley.materialdesign.R;
+import com.bingley.materialdesign.mvp.ikvstock.alilgn.YLabelAlign;
 import com.bingley.materialdesign.mvp.ikvstock.entry.SizeColor;
 
 /**
  * Author:  Mr.bingley
  * Version:
  * Date:  2017/5/11
+ * Interactive 互动
  */
 
 public class ViewUtils {
@@ -57,8 +59,20 @@ public class ViewUtils {
             sizeColor.setYLabelColor(a.getColor(R.styleable.InteractiveKLineView_yLabelColor,
                     sizeColor.getYLabelColor()));
 
+            // 这行代码不是写死了吗？为啥可以动态获取---看不懂
+            int align = a.getInteger(R.styleable.InteractiveKLineView_yLabelAlign, YLabelAlign.LEFT.ordinal());
+            sizeColor.setYLabelAlign(YLabelAlign.values()[align]);
 
-            //int align = a.getInteger(R.styleable.inal)
+
+            sizeColor.setAxisSize(a.getDimension(R.styleable.InteractiveKLineView_axisSize, sizeColor.getAxisSize()));
+
+            sizeColor.setAxisColor(a.getColor(R.styleable.InteractiveKLineView_axisColor, sizeColor.getAxisColor()));
+
+            sizeColor.setGridSize(a.getDimension(R.styleable.InteractiveKLineView_gridSize, sizeColor.getGridSize()));
+
+            sizeColor.setGridColor(a.getColor(R.styleable.InteractiveKLineView_gridColor, sizeColor.getGridColor()));
+
+
 
         } catch (Exception e) {
             a.recycle();
