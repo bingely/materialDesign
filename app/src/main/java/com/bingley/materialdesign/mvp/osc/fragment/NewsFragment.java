@@ -47,7 +47,6 @@ public class NewsFragment extends BaseGeneralListFragment<News>{
         return mNewsAdapter;
     }
 
-
     @Override
     protected void initWidget(View root) {
         super.initWidget(root);
@@ -56,7 +55,7 @@ public class NewsFragment extends BaseGeneralListFragment<News>{
             @Override
             public void run() {
                 final PageBean<Banner> pageBean = (PageBean<Banner>) CacheManager.readObject(getActivity(), NEWS_BANNER);
-                LogUtils.e(NEWS_BANNER,NEWS_BANNER+":"+pageBean.getItems().size());
+                LogUtils.e(NEWS_BANNER,NEWS_BANNER+"缓存的数量:"+pageBean.getItems().size());
                 /*if (pageBean != null) {
                     handler.post(new Runnable() {
                         @Override
@@ -119,20 +118,21 @@ public class NewsFragment extends BaseGeneralListFragment<News>{
                     mBean = new PageBean<>();
                     mBean.setItems(new ArrayList<News>());
                     //onRefresh();
-                    OSChinaApi.getNewsList(mIsRefresh ? mBean.getPrevPageToken() : mBean.getNextPageToken(), mHandler);
                 } else {
                     mRoot.post(new Runnable() {
                         @Override
                         public void run() {
                             mAdapter.addItem(mBean.getItems());
+                            LogUtils.e(NEWS_BANNER,"news緩存的數量:"+mBean.getItems().size());
                             mErrorLayout.setErrorType(EmptyLayout.HIDE_LAYOUT);
                             mRefreshLayout.setVisibility(View.VISIBLE);
                            // onRefresh();
 
-                            OSChinaApi.getNewsList(mIsRefresh ? mBean.getPrevPageToken() : mBean.getNextPageToken(), mHandler);
+
                         }
                     });
                 }
+                OSChinaApi.getNewsList(mIsRefresh ? mBean.getPrevPageToken() : mBean.getNextPageToken(), mHandler);
             }
         });
 

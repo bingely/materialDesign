@@ -95,7 +95,7 @@ public class MainActivity extends BaseActivity
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.closeDrawer(GravityCompat.START);
+       // drawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
