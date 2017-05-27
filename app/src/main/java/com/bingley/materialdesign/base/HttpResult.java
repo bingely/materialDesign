@@ -1,5 +1,15 @@
 package com.bingley.materialdesign.base;
 
+/**
+ * 一般的返回数据体结构
+ *
+ * @param <T>
+ */
+
+/**
+ how to use？
+ T 就是代表一个实体，代表任意类型
+ */
 public class HttpResult<T> {
 
     private int code;

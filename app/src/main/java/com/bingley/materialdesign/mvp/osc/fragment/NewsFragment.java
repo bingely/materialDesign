@@ -40,6 +40,7 @@ public class NewsFragment extends BaseGeneralListFragment<News>{
     private NewsAdapter mNewsAdapter;
 
     private static final String NEWS_BANNER = "news_banner";
+    private String mSystemTime;
 
     @Override
     protected CommonAdapter<News> getListAdapter() {
@@ -98,6 +99,7 @@ public class NewsFragment extends BaseGeneralListFragment<News>{
                                 CacheManager.saveObject(getActivity(), mBean, CACHE_NAME);
                             }
                         });
+                        isFrist = false;
                     } else {
                         setFooterType(TYPE_NO_MORE);
                     }
@@ -148,6 +150,8 @@ public class NewsFragment extends BaseGeneralListFragment<News>{
 
     private void getBannerList() {
         OSChinaApi.getBannerList(OSChinaApi.CATALOG_BANNER_NEWS, new TextHttpResponseHandler() {
+
+
             @Override
             public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
             }
@@ -158,6 +162,8 @@ public class NewsFragment extends BaseGeneralListFragment<News>{
                 try {
                     final ResultBean<PageBean<Banner>> resultBean = AppContext.createGson().fromJson(responseString, new TypeToken<ResultBean<PageBean<Banner>>>() {
                     }.getType());
+                    mSystemTime = resultBean.getTime();
+                    ((NewsAdapter) mAdapter).setSystemTime(mSystemTime);
                     if (resultBean != null && resultBean.isSuccess()) {
                         AppOperator.runOnThread(new Runnable() {
                             @Override

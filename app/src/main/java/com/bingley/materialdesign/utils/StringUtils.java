@@ -365,4 +365,28 @@ public final class StringUtils {
         return sDate;
     }
 
+    /**
+     * 是否是相同的一天
+     *
+     * @param sDate1 sDate1
+     * @param sDate2 sDate2
+     * @return
+     */
+    public static boolean isSameDay(String sDate1, String sDate2) {
+        if (TextUtils.isEmpty(sDate1) || TextUtils.isEmpty(sDate2)) {
+            return false;
+        }
+        boolean b = false;
+        Date date1 = toDate(sDate1);
+        Date date2 = toDate(sDate2);
+        if (date1 != null && date2 != null) {
+            String d1 = dateFormater2.get().format(date1);
+            String d2 = dateFormater2.get().format(date2);
+            if (d1.equals(d2)) {
+                b = true;
+            }
+        }
+        return b;
+    }
+
 }

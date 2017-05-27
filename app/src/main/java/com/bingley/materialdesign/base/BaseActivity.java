@@ -24,6 +24,9 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        if (savedInstanceState != null) {
+            savedInstanceState.putParcelable("android:support:fragments", null); // 清空保存 fragment 的状态数据，防止低内存时程序被系统回收再打开时 fragment 重叠
+        }
         super.onCreate(savedInstanceState);
         // 设置状态栏，那如何与下面的部件统一
         setStatusBarColor(R.color.red);

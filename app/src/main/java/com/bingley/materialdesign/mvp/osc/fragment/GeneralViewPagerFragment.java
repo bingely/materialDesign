@@ -74,4 +74,14 @@ public class GeneralViewPagerFragment extends BaseViewPagerFragment implements O
         mViewPager.setOffscreenPageLimit(3);
     }
 
+    /**
+     * 返回fragment中一个实例
+     * @return
+     */
+    public static GeneralViewPagerFragment newInstance() {
+        Bundle args = new Bundle();
+        GeneralViewPagerFragment fragment = new GeneralViewPagerFragment();
+        fragment.setArguments(args);
+        return fragment;
+    }
 }

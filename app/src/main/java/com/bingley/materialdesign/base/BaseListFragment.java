@@ -67,7 +67,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_base_list;
+        return R.layout.fragment_pull_refresh_listview;
     }
 
     @Override
@@ -155,7 +155,7 @@ public abstract class BaseListFragment<T> extends BaseFragment implements
 
     @Override
     public void onRefresh() {
-        // mIsRefresh = true;
+        mIsRefresh = true;
         mCurrentPage = 1;
         isFrist = true;
         dataState = LISTVIEW_ACTION_NONE;

@@ -18,5 +18,9 @@
         <attr name="rightText" format="string" />
     </declare-styleable>
 
+    <!-- Tab按键, 带提示红点 -->
+    <declare-styleable name="TabButton">
+        <attr name="dotSize" format="dimension"/>
+    </declare-styleable>
 
 </resources>

@@ -1,8 +1,10 @@
 package com.bingley.materialdesign.base;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +20,13 @@ public abstract class BaseFragment extends Fragment {
     protected View mRoot;
     protected Bundle mBundle;
 
+    private Context mRootActivity;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mRootActivity = getActivity();
         mBundle = getArguments();
         initBundle(mBundle);
     }

@@ -1,6 +1,7 @@
 package com.bingley.materialdesign.mvp.osc.fragment;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,9 +14,9 @@ import com.bingley.materialdesign.utils.SPUtils;
 import butterknife.Bind;
 
 /**
- * Created by Administrator on 2017/1/19.
+ * Created by SAM on 2017/5/27.
  */
-public class MeFragment extends BaseFragment {
+public class UserFragment extends BaseFragment{
     @Bind(R.id.bt_meinfo)
     Button mBtInfo;
 
@@ -35,5 +36,11 @@ public class MeFragment extends BaseFragment {
         });
 
         mBtInfo.setText(SPUtils.getFromPrefs(getActivity(), AppConfig.OSCINFO, ""));
+    }
+    public static UserFragment newInstance() {
+        Bundle args = new Bundle();
+        UserFragment fragment = new UserFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 }

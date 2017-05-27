@@ -1,20 +1,21 @@
 package com.bingley.materialdesign.mvp.osc;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
+import android.widget.RadioGroup;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseActivity;
-import com.bingley.materialdesign.base.BaseFragment;
+import com.bingley.materialdesign.mvp.osc.fragment.FindFragment;
 import com.bingley.materialdesign.mvp.osc.fragment.GeneralViewPagerFragment;
-import com.bingley.materialdesign.mvp.osc.fragment.MeFragment;
+import com.bingley.materialdesign.mvp.osc.fragment.TweenFragment;
+import com.bingley.materialdesign.mvp.osc.fragment.UserFragment;
+import com.bingley.materialdesign.view.TabButton;
 
 import butterknife.Bind;
-import butterknife.OnClick;
 
 /**
  * 我想实现点击下面某个模块会刷新界面功能
@@ -25,120 +26,138 @@ import butterknife.OnClick;
  */
 
 public class OscMainActivity extends BaseActivity {
-    @Bind(R.id.iv_home)
-    ImageView mIvHome;
-    @Bind(R.id.iv_goods)
-    ImageView mIvGoods;
-    @Bind(R.id.iv_friend_circle)
-    ImageView mIvFriendCircle;
-    @Bind(R.id.iv_me)
-    ImageView mIvMe;
-    @Bind(R.id.ll_tab_goods)
-    LinearLayout ll_tab_goods;//优品
-    public
-    @Bind(R.id.ll_tab_me)
-    LinearLayout ll_tab_me;//我
 
-    Fragment mContent;
-    BaseFragment mBaseFragment;
 
-    MeFragment meFragment;       // 我
+    @Bind(R.id.home_homePageTab)
+    TabButton mHomeHomePageTab;
+    @Bind(R.id.home_newsTab)
+    TabButton mHomeNewsTab;
+    @Bind(R.id.home_findTab)
+    TabButton mHomeFindTab;
+    @Bind(R.id.home_userTab)
+    TabButton mHomeUserTab;
+    @Bind(R.id.home_tabGroup)
+    RadioGroup mHomeTabGroup;
+    @Bind(R.id.main_content)
+    FrameLayout mMainContent;
+    private GeneralViewPagerFragment homeFragment;
+    private TweenFragment tweenFragment;
+    private FindFragment findFragment;
+    private UserFragment userFragment;
 
     @Override
     protected int getContentView() {
-        return R.layout.activity_common_tab_main;
+        return R.layout.activity_oscmain;
     }
 
     @Override
     protected void initWidget() {
         super.initWidget();
-        mContent = new Fragment();
-        mBaseFragment = new GeneralViewPagerFragment();
-        mIvHome.setBackgroundResource(R.drawable.home_press);
-        switchContent(mContent, mBaseFragment);
+        homeFragment = GeneralViewPagerFragment.newInstance();
+        tweenFragment = TweenFragment.newInstance();
+        findFragment = FindFragment.newInstance();
+        userFragment = UserFragment.newInstance();
 
-
-
-    }
-
-    @OnClick({R.id.ll_tab_home, R.id.ll_tab_goods, R.id.ll_tab_add, R.id.ll_tab_circle, R.id.ll_tab_me})
-    public void onclick(View view) {
-
-        //hideFragment();
-        int id = view.getId();
-        if (id != R.id.ll_tab_add) {
-            reSetTab();
-        }
-        switch (id) {
-            case R.id.ll_tab_home:  // 首页
-                if (mBaseFragment == null) {
-                    mBaseFragment = new GeneralViewPagerFragment();
-                }
-                mIvHome.setBackgroundResource(R.drawable.home_press);
-                switchContent(mContent, mBaseFragment);
-
-               /* if (mBaseFragment != null
-                        && mBaseFragment instanceof OnTabReselectListener) {
-                    OnTabReselectListener listener = (OnTabReselectListener) mBaseFragment;
-                    listener.onTabReselect();
-                }*/
-                break;
-            case R.id.ll_tab_goods:  // 优品
-                if (mBaseFragment == null) {
-                    mBaseFragment = new GeneralViewPagerFragment();
-                }
-                mIvGoods.setBackgroundResource(R.drawable.goods_press);
-                switchContent(mContent, mBaseFragment);
-                break;
-            case R.id.ll_tab_add:
-
-                break;
-            case R.id.ll_tab_circle:  // 圈子
-                if (mBaseFragment == null) {
-                    mBaseFragment = new GeneralViewPagerFragment();
-                }
-
-                mIvFriendCircle.setBackgroundResource(R.drawable.friend_circle_press);
-                switchContent(mContent, mBaseFragment);
-                break;
-            case R.id.ll_tab_me:   // 我
-                if (meFragment == null) {
-                    meFragment = new MeFragment();
-                    Bundle bundle = new Bundle();
-                    bundle.putBoolean("gone", false);
-                    meFragment.setArguments(bundle);
-                }
-                mIvMe.setBackgroundResource(R.drawable.me_press);
-                switchContent(mContent, meFragment);
-                break;
-        }
-
-        // 如果是把逻辑写在这边，fragment方式得重新写正确
-        /*if (mBaseFragment != null
-                && mBaseFragment instanceof OnTabReselectListener) {
-            OnTabReselectListener listener = (OnTabReselectListener) mBaseFragment;
-            listener.onTabReselect();
-        }*/
+        mHomeTabGroup.setOnCheckedChangeListener(onTabCheckedChangeListener);
+        mHomeHomePageTab.setOnClickListener(onTabClicklistener);
+        mHomeNewsTab.setOnClickListener(onTabClicklistener);
+        mHomeFindTab.setOnClickListener(onTabClicklistener);
+        mHomeUserTab.setOnClickListener(onTabClicklistener);
+        // 设置它为小红点
+        mHomeUserTab.setShowTag(true);
+        addFragment(getSupportFragmentManager(), homeFragment);
 
     }
 
-    public void switchContent(Fragment from, Fragment to) {
-        if (mContent != to) {
-            mContent = to;
-            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-            if (!to.isAdded()) { // 先判断是否被add过
-                transaction.hide(from).add(R.id.lin_main, to).commit(); // 隐藏当前的fragment，add下一个到Activity中
-            } else {
-                transaction.hide(from).show(to).commit(); // 隐藏当前的fragment，显示下一个
+    private void addFragment(FragmentManager fm, Fragment fragment) {
+        if (!fragment.isAdded()) {
+            FragmentTransaction ft = fm.beginTransaction();
+            ft.add(R.id.main_content, fragment);
+            ft.commit();
+        }
+    }
+
+
+    private void hideAllFragment(FragmentManager fm) {
+        FragmentTransaction ft = fm.beginTransaction();
+        if (!homeFragment.isHidden()) {
+            ft.hide(homeFragment);
+        }
+        if (!tweenFragment.isHidden()) {
+            ft.hide(tweenFragment);
+        }
+        if (!findFragment.isHidden()) {
+            ft.hide(findFragment);
+        }
+        if (!userFragment.isHidden()) {
+            ft.hide(userFragment);
+        }
+        ft.commit();
+    }
+
+    private void showFragment(FragmentManager fm, Fragment fragment) {
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.show(fragment);
+        ft.commit();
+    }
+
+
+    private View.OnClickListener onTabClicklistener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            switch (v.getId()) {
+                case R.id.home_homePageTab:
+                    if (homeFragment.isAdded() && !homeFragment.isHidden()) {
+                       // homeFragment.onTabClick((TabButton) v);
+                    }
+                    break;
+
+                case R.id.home_newsTab:
+                    if (tweenFragment.isAdded() && !tweenFragment.isHidden()) {
+                        //newsFragment.onTabClick((TabButton) v);
+                    }
+                    break;
+
+                case R.id.home_findTab:
+                    if (findFragment.isAdded() && !findFragment.isHidden()) {
+                       // findFragment.onTabClick((TabButton) v);
+                    }
+                    break;
+
+                case R.id.home_userTab:
+                    if (userFragment.isAdded() && !userFragment.isHidden()) {
+                      //  userFragment.onTabClick((TabButton) v);
+                    }
+                    break;
             }
         }
-    }
+    };
 
-    private void reSetTab() {
-        mIvHome.setBackgroundResource(R.drawable.home);
-        mIvGoods.setBackgroundResource(R.drawable.goods);
-        mIvFriendCircle.setBackgroundResource(R.drawable.friend_circle);
-        mIvMe.setBackgroundResource(R.drawable.me);
-    }
+    private RadioGroup.OnCheckedChangeListener onTabCheckedChangeListener = new RadioGroup.OnCheckedChangeListener() {
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            FragmentManager fm = getSupportFragmentManager();
+            hideAllFragment(fm);
+            switch (checkedId) {
+                case R.id.home_homePageTab:
+                    showFragment(fm, homeFragment);
+                    break;
 
+                case R.id.home_newsTab:
+                    addFragment(fm, tweenFragment);
+                    showFragment(fm, tweenFragment);
+                    break;
+
+                case R.id.home_findTab:
+                    addFragment(fm, findFragment);
+                    showFragment(fm, findFragment);
+                    break;
+
+                case R.id.home_userTab:
+                    addFragment(fm, userFragment);
+                    showFragment(fm, userFragment);
+                    break;
+            }
+        }
+    };
 }
