@@ -15,6 +15,9 @@ import org.acra.sender.ReportSenderException;
    * Date:  2017/5/30
    */
 
+/**
+ * 参考文章 http://blog.csdn.net/xiaxiayige/article/details/72232157
+ */
 public class YourOwnSender implements ReportSender {
     @Override
     public void send(@NonNull Context context, @NonNull CrashReportData crashReportData) throws ReportSenderException {

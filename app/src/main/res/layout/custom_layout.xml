@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="clickSwitch"
+        android:text="切换" />
+
+    <com.bingley.materialdesign.mvp.customview.CustomLayout
+        android:id="@+id/custom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:background="#ff0000" />
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:background="#00ff00" />
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:background="#0000ff" />
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:background="#ffff00" />
+
+        <View
+            android:layout_width="180dp"
+            android:layout_height="30dp"
+            android:background="#00ffff" />
+    </com.bingley.materialdesign.mvp.customview.CustomLayout>
+
+</LinearLayout>
