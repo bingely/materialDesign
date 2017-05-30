@@ -9,14 +9,15 @@ import android.graphics.Path;
 import android.graphics.PathEffect;
 import android.graphics.PointF;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 
 import java.util.List;
 
 /**
-   * 
+   *
    * Author:  Mr.bingley
-   * Version: 
+   * Version:
    * Date:  2017/4/21
    */
 
@@ -366,15 +367,18 @@ public class MyGridChartView extends View {
         float lineVlenth = getHeight() - 2f;       // 为啥钟爱 float类型的数据
 
 
-        float startX = touchPoint.x > super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT ? super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT : touchPoint.x;
+        float startX = touchPoint.x > super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT ? super.getWidth() -DEFAULT_AXIS_MARGIN_RIGHT:touchPoint.x;
         float StopX = touchPoint.x > super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT ? super.getWidth() - DEFAULT_AXIS_MARGIN_RIGHT : touchPoint.x;
         canvas.drawLine(startX,1f,StopX,lineVlenth,paint);
     }
 
 
+    private float spacing(MotionEvent event) {
+        float x_distance = event.getX(0) - event.getX(1);
+        float y_distance = event.getY(0) - event.getY(1);
 
-
-
+        return (float) Math.sqrt(x_distance * x_distance + y_distance * y_distance);
+    }
 
 
 

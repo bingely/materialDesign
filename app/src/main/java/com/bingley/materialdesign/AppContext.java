@@ -13,6 +13,10 @@ import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.https.HttpsUtils;
 import com.zhy.http.okhttp.log.LoggerInterceptor;
 
+import org.acra.ACRA;
+import org.acra.ReportField;
+import org.acra.annotation.ReportsCrashes;
+
 import java.util.concurrent.TimeUnit;
 
 import javax.net.ssl.HostnameVerifier;
@@ -23,21 +27,28 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
-   * $Description:$
-   * Author:  Mr.bingley
-   * Version:
-   * Date:  2017/4/8
-   */
-public class AppContext extends BaseApplication{
+ * $Description:$
+ * Author:  Mr.bingley
+ * Version:
+ * Date:  2017/4/8
+ */
+@ReportsCrashes(
+        reportSenderFactoryClasses = {com.bingley.materialdesign.mvp.acra.YourOwnSenderfactory.class},  // 是.class
+        customReportContent = {ReportField.APP_VERSION_CODE, ReportField.APP_VERSION_NAME, ReportField.ANDROID_VERSION, ReportField.PHONE_MODEL, ReportField.CUSTOM_DATA, ReportField.STACK_TRACE, ReportField.LOGCAT},
+        resToastText = R.string.msg_acra_toast
+)
+public class AppContext extends BaseApplication {
     private static AppContext instance;
 
 
     private Engine mEngine;
+
     @Override
     public void onCreate() {
+        ACRA.init(this);
         super.onCreate();
         instance = this;
-
+        //System.out.println(1 / 0);
         init();
     }
 
@@ -66,19 +77,19 @@ public class AppContext extends BaseApplication{
         initOkhttp();
     }
 
-     private void initRetrofit() {
-         mEngine = new Retrofit.Builder()
-                 .baseUrl("http://7xk9dj.com1.z0.glb.clouddn.com/")
-                 .addConverterFactory(GsonConverterFactory.create())
-                 .build().create(Engine.class);
-     }
+    private void initRetrofit() {
+        mEngine = new Retrofit.Builder()
+                .baseUrl("http://7xk9dj.com1.z0.glb.clouddn.com/")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build().create(Engine.class);
+    }
 
 
     public Engine getEngine() {
         return mEngine;
     }
 
-     private void initOkhttp() {
+    private void initOkhttp() {
     /* ClearableCookieJar cookieJar1 = new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(getApplicationContext()));
 
      HttpsUtils.SSLParams sslParams = HttpsUtils.getSslSocketFactory(null, null, null);

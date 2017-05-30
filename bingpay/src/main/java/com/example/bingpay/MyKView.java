@@ -2,6 +2,7 @@ package com.example.bingpay;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.util.AttributeSet;
 
@@ -155,6 +156,14 @@ public class MyKView extends MyGridChartView{
         super(context, attrs);
         initInvioment(context);
         initBaseData();
+    }
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+
+        super.drawWithFingerClick(canvas);
     }
 
     /**

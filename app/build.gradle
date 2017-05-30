@@ -204,4 +204,7 @@ dependencies {
 
     // 设置状态栏颜色
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+
+    // ACRA是一个库，使Android应用程序可以自动将其崩溃报告发布到报表服务器。 它的目标是Android应用程序开发人员帮助他们从应用程序获取数据时遇到错误或行为错误
+    compile 'ch.acra:acra:4.9.2' //配置acra
 }

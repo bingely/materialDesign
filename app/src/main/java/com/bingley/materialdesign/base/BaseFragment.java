@@ -20,7 +20,7 @@ public abstract class BaseFragment extends Fragment {
     protected View mRoot;
     protected Bundle mBundle;
 
-    private Context mRootActivity;
+    protected Context mRootActivity;
 
 
     @Override
