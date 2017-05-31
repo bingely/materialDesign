@@ -67,7 +67,8 @@ public class OscMainActivity extends BaseActivity {
         mHomeUserTab.setShowTag(true);
         addFragment(getSupportFragmentManager(), homeFragment);
 
-        System.out.println(1 / 0);
+        // 模拟
+       // System.out.println(1 / 0);
 
     }
 

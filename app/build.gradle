@@ -187,6 +187,9 @@ dependencies {
     //  Custom Tabs Support Library 学习
     compile 'com.android.support:customtabs:25.1.1'
 
+    // 多种风格的Tab
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'
+
     // K线开源
     compile 'com.github.zhangliangzs:KDemo:1.0.0'
 
@@ -204,6 +207,10 @@ dependencies {
 
     // 设置状态栏颜色
     compile 'com.readystatesoftware.systembartint:systembartint:1.0.3'
+
+
+    // 下拉刷新, 支持ScrollView、RecyclerView
+    compile 'com.chanven.lib:cptr:1.1.0'
 
     // ACRA是一个库，使Android应用程序可以自动将其崩溃报告发布到报表服务器。 它的目标是Android应用程序开发人员帮助他们从应用程序获取数据时遇到错误或行为错误
     compile 'ch.acra:acra:4.9.2' //配置acra

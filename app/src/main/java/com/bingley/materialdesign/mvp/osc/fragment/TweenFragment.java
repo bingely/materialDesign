@@ -11,7 +11,7 @@ import com.bingley.materialdesign.base.BaseFragment;
 public class TweenFragment extends BaseFragment{
     @Override
     protected int getLayoutId() {
-        return R.layout.frg_me;
+        return R.layout.frg_tween;
     }
     public static TweenFragment newInstance() {
         Bundle args = new Bundle();
