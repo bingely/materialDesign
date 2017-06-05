@@ -1,45 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:orientation="vertical">
-    <Button
-        android:id="@+id/btn_me"
-        style="@style/button_common_blue"
-        android:layout_margin="@dimen/distance_10"
-        android:text="我"/>
+    >
 
 
-    <com.bingley.materialdesign.view.RevealLayout
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
-
-        <Button
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_width="123dp"
-            android:layout_margin="@dimen/distance_10"
-            android:text="一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
         <Button
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:id="@+id/btn_me"
+            style="@style/button_common_blue"
+            android:layout_margin="@dimen/distance_10"
+            android:text="我"/>
+
+
+        <com.bingley.materialdesign.view.RevealLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/distance_10"
+                android:layout_weight="1"
+                android:text="一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果"/>
+
+
+            <Button
+                android:layout_width="123dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/distance_10"
+                android:layout_weight="1"
+                android:text="一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果"/>
+
+        </com.bingley.materialdesign.view.RevealLayout>
+
+
+        <Button
+            android:id="@+id/bt_meinfo"
             android:layout_width="123dp"
+            android:layout_height="wrap_content"
             android:layout_margin="@dimen/distance_10"
             android:text="一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果"/>
 
-    </com.bingley.materialdesign.view.RevealLayout>
+        <include layout="@layout/layout_login"/>
 
-
-    <Button
-        android:id="@+id/bt_meinfo"
-        android:layout_height="wrap_content"
-        android:layout_width="123dp"
-        android:layout_margin="@dimen/distance_10"
-        android:text="一个特殊的LinearLayout,任何放入内部的clickable元素都具有波纹效果"/>
-
-
+    </LinearLayout>
 
     <!--    <LinearLayout
             android:layout_width="match_parent"
@@ -206,4 +216,4 @@
 
         </LinearLayout>-->
 
-</LinearLayout>
+</ScrollView>

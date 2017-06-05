@@ -56,7 +56,9 @@ public class NewsFragment extends BaseGeneralListFragment<News>{
             @Override
             public void run() {
                 final PageBean<Banner> pageBean = (PageBean<Banner>) CacheManager.readObject(getActivity(), NEWS_BANNER);
-                LogUtils.e(NEWS_BANNER,NEWS_BANNER+"缓存的数量:"+pageBean.getItems().size());
+                if (pageBean != null && pageBean.getItems() != null) {
+                    LogUtils.e(NEWS_BANNER,NEWS_BANNER+"缓存的数量:"+pageBean.getItems().size());
+                }
                 /*if (pageBean != null) {
                     handler.post(new Runnable() {
                         @Override
