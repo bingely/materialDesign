@@ -13,9 +13,9 @@ import android.view.View;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseFragment;
 import com.bingley.materialdesign.utils.LogUtils;
-import com.bingley.materialdesign.zhifeiji.mvp.homepager.DouBanFragment;
-import com.bingley.materialdesign.zhifeiji.mvp.homepager.ZhihuDailyFragment;
-import com.bingley.materialdesign.zhifeiji.mvp.homepager.ZhihuDailyPresenter;
+import com.bingley.materialdesign.topic.zhifeiji.mvp.homepager.DouBanFragment;
+import com.bingley.materialdesign.topic.zhifeiji.mvp.homepager.ZhihuDailyFragment;
+import com.bingley.materialdesign.topic.zhifeiji.mvp.homepager.ZhihuDailyPresenter;
 
 
 public class MainFragment extends BaseFragment {

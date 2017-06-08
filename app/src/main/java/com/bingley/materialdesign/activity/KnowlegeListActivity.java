@@ -4,9 +4,8 @@ import android.content.Intent;
 import android.view.View;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.base.BaseSwipebackActivity;
-import com.bingley.materialdesign.mvp.listviewdemo.ScrollHideListViewActivity;
+import com.bingley.materialdesign.topic.listviewdemo.ScrollHideListViewActivity;
 import com.bingley.materialdesign.view.TitleView;
 
 import butterknife.Bind;

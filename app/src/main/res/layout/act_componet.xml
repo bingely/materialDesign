@@ -40,7 +40,7 @@
                     android:layout_height="wrap_content"
                     android:text="手机号："/>
 
-                <com.bingley.materialdesign.mvp.textview.ClearableEditText
+                <com.bingley.materialdesign.topic.textview.ClearableEditText
                     android:id="@+id/phone"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
@@ -61,14 +61,14 @@
 
             </com.bingley.materialdesign.view.MyToggleButton>
 
-            <com.bingley.materialdesign.mvp.textview.MyTextView
+            <com.bingley.materialdesign.topic.textview.MyTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="45dp"
                 android:padding="15dp"
                 android:text="如果爱---textview">
 
-            </com.bingley.materialdesign.mvp.textview.MyTextView>
+            </com.bingley.materialdesign.topic.textview.MyTextView>
 
 
         </LinearLayout>

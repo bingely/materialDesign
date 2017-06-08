@@ -4,7 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 
-import com.bingley.materialdesign.mvp.ikvstock.compat.GestureMoveActionCompat;
+import com.bingley.materialdesign.topic.ikvstock.compat.GestureMoveActionCompat;
 import com.chanven.lib.cptr.PtrFrameLayout;
 import com.chanven.lib.cptr.loadmore.DefaultLoadMoreViewFooter;
 import com.chanven.lib.cptr.loadmore.ILoadMoreViewFactory;

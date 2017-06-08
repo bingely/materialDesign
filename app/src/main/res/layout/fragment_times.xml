@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <com.bingley.materialdesign.mvp.stock.view.TimesView
+    <com.bingley.materialdesign.topic.stock.view.TimesView
         android:id="@+id/my_fenshi_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

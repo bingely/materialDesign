@@ -32,18 +32,18 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".activity.KnowlegeListActivity"/>
         <activity android:name=".activity.KnowleageDetailActivty"/>
-        <activity android:name=".mvp.osc.OscMainActivity"/>
+        <activity android:name=".topic.osc.OscMainActivity"/>
         <activity
-            android:name=".mvp.elmssearch.ElemsSearchActivity"
+            android:name=".topic.elmssearch.ElemsSearchActivity"
             android:theme="@style/Translucent"/>
-        <activity android:name=".mvp.listviewdemo.ScrollHideListViewActivity"/>
-        <activity android:name=".mvp.materal.palette.PaletteActivity"/>
-        <activity android:name=".mvp.materal.palette.XiTuActivity"/>
-        <activity android:name=".mvp.materal.trans.TransListActitity"/>
-        <activity android:name=".mvp.materal.trans.TransitionsActivity"/>
-        <activity android:name=".mvp.osc.activity.LoginActivity"/>
-        <activity android:name=".mvp.stock.BarChartDemoActivity"/>
-        <activity android:name=".mvp.stock.kdemo.KDiagramActivity"/>
+        <activity android:name=".topic.listviewdemo.ScrollHideListViewActivity"/>
+        <activity android:name=".topic.materal.palette.PaletteActivity"/>
+        <activity android:name=".topic.materal.palette.XiTuActivity"/>
+        <activity android:name=".topic.materal.trans.TransListActitity"/>
+        <activity android:name=".topic.materal.trans.TransitionsActivity"/>
+        <activity android:name=".topic.osc.activity.LoginActivity"/>
+        <activity android:name=".topic.stock.BarChartDemoActivity"/>
+        <activity android:name=".topic.stock.kdemo.KDiagramActivity"/>
     </application>
 
 </manifest>

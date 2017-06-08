@@ -9,20 +9,11 @@ import com.bingley.materialdesign.http.asy.ApiHttpClient;
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.PersistentCookieStore;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.https.HttpsUtils;
-import com.zhy.http.okhttp.log.LoggerInterceptor;
 
 import org.acra.ACRA;
 import org.acra.ReportField;
 import org.acra.annotation.ReportsCrashes;
 
-import java.util.concurrent.TimeUnit;
-
-import javax.net.ssl.HostnameVerifier;
-import javax.net.ssl.SSLSession;
-
-import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -33,7 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Date:  2017/4/8
  */
 @ReportsCrashes(
-        reportSenderFactoryClasses = {com.bingley.materialdesign.mvp.acra.YourOwnSenderfactory.class},  // 是.class
+        reportSenderFactoryClasses = {com.bingley.materialdesign.topic.acra.YourOwnSenderfactory.class},  // 是.class
         customReportContent = {ReportField.APP_VERSION_CODE, ReportField.APP_VERSION_NAME, ReportField.ANDROID_VERSION, ReportField.PHONE_MODEL, ReportField.CUSTOM_DATA, ReportField.STACK_TRACE, ReportField.LOGCAT},
         resToastText = R.string.msg_acra_toast
 )

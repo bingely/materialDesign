@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <!--type中声明的就是我们的用户实体类User，一定要写全，带着包名，我们给这个实体类命名为user-->
+    <data>
+
+        <variable
+            name="user"
+            type="com.bingley.materialdesign.topic.databinding.User"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{user.age}"/>
+    </LinearLayout>
+
+    <!--高级用法-->
+   <!-- <data>
+        <import type="com.bingley.materialdesign.mvp.databinding.User"/>
+    </data>-->
+
+
+    <!--变量定义的高级用法-->
+   <!-- <data>
+
+        <import type="android.graphics.Bitmap"/>
+
+        <import type="java.util.ArrayList"/>
+
+        <import type="java.util.HashMap"/>
+
+
+    </data>-->
+
+</layout>

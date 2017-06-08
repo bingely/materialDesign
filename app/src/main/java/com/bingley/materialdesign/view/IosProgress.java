@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.mvp.dialog.progress.Indeterminate;
+import com.bingley.materialdesign.topic.dialog.progress.Indeterminate;
 
 /**
  * Created by Administrator on 2017/1/20.

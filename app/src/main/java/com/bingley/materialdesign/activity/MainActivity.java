@@ -3,29 +3,19 @@ package com.bingley.materialdesign.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
-import android.webkit.JavascriptInterface;
-import android.widget.LinearLayout;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.activity.KnowlegeListActivity;
 import com.bingley.materialdesign.base.BaseActivity;
 import com.bingley.materialdesign.fragment.MainFragment;
-import com.bingley.materialdesign.mvp.osc.OscMainActivity;
-import com.bingley.materialdesign.view.IosProgress;
-
-import butterknife.Bind;
+import com.bingley.materialdesign.topic.osc.OscMainActivity;
 
 public class MainActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {

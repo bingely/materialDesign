@@ -10,26 +10,26 @@
         android:text="实现滑动的七种方式"/>
 
 
-    <com.bingley.materialdesign.mvp.scrolldemo.DragView1
+    <com.bingley.materialdesign.topic.scrolldemo.DragView1
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 
-    <com.bingley.materialdesign.mvp.scrolldemo.DragView2
+    <com.bingley.materialdesign.topic.scrolldemo.DragView2
 
         android:layout_width="100dp"
         android:layout_height="100dp"/>
 
-    <com.bingley.materialdesign.mvp.scrolldemo.DragView3
+    <com.bingley.materialdesign.topic.scrolldemo.DragView3
         android:layout_width="100dp"
         android:layout_height="100dp"
         />
 
-    <com.bingley.materialdesign.mvp.scrolldemo.DragView4
+    <com.bingley.materialdesign.topic.scrolldemo.DragView4
         android:layout_width="100dp"
         android:layout_height="100dp"
         />
 
-    <com.bingley.materialdesign.mvp.scrolldemo.DragView5
+    <com.bingley.materialdesign.topic.scrolldemo.DragView5
         android:layout_height="100dp"
         android:layout_width="100dp"/>
 </LinearLayout>

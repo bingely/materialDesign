@@ -8,11 +8,9 @@ import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 
 import com.bingley.materialdesign.R;
-import com.bingley.materialdesign.mvp.osc.bean.Entity;
+import com.bingley.materialdesign.topic.osc.bean.Entity;
 import com.bingley.materialdesign.view.CBSwipeRefreshLayout;
 import com.bingley.materialdesign.view.EmptyLayout;
 

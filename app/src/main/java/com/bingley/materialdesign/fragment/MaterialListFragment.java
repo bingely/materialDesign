@@ -7,8 +7,8 @@ import android.view.View;
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.activity.KnowleageDetailActivty;
 import com.bingley.materialdesign.base.BaseFragment;
-import com.bingley.materialdesign.mvp.materal.trans.TransListActitity;
-import com.bingley.materialdesign.mvp.materal.palette.XiTuActivity;
+import com.bingley.materialdesign.topic.materal.trans.TransListActitity;
+import com.bingley.materialdesign.topic.materal.palette.XiTuActivity;
 
 import butterknife.OnClick;
 
