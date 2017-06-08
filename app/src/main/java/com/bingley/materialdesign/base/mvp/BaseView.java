@@ -7,9 +7,7 @@ package com.bingley.materialdesign.base.mvp;
  *   比如，一个 Activity 中使用了两个以上的 presenter 方法，在 Activity 中 implement 了本接口，
  *   那么此时如果返回结果，就需根据请求编码来作对应的UI呈现。
  * </p>
- * <p>Date: 2017/4/11</p>
  *
- * @author afon
  */
 
 public interface BaseView {
