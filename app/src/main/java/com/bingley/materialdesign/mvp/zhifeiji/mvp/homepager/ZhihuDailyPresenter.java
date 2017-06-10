@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.topic.zhifeiji.mvp.homepager;
+package com.bingley.materialdesign.mvp.zhifeiji.mvp.homepager;
 
 /**
  * Author:  Mr.bingley

@@ -1,4 +1,4 @@
-package com.bingley.materialdesign.topic.zhifeiji.mvp.homepager;
+package com.bingley.materialdesign.mvp.zhifeiji.mvp.homepager;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
@@ -9,25 +9,25 @@ import android.view.View;
 
 import com.bingley.materialdesign.R;
 import com.bingley.materialdesign.base.BaseFragment;
-import com.bingley.materialdesign.topic.zhifeiji.bean.ZhihuDailyNews;
+import com.bingley.materialdesign.mvp.zhifeiji.bean.ZhihuDailyNews;
 
 import java.util.ArrayList;
 
 /**
- * 豆瓣
+ * 知乎
  * Author:  Mr.bingley
  * Version:
  * Date:  2017/3/9
  */
 
-public class DouBanFragment extends BaseFragment implements ZhihuDailyContract.View {
+public class ZhihuDailyFragment extends BaseFragment implements ZhihuDailyContract.View {
     private RecyclerView recyclerView;
     private SwipeRefreshLayout refresh;
     private FloatingActionButton fab;
     private TabLayout tabLayout;
 
-    public static DouBanFragment newInstance() {
-        return new DouBanFragment();
+    public static ZhihuDailyFragment newInstance() {
+        return new ZhihuDailyFragment();
     }
 
     @Override

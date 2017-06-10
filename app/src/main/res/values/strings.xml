@@ -64,4 +64,9 @@
     <string name="msg_acra_toast">some error</string>
     <string name="Warning_Unknow">warning_unknow</string>
 
+
+    <string name="city">城市:</string>
+    <string name="wd">\n风向:</string>
+    <string name="ws">\n风级:</string>
+    <string name="time">\n发布时间:</string>
 </resources>

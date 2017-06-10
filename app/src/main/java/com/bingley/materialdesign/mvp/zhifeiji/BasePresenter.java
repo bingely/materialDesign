@@ -14,14 +14,20 @@
  * limitations under the License.
  */
 
-package com.bingley.materialdesign.topic.zhifeiji.bean;
+package com.bingley.materialdesign.mvp.zhifeiji;
 
-/**
- * Created by lizhaotailang on 2016/12/27.
- */
+ /**
+   * 
+   * Author:  Mr.bingley
+   * Version: 
+   * Date:  2017/3/9
+   */
 
-public enum BeanType {
+public interface BasePresenter {
 
-    TYPE_ZHIHU,TYPE_GUOKR,TYPE_DOUBAN;
+    /**
+     * get the data and etc.
+     */
+    void start();
 
 }

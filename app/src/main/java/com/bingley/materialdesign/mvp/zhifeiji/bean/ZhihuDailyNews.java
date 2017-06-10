@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.bingley.materialdesign.topic.zhifeiji.bean;
+package com.bingley.materialdesign.mvp.zhifeiji.bean;
 
 import java.util.ArrayList;
 

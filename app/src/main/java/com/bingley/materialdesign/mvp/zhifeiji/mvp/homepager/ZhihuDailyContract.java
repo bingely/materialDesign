@@ -1,8 +1,8 @@
-package com.bingley.materialdesign.topic.zhifeiji.mvp.homepager;
+package com.bingley.materialdesign.mvp.zhifeiji.mvp.homepager;
 
-import com.bingley.materialdesign.topic.zhifeiji.BasePresenter;
-import com.bingley.materialdesign.topic.zhifeiji.BaseView;
-import com.bingley.materialdesign.topic.zhifeiji.bean.ZhihuDailyNews;
+import com.bingley.materialdesign.mvp.zhifeiji.BasePresenter;
+import com.bingley.materialdesign.mvp.zhifeiji.BaseView;
+import com.bingley.materialdesign.mvp.zhifeiji.bean.ZhihuDailyNews;
 
 import java.util.ArrayList;
 
