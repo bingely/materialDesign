@@ -7,9 +7,11 @@ package com.example.bingpay;
 public class HelloWorld {
     public static void main(String[] args){
         try {
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
+
         }
 
     }
