@@ -49,7 +49,8 @@
             android:layout_height="match_parent"
             android:text="关注"/>
 
-        <android.support.design.widget.TabItem
+
+       <android.support.design.widget.TabItem
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="微博"/>

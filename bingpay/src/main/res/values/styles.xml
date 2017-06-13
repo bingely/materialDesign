@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+    <style name="AppTheme.Launcher">
+        <!--关闭启动窗口-->
+        <!--设置为true这样启动APP，就没有白屏，但会出现点击桌面图标而半天没有反应的现象-->
+        <item name="android:windowDisablePreview">@drawable/branded_launch_screens</item>
+
+    </style>
+
 </resources>

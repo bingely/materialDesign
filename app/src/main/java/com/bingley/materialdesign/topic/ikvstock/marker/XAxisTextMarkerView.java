@@ -5,6 +5,7 @@ import android.graphics.Paint;
 import android.graphics.RectF;
 
 import com.bingley.materialdesign.topic.ikvstock.alilgn.XMarkerAlign;
+import com.bingley.materialdesign.topic.ikvstock.entry.Entry;
 import com.bingley.materialdesign.topic.ikvstock.entry.SizeColor;
 import com.bingley.materialdesign.topic.ikvstock.render.AbstractReader;
 
@@ -57,11 +58,39 @@ public class XAxisTextMarkerView implements IMarkerView {
         markerBorderPaint.setColor(sizeColor.getMarkerBorderColor());
         inset = markerBorderPaint.getStrokeWidth() / 2;
 
+        xMarkerAlign = sizeColor.getXMarkerAlign();
     }
 
 
     @Override
     public void onDrawMarkerView(Canvas canvas, float highlightPointX, float highlightPointY) {
+        if (contentRect.left < highlightPointX && highlightPointX < contentRect.right) {
+            Entry highlightEntry = mRender.getEntrySet().getHighlightEntry();
 
+            if (highlightEntry != null) {
+                float width = markerTextPaint.measureText(highlightEntry.getXLabel() + 50);
+
+                highlightPointX = highlightPointX - width / 2;
+                if (highlightPointX < contentRect.left) {
+                    highlightPointX = contentRect.left;
+                }
+                if (highlightPointX > contentRect.right - width) {
+                    highlightPointX = contentRect.right - width;
+                }
+
+                markerInsets.left = highlightPointX + inset;
+
+                if (xMarkerAlign == XMarkerAlign.TOP) {
+                    markerInsets.top = contentRect.top + inset;
+                } else if (xMarkerAlign == XMarkerAlign.BOTTOM) {
+                    markerInsets.top = contentRect.bottom - height + inset;
+
+                } else if (highlightPointY < contentRect.top + contentRect.height() / 3) {
+                    markerInsets.top = contentRect.bottom - height + inset;
+
+                } else {
+                }
+            }
+        }
     }
 }
