@@ -14,4 +14,6 @@ public interface IMainPresenter {
     void loadDataSuccess(MainModelBean mainModelBean);
 
     void loadDataFailure();
+
+
 }
