@@ -1,6 +1,7 @@
 package com.bingley.materialdesign.utils.newj;
 
-import com.blankj.utilcode.constant.RegexConstants;
+
+import com.bingley.materialdesign.utils.newj.constant.RegexConstants;
 
 import java.util.ArrayList;
 import java.util.List;

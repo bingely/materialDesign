@@ -1,6 +1,7 @@
 package com.bingley.materialdesign.utils.newj;
 
-import com.blankj.utilcode.constant.TimeConstants;
+
+import com.bingley.materialdesign.utils.newj.constant.TimeConstants;
 
 import java.text.DateFormat;
 import java.text.ParseException;

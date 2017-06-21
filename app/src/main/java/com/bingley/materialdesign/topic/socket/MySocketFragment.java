@@ -7,8 +7,9 @@ import com.bingley.materialdesign.base.BaseFragment;
 import com.bingley.materialdesign.utils.LogUtils;
 import com.vilyever.socketclient.SocketClient;
 
+import java.net.Socket;
+
 import butterknife.OnClick;
-import io.socket.client.Socket;
 
 /**
  * Author:  Mr.bingley
